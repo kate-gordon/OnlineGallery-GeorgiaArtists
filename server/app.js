@@ -5,6 +5,8 @@ const express = require("express"),
   cors = require("cors"),
   logger = require("morgan");
 
+require("dotenv").config();
+
 const artistsRouter = require("./routes/artists");
 const artworksRouter = require("./routes/artworks");
 
