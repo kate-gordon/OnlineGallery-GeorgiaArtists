@@ -1,57 +1,16 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const { allartworks, artworkid } = require("../utilities/artworks");
 
-/* GET home page. */
-
-router.get("/all", function(req, res, next) {
-  res.send([
-    {
-      id: 1,
-      title: "Hilary Stole My Apple Pie",
-      medium: "Painting",
-      artist: 1,
-      picture: "localhost:5252/images/artworks/applepie.jpg",
-      price: 175,
-      sold: false,
-      award: "Best Apple Pie Related"
-    },
-    {
-      id: 2,
-      title: "Sea Man",
-      medium: "Marble",
-      artist: 2,
-      picture: "localhost:5252/images/artworks/spongeart.png",
-      price: 2225,
-      sold: true,
-      award: "Most Beautiful Statue"
-    }
-  ]);
+router.get("/all", async function(req, res, next) {
+  const response = await allartworks();
+  res.send(response);
 });
 
-router.get("/id/1", function(req, res, next) {
-  res.send({
-    id: 1,
-    title: "Hilary Stole My Apple Pie",
-    medium: "Painting",
-    artist: 1,
-    picture: "localhost:5252/images/artworks/applepie.jpg",
-    price: 175,
-    sold: false,
-    award: "Best Apple Pie Related"
-  });
-});
-
-router.get("/id/2", function(req, res, next) {
-  res.send({
-    id: 2,
-    title: "Sea Man",
-    medium: "Marble",
-    artist: 2,
-    picture: "localhost:5252/images/artworks/spongeart.jpg",
-    price: 2225,
-    sold: true,
-    award: "Most Beautiful Statue"
-  });
+router.get("/id/:id", async function(req, res, next) {
+  const { id } = req.params;
+  const response = await artworkid(id);
+  res.send(response);
 });
 
 module.exports = router;
