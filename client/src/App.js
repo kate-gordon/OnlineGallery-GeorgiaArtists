@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Artists from '../src/components/pages/Artists'; 
 
 function App() {
   return (
-    <div className="App">
-      <Artists /> 
+    <div className='App'>
+      <h1>The Georgia Artists With DisAbilities Gallery</h1>
+      <Artists/> 
     </div>
   );
 }
