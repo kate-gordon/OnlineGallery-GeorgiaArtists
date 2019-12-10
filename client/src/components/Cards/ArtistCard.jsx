@@ -11,11 +11,11 @@ const ArtistCard = props => {
                 d="flex" 
                 flexDirection="column"
             >
-                <Box p={8}>
+                <Box p={6}>
                     <h1>{artist.firstname} {artist.lastname}</h1>
-                    <img alt={artist.firstname} src={artist.picture} />
+                    <img alt="{artist.firstname}" src={artist.picture} />
                 </Box>
-                <Box p={10}>
+                <Box p={4}>
                     <p>
                         {artist.blurb}
                     </p>
@@ -23,9 +23,7 @@ const ArtistCard = props => {
                  <Box p={1} d="flex" justifyContent="flex-end">
                     <Button>...</Button>
                  </Box>
-            </Box>
-
-            
+            </Box>  
         </>
     )
 }
