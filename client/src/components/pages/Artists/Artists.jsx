@@ -1,19 +1,21 @@
 import React from 'react';
 import ArtistCard from '../../Cards/ArtistCard'; 
 
-import loadData from '../../../utils/loadData'; 
-
+// import loadData from '../../../utils/loadData'; 
+import axios from 'axios'; 
 import './artists.css';
+import Axios from 'axios';
 const Artists = () => {
 
-  // async function fetchData() {
-  //   let uri = "http://admin.insae.org/artists/all";
-  //   const data = await loadData(uri);
-  //   console.log(data); 
-  //   return data
-  // };
+const fetchData = () => {
+    let uri = "http://admin.insae.org/artists/all";
+    axios.get(uri)
+    .then(data => {
+      console.log(data.data)
+    }).catch ( error => console.log(error))
+  };
 
-  // fetchData(); 
+  fetchData(); 
 
   return (
     <>
@@ -22,7 +24,7 @@ const Artists = () => {
         <ArtistCard artist={artistData[id]}/>
         ); 
       })} */}
-      <ArtistCard /> 
+    
     </>
   );
 };
