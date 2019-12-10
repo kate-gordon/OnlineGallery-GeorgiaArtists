@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-import Artists from '../src/components/pages/Artists'; 
-// import SingleArtist from '../src/components/pages/SingleArtist'; 
+import { ThemeProvider } from '@chakra-ui/core';
+import Artists from '../src/components/pages/Artists';
 
 function App() {
   return (
     <div className='App'>
-      <h1>The Georgia Artists With DisAbilities Gallery</h1>
-      <Artists/> 
-      {/* <SingleArtist />  */}
+      <ThemeProvider>
+        <h1>The Georgia Artists With DisAbilities Gallery</h1>
+        <Artists />
+      </ThemeProvider>
     </div>
   );
 }
