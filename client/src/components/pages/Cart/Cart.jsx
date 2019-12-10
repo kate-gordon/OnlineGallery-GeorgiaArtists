@@ -2,8 +2,6 @@ import React from 'react';
 
 import './cart.css';
 
-import React from 'react';
-
 function Cart() {
   return (
     <div>
