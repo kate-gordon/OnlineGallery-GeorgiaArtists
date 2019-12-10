@@ -26,7 +26,7 @@ const Artists = () => {
     <>
      {artists.map((el, id) => {
         return (
-        <ArtistCard artist={artists[id]}/>
+        <ArtistCard key={artists[id].id} artist={artists[id]}/>
         ); 
       })}
     </>
