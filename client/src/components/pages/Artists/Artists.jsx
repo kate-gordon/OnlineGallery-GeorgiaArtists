@@ -1,30 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ArtistCard from '../../Cards/ArtistCard'; 
 
-import loadData from '../../../utils/loadData'; 
-
+import axios from 'axios'; 
 import './artists.css';
+
 const Artists = () => {
+  const [artists, setArtists] =useState([]); 
 
-  // async function fetchData() {
-  //   let uri = "http://admin.insae.org/artists/all";
-  //   const data = await loadData(uri);
-  //   console.log(data); 
-  //   return data
-  // };
+  const fetchData = () => {
+    let uri = "http://admin.insae.org/artists/all";
+     axios.get(uri)
+    .then(data => {
+      console.log(data.data)
+      setArtists(data.data); 
+  }).catch ( error => console.log(error))
+}; 
 
-  // fetchData(); 
+  useEffect(() => {
+    const artistData = fetchData(); 
+    console.log(artistData); 
+}, []); 
+
 
   return (
     <>
-     {/* {artistData.map((el, id) => {
+     {artists.map((el, id) => {
         return (
-        <ArtistCard artist={artistData[id]}/>
+        <ArtistCard key={artists[id].id} artist={artists[id]}/>
         ); 
-      })} */}
-      <ArtistCard /> 
+      })}
     </>
   );
 };
 
 export default Artists;
+
+

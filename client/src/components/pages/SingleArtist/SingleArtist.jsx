@@ -2,7 +2,7 @@ import React from 'react';
 
 import artistImg from './artistImg.png'; 
 
-const SingleArtist = () => {
+const SingleArtist = ({artist}) => {
     return (
         <>
             <h1>Artist Name</h1>
