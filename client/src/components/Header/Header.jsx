@@ -1,11 +1,15 @@
 import React from 'react';
+import Navbar from './Navbar/Navbar';
+import { Heading } from '@chakra-ui/core';
+import './header.css';
 
-function Header() {
+const Header = () => {
   return (
-    <div>
+    <>
       <h1>Header test</h1>
-    </div>
+      <Navbar />
+    </>
   );
-}
+};
 
 export default Header;
