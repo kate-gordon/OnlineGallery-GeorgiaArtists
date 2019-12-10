@@ -10,9 +10,11 @@ import Home from '../src/components/pages/Home';
 import Cart from '../src/components/pages/Cart';
 
 function App() {
+  const initialState = [];
   return (
     <div className='App'>
       <ThemeProvider>
+        <StateProvider initialState={initialState}>
       <h1>The Georgia Artists with DisAbilities Gallery</h1>
       <Grid p={20} templateColumns="repeat(3, 1fr)" gap={6}>   
         <Header />
@@ -26,6 +28,7 @@ function App() {
           <Cart />
         </Route>
         </Grid>
+        </StateProvider>
       </ThemeProvider>
     </div>
   );
