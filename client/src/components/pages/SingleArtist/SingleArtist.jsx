@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { useRouteMatch } from "react-router-dom";import axios from 'axios'; 
+import { useRouteMatch } from "react-router-dom";
+import axios from 'axios'; 
 
 import artistImg from './artistImg.png';
 
 const SingleArtist = () => {
     const [artist, setArtist] =useState([]); 
 
+    // Get artist ID from URL params
+
     let match = useRouteMatch("/artists/artist/:id"); 
     const id = match.params.id; 
+
+    // Get single artist data 
 
     const fetchArtist = () => {
         let uri = `http://admin.insae.org/api/artists/id/${id}`;

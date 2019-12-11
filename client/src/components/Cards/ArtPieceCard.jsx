@@ -9,7 +9,7 @@ const ArtPieceCard = props => {
       <Image
         htmlWidth='450px'
         htmlHeight='200px'
-        src={piece.portrait}
+        src={piece.picture}
         alt={piece.title}
       />
       <IconButton aria-label='Add to cart' size='xs' icon='add'></IconButton>
@@ -18,7 +18,9 @@ const ArtPieceCard = props => {
         <h2>${piece.price}</h2>
       </Box>
       <Box>
-        <h2>By {piece.firstname} {piece.lastname}</h2>
+        <h2>
+          By {piece.firstname} {piece.lastname}
+        </h2>
       </Box>
     </Box>
   );
