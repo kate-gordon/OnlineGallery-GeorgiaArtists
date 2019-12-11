@@ -25,7 +25,7 @@ const SingleArtist = () => {
         <>
             <h1>{artist.firstname} {artist.lastname}</h1>
                 <h2>{artist.city}, GA</h2>
-                    <img alt="" src={artist.picture} /> 
+                    <img alt="" src={artist.portrait} /> 
                     <p>{artist.blurb}</p>
             <div role="group" className="imgContainer"> 
                 <img alt="" src={artistImg} />  

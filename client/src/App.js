@@ -23,6 +23,7 @@ function App() {
       .get(uri)
       .then(data => {
         setArtists(data.data);
+      
       })
       .catch(error => console.log(error));
   };

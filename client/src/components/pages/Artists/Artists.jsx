@@ -1,19 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import ArtistCard from '../../Cards/ArtistCard'; 
-import './artists.css';
+import ArtistCard from "../../Cards/ArtistCard";
+import "./artists.css";
 
 const Artists = props => {
-  const { artists } = props; 
+  const { artists } = props;
 
   return (
     <>
-     {artists.map((artist, id)=> {
-        return (
-        <ArtistCard key={artists[id].id} artist={artists[id]}/>
-        ); 
+      {artists.map((artist, id) => {
+        return <ArtistCard key={artists[id].artist_id} artist={artists[id]} />;
       })}
-      
     </>
   );
 };
