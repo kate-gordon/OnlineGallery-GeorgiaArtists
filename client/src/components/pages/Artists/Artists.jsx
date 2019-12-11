@@ -19,5 +19,3 @@ const Artists = props => {
 };
 
 export default Artists;
-
-

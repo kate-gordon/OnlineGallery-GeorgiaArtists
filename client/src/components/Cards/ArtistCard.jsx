@@ -30,5 +30,4 @@ const ArtistCard = props => {
     )
 }
 
-
-export default ArtistCard; 
+export default ArtistCard;

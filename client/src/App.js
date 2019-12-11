@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { StateProvider } from './context/index';
+import { Grid, ThemeProvider } from '@chakra-ui/core';
 import axios from 'axios'; 
 
-import './App.css';
-import { ThemeProvider, Grid } from '@chakra-ui/core';
-import Artists from '../src/components/pages/Artists';
 import SingleArtist from '../src/components/pages/SingleArtist';
-
-// import Events from '../src/components/pages/Events';
-// import Header from '../src/components/Header';
+import Artists from '../src/components/pages/Artists';
+import Header from '../src/components/Header/Header';
 import Home from '../src/components/pages/Home';
 import Cart from '../src/components/pages/Cart';
 import About from '../src/components/pages/About';
 import Events from '../src/components/pages/Events';
+import Footer from '../src/components/Footer/Footer';
 
+import './App.css';
 
 function App() {
   const [artists, setArtists] =useState([]); 
@@ -33,9 +33,9 @@ function App() {
   return (
     <div className='App'>
       <ThemeProvider>
-        <h1>The Georgia Artists with DisAbilities Gallery</h1>
+      <StateProvider initialState={initialState}>
+          <Header />
         <Grid p={20} templateColumns='repeat(3, 1fr)' gap={6}>
-          {/* <Header /> */}
         <Switch>
           <Route exact path='/'>
             <Home />
@@ -56,7 +56,9 @@ function App() {
             <Cart />
           </Route>
           </Switch>
-        </Grid>
+          </Grid>
+          <Footer />
+        </StateProvider>
       </ThemeProvider>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch } from "react-router-dom";import axios from 'axios'; 
 
-import artistImg from './artistImg.png'; 
+import artistImg from './artistImg.png';
 
 const SingleArtist = () => {
     const [artist, setArtist] =useState([]); 
@@ -39,5 +39,4 @@ const SingleArtist = () => {
     )
 }
 
-
-export default SingleArtist; 
+export default SingleArtist;
