@@ -10,7 +10,7 @@ const SingleArtist = () => {
     const id = match.params.id; 
 
     const fetchArtist = () => {
-        let uri = `http://admin.insae.org/artists/id/${id}`;
+        let uri = `http://admin.insae.org/api/artists/id/${id}`;
          axios.get(uri)
         .then(data => {
           setArtist(data.data); 

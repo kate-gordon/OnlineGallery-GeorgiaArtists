@@ -18,7 +18,7 @@ function App() {
   const [artists, setArtists] = useState([]);
 
   const fetchData = () => {
-    let uri = 'http://admin.insae.org/artists/all';
+    let uri = 'http://admin.insae.org/api/artists/all';
     axios
       .get(uri)
       .then(data => {
