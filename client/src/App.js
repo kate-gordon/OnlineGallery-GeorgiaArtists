@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { StateProvider } from './context/index';
 import { Grid, ThemeProvider } from '@chakra-ui/core';
 import axios from 'axios'; 
 
@@ -32,8 +31,7 @@ function App() {
 
   return (
     <div className='App'>
-      <ThemeProvider>
-      <StateProvider initialState={initialState}>
+      <ThemeProvider> 
           <Header />
         <Grid p={20} templateColumns='repeat(3, 1fr)' gap={6}>
         <Switch>
@@ -58,7 +56,6 @@ function App() {
           </Switch>
           </Grid>
           <Footer />
-        </StateProvider>
       </ThemeProvider>
     </div>
   );
