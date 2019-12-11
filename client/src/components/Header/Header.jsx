@@ -8,8 +8,8 @@ import './header.css';
 
 const Header = () => {
   return (
-    <>
-      <Grid p={20} templateColumns='repeat(3, 1fr)' gap={6}>
+    <div className='header'>
+      <div className='headerContent'>
         <Box>
           <Text>Georgia Artists with DisAbilities</Text>
         </Box>
@@ -26,9 +26,9 @@ const Header = () => {
             Cart
           </Button>
         </Box>
-        <Navbar />
-      </Grid>
-    </>
+      </div>
+      <Navbar />
+    </div>
   );
 };
 
