@@ -36,7 +36,7 @@ router.get("/admin", function(req, res, next) {
   }
 });
 
-router.get("/admin/:artists", function(req, res, next) {
+router.get("/admin/artists", function(req, res, next) {
   if (req.session.is_logged_in) {
     res.render("template", {
       partials: {

@@ -5,7 +5,7 @@
 INSERT INTO artists (firstname,
     lastname,
     city,
-    picture,
+    portrait,
     blurb,
     email) VALUES (
     'Barack',
@@ -18,7 +18,7 @@ INSERT INTO artists (firstname,
 INSERT INTO artists (firstname,
     lastname,
     city,
-    picture,
+    portrait,
     blurb,
     email) VALUES (   
     'SpongeBob',

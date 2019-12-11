@@ -8,7 +8,7 @@ CREATE TABLE artists (
     lastname VARCHAR(30),
     city VARCHAR(50),
     email VARCHAR(50),
-    picture VARCHAR(80),
+    portrait VARCHAR(80),
     blurb VARCHAR (2000)
 );
 
