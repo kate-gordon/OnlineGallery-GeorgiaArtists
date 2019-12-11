@@ -9,6 +9,8 @@ require("dotenv").config();
 
 const artistsRouter = require("./routes/artists");
 const artworksRouter = require("./routes/artworks");
+const eventsRouter = require("./routes/events");
+const controlRouter = require("./routes/control");
 
 const app = express();
 
@@ -23,5 +25,7 @@ app.use(cookieParser());
 
 app.use("/artists", artistsRouter);
 app.use("/artworks", artworksRouter);
+app.use("/events", eventsRouter);
+app.use("/control", controlRouter);
 
 module.exports = app;

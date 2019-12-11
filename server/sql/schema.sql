@@ -22,3 +22,21 @@ picture VARCHAR(80),
 sold boolean DEFAULT 'f', 
 award VARCHAR(100)
 );
+
+CREATE TABLE events (
+    id serial primary key,
+    title VARCHAR(200),
+    date DATE,
+    time TIME,
+    location VARCHAR(200),
+    picture VARCHAR(80),
+    blurb VARCHAR (2000)
+);
+
+CREATE TABLE subscribers (
+    id serial primary key,
+    email VARCHAR(100),
+    zip VARCHAR(10),
+    firstname VARCHAR(20),
+    lastname VARCHAR(20)
+);

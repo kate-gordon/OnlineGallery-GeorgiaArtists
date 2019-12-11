@@ -1,6 +1,7 @@
 /*
     Run this for junk data on your database for testing purposes.
 */
+
 INSERT INTO artists (firstname,
     lastname,
     city,
@@ -17,7 +18,7 @@ INSERT INTO artists (firstname,
 INSERT INTO artists (firstname,
     lastname,
     city,
-    picture'
+    picture,
     blurb,
     email) VALUES (   
     'SpongeBob',
@@ -56,3 +57,32 @@ INSERT INTO artworks (title,
     true,
     'Most Beautiful Statue'
     );
+
+INSERT INTO events(
+    title ,
+    date,
+    time,
+    location,
+    picture,
+    blurb)VALUES (
+    'Gallary At The Park',
+    '01/06/2020',
+    '02:30 PM',
+    'Piedmont Park, Atlanta GA',
+    'localhost:5252/images/events/piedmont-park.jpg',
+    'PostgreSQL uses Julian dates for all date/time calculations. This has the useful property of correctly calculating dates from 4713 BC to far into the future, using the assumption that the length of the year is 365.2425 days. Date conventions before the 19th century make for interesting reading, but are not consistent enough to warrant coding into a date/time handler.'
+);
+INSERT INTO events(
+    title ,
+    date,
+    time,
+    location,
+    picture,
+    blurb)VALUES (
+    'Lost At Sea: Oceanic Art',
+    '01/22/2020',
+    '06:30 PM',
+    'Atlanta Tech Village, Buckhead GA',
+    'localhost:5252/images/events/lostatsea.jpeg',
+    'An art museum or art gallery is a building or space for the display of art, usually from the museums own collection. It might be in public or private ownership and may be accessible to all or have restrictions in place.'
+);
