@@ -1,0 +1,9 @@
+.navList {
+  display: flex;
+  align-content: space-around;
+}
+
+.navListItem {
+  display: inline;
+  text-decoration: none;
+}

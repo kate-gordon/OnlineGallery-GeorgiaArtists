@@ -9,6 +9,7 @@ import Home from '../src/components/pages/Home';
 import Cart from '../src/components/pages/Cart';
 import About from '../src/components/pages/About';
 import Events from '../src/components/pages/Events';
+import Footer from '../src/components/Footer/Footer';
 
 function App() {
   const initialState = [];
@@ -16,9 +17,8 @@ function App() {
     <div className='App'>
       <ThemeProvider>
         <StateProvider initialState={initialState}>
-          <h1>The Georgia Artists with DisAbilities Gallery</h1>
+          <Header />
           <Grid p={20} templateColumns='repeat(3, 1fr)' gap={6}>
-            <Header />
             <Route exact path='/'>
               <Home />
             </Route>
@@ -35,6 +35,7 @@ function App() {
               <Cart />
             </Route>
           </Grid>
+          <Footer />
         </StateProvider>
       </ThemeProvider>
     </div>
