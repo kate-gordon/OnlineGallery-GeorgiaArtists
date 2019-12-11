@@ -8,7 +8,7 @@ router.get("/all", async function(req, res, next) {
 });
 
 router.get("/id/:id", async function(req, res, next) {
-  const { id } = req.params;
+  const id = req.params.artist_id;
   const response = await artistid(id);
   res.send(response);
 });

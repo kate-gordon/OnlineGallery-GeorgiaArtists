@@ -3,7 +3,7 @@
 */
 
 CREATE TABLE artists (
-    id serial primary key,
+    artist_id serial primary key,
     firstname VARCHAR(30),
     lastname VARCHAR(30),
     city VARCHAR(50),
@@ -13,10 +13,10 @@ CREATE TABLE artists (
 );
 
 CREATE TABLE artworks (
-id serial primary key,
+artwork_id serial primary key,
 title VARCHAR(100),
 medium VARCHAR(50),
-artist INTEGER REFERENCES artists(id),
+artist INTEGER REFERENCES artists(artist_id),
 price float,
 picture VARCHAR(80),
 sold boolean DEFAULT 'f', 
@@ -24,7 +24,7 @@ award VARCHAR(100)
 );
 
 CREATE TABLE events (
-    id serial primary key,
+    event_id serial primary key,
     title VARCHAR(200),
     datewhen TIMESTAMP,
     location VARCHAR(200),
@@ -33,7 +33,7 @@ CREATE TABLE events (
 );
 
 CREATE TABLE subscribers (
-    id serial primary key,
+    subscriber_id serial primary key,
     email VARCHAR(100),
     zip VARCHAR(10),
     firstname VARCHAR(20),

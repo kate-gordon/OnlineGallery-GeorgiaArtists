@@ -3,7 +3,7 @@ const db = require("../utilities/conn");
 const allartworks = async () => {
   try {
     const response = await db.any(
-      `SELECT * FROM artworks FULL JOIN artists ON artworks.artist=artists.id`
+      `SELECT * FROM artworks FULL JOIN artists ON artworks.artist=artists.artist_id`
     );
     return response;
   } catch (err) {
@@ -14,7 +14,7 @@ const allartworks = async () => {
 const artworkid = async id => {
   try {
     const response = await db.any(
-      `SELECT * FROM artworks FULL JOIN artists ON artworks.artist=artists.id WHERE artworks.id=${id}`
+      `SELECT * FROM artworks FULL JOIN artists ON artworks.artist=artists.artist_id WHERE artworks.artwork_id=${id}`
     );
     return response[0];
   } catch (err) {
