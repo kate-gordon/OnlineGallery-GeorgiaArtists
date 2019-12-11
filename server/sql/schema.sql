@@ -26,8 +26,7 @@ award VARCHAR(100)
 CREATE TABLE events (
     id serial primary key,
     title VARCHAR(200),
-    date DATE,
-    time TIME,
+    datewhen TIMESTAMP,
     location VARCHAR(200),
     picture VARCHAR(80),
     blurb VARCHAR (2000)
