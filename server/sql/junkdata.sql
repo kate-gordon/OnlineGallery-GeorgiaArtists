@@ -57,7 +57,21 @@ INSERT INTO artworks (title,
     true,
     'Most Beautiful Statue'
     );
-
+INSERT INTO artworks (title,
+    medium,
+    artist,
+    picture,
+    price,
+    sold,
+    award) VALUES (
+    'Self Portrait',
+    'Painting',
+    2,
+    'localhost:5252/images/artworks/spongebobselfportrait.png',
+    525,
+    false,
+    'Best Pineapple Painting'
+    );
 INSERT INTO events(
     title ,
     datewhen,
