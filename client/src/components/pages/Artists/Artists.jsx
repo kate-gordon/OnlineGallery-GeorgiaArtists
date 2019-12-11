@@ -11,20 +11,18 @@ const Artists = () => {
     let uri = "http://admin.insae.org/artists/all";
      axios.get(uri)
     .then(data => {
-      console.log(data.data)
       setArtists(data.data); 
   }).catch ( error => console.log(error))
 }; 
 
   useEffect(() => {
     const artistData = fetchData(); 
-    console.log(artistData); 
 }, []); 
 
 
   return (
     <>
-     {artists.map((el, id) => {
+     {artists.map((artist, id)=> {
         return (
         <ArtistCard key={artists[id].id} artist={artists[id]}/>
         ); 
