@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { allevents, eventid } = require("../utilities/events");
+const { allevents, eventid } = require("../models/events");
 
 router.get("/all", async function(req, res, next) {
   const response = await allevents();

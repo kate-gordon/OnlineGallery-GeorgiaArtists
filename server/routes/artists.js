@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { allartists, artistid } = require("../utilities/artists");
+const { allartists, artistid } = require("../models/artists");
 
 router.get("/all", async function(req, res, next) {
   const response = await allartists();
