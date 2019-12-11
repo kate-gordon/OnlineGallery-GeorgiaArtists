@@ -1,14 +1,32 @@
-import React from 'react'; 
+import React, { useState, useEffect } from 'react';
+import { useRouteMatch } from "react-router-dom";import axios from 'axios'; 
 
 import artistImg from './artistImg.png'; 
 
-const SingleArtist = ({artist}) => {
+const SingleArtist = () => {
+    const [artist, setArtist] =useState([]); 
+
+    let match = useRouteMatch("/artists/artist/:id"); 
+    const id = match.params.id; 
+
+    const fetchArtist = () => {
+        let uri = `http://admin.insae.org/artists/id/${id}`;
+         axios.get(uri)
+        .then(data => {
+          setArtist(data.data); 
+      }).catch ( error => console.log(error))
+    }; 
+
+    useEffect(() => {
+        fetchArtist();    
+    }, []); 
+
     return (
         <>
-            <h1>Artist Name</h1>
-                <h2>Location, GA</h2>
-                    <img alt="" src="https://via.placeholder.com/150" /> 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget sit amet tellus cras. Dui ut ornare lectus sit amet. Posuere sollicitudin aliquam ultrices sagittis orci a. Sit amet cursus sit amet dictum sit amet justo donec. Placerat in egestas erat imperdiet. Nisl nunc mi ipsum faucibus vitae aliquet nec. Est sit amet facilisis magna etiam tempor orci eu lobortis. Dolor purus non enim praesent elementum facilisis leo vel. In nibh mauris cursus mattis molestie. Amet venenatis urna cursus eget nunc scelerisque viverra mauris in. Faucibus et molestie ac feugiat sed lectus.</p>
+            <h1>{artist.firstname} {artist.lastname}</h1>
+                <h2>{artist.city}, GA</h2>
+                    <img alt="" src={artist.picture} /> 
+                    <p>{artist.blurb}</p>
             <div role="group" className="imgContainer"> 
                 <img alt="" src={artistImg} />  
                 <h3>Art Title</h3>

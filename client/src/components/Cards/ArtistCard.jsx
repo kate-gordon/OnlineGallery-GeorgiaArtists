@@ -1,7 +1,6 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import SingleArtist from '../pages/SingleArtist'; 
 import { Box, Button } from '@chakra-ui/core';
 
 const ArtistCard = props => {
@@ -24,9 +23,7 @@ const ArtistCard = props => {
                     </p>
                  </Box>
                  <Box p={1} d="flex" justifyContent="flex-end">
-                    <Link to={`/artist/${artist.id}`}>Click Me</Link>
-
-                    {/* <Route path= component={SingleArtist} />  */}
+                    <Link to={`/artists/artist/${artist.id}`}>Click Me</Link>
                  </Box>
             </Box>  
         </>
