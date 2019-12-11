@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
-import { Grid, ThemeProvider } from "@chakra-ui/core";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { Grid, ThemeProvider } from '@chakra-ui/core';
+import axios from 'axios';
 
-import SingleArtist from "../src/components/pages/SingleArtist";
-import Artists from "../src/components/pages/Artists";
-import Header from "../src/components/Header/Header";
-import Home from "../src/components/pages/Home";
-import Cart from "../src/components/pages/Cart";
-import About from "../src/components/pages/About";
-import Events from "../src/components/pages/Events";
-import Footer from "../src/components/Footer/Footer";
+import SingleArtist from '../src/components/pages/SingleArtist';
+import Artists from '../src/components/pages/Artists';
+import Header from '../src/components/Header/Header';
+import Home from '../src/components/pages/Home';
+import Cart from '../src/components/pages/Cart';
+import About from '../src/components/pages/About';
+import Events from '../src/components/pages/Events';
+import Footer from '../src/components/Footer/Footer';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const [artists, setArtists] = useState([]);
 
   const fetchData = () => {
-    let uri = "http://admin.insae.org/api/artists/all";
+    let uri = 'http://admin.insae.org/api/artists/all';
     axios
       .get(uri)
       .then(data => {
