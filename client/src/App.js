@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import './App.css';
-import { ThemeProvider, Grid } from '@chakra-ui/core';
 import { StateProvider } from './context/index';
+import { Grid, ThemeProvider } from '@chakra-ui/core';
+
 import Artists from '../src/components/pages/Artists';
 import Header from '../src/components/Header/Header';
 import Home from '../src/components/pages/Home';
@@ -10,6 +10,8 @@ import Cart from '../src/components/pages/Cart';
 import About from '../src/components/pages/About';
 import Events from '../src/components/pages/Events';
 import Footer from '../src/components/Footer/Footer';
+
+import './App.css';
 
 function App() {
   const initialState = [];
