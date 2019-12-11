@@ -28,6 +28,17 @@ function App() {
             <Route path='/about'>
               <About />
             </Route>
+            <Route path='/events'>
+              <Events />
+            </Route>
+            <Route path='/cart'>
+              <Cart />
+            </Route>
+          </Grid>
+        </StateProvider>
+      </ThemeProvider>
+    </div>
+  );
 }
 
 export default App;
