@@ -4,12 +4,6 @@
   font-family: 'Bitter', serif;
 }
 
-/* .header {
-  grid-template-rows: 
-    [row1-start] "content logo content" auto [row1-end]
-    [row2-start] "blank navlink navlink navlink blank" auto [row1-end]
-} */
-
 .headerContent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -3,11 +3,13 @@
   list-style-type: none;
   text-decoration: none;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .navListItem {
-  padding: 10px;
+  pad1remding: ;
 }
 
 .navbar {
