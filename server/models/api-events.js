@@ -11,7 +11,7 @@ const allevents = async () => {
 
 const eventid = async id => {
   try {
-    const response = await db.any(`SELECT * FROM events WHERE id=${id}`);
+    const response = await db.any(`SELECT * FROM events WHERE event_id=${id}`);
     return response[0];
   } catch (err) {
     return `Internal Database Error: ${err}`;
