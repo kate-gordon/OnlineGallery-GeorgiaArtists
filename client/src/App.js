@@ -11,6 +11,7 @@ import Cart from '../src/components/pages/Cart';
 import About from '../src/components/pages/About';
 import Events from '../src/components/pages/Events';
 import Footer from '../src/components/Footer/Footer';
+import Checkout from '../src/components/pages/Checkout/Checkout';
 
 import './App.css';
 
@@ -54,6 +55,9 @@ function App() {
             </Route>
             <Route path='/cart'>
               <Cart />
+            </Route>
+            <Route path='/checkout'>
+              <Checkout />
             </Route>
           </Switch>
         </Grid>

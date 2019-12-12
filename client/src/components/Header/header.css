@@ -27,3 +27,7 @@
 .gridItem3 {
   grid-area: 1 / 3 / 2 / 4;
 }
+
+.cartButton {
+  text-decoration: none;
+}
