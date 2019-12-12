@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, Button, Image } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
-import { MdShoppingCart } from 'react-icons/md';
 
 import logo from './logo.png';
 import Navbar from './Navbar/Navbar';
+import { MdShoppingCart } from 'react-icons/md';
 
 import './header.css';
 
