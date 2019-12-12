@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+
 import EventCard from "../../Cards/EventCard";
 
 const Events = () => {
@@ -21,6 +23,7 @@ const Events = () => {
 
   return (
     <>
+    
       {events.map((event, id) => {
         return <EventCard key={events[id].event_id} event={events[id]} />;
       })}
