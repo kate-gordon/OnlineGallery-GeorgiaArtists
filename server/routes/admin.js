@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { login } = require("../models/control");
+const { login } = require("../models/admin");
 
 router.post("/login", function(req, res, next) {
   const { username, password } = req.body;
@@ -47,4 +47,12 @@ router.get("/admin/artists", function(req, res, next) {
     res.status(401).redirect("/");
   }
 });
+
+router.put("/admin/artists/add", function(req, res, next) {
+  if (req.session.is_logged_in) {
+  } else {
+    res.status(401).redirect("/");
+  }
+});
+
 module.exports = router;

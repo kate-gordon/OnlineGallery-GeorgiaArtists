@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { allevents, eventid } = require("../models/events");
+const { allevents, eventid } = require("../models/api-events");
 
 router.get("/all", async function(req, res, next) {
   const response = await allevents();
@@ -8,7 +8,7 @@ router.get("/all", async function(req, res, next) {
 });
 
 router.get("/id/:id", async function(req, res, next) {
-  const id = req.params.event_id;
+  const { id } = req.params;
   const response = await eventid(id);
   res.send(response);
 });

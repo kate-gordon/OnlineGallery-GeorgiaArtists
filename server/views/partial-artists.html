@@ -1,2 +1,30 @@
-<p>edit artist</p>
-<p>add artist:</p>
+<div style="border: 1px solid black">
+  <h3>add artist:</h3>
+  <form action="/admin/artists/add" method="PUT">
+    <label
+      >First Name
+      <input name="firstname" type="text" />
+    </label>
+    <label
+      >Last Name
+      <input name="lastname" type="text" />
+    </label>
+    <label
+      >City
+      <input name="city" type="text" />
+    </label>
+    <label
+      >Email
+      <input name="email" type="email" />
+    </label>
+    <label
+      >Picture
+      <input name="picture" type="file" />
+    </label>
+    <label
+      >Blurb
+      <textarea name="blurb" rows="5" cols="30"></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</div>
