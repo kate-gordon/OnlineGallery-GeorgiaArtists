@@ -1,5 +1,7 @@
 import React from "react";
-import { Box, Image, IconButton } from "@chakra-ui/core";
+import { Link } from "react-router-dom";
+
+import { Box, Button, Image, IconButton } from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
   const { piece } = props;
@@ -18,8 +20,11 @@ const ArtPieceCard = props => {
         <h2>${piece.price}</h2>
       </Box>
       <Box>
-        <h2>By {piece.artist}</h2>
+        <h2>
+          By {piece.firstname} {piece.lastname}
+        </h2>
       </Box>
+      <Button><Link to={`/piece/${piece.artwork_id}`}>Click Me</Link></Button>
     </Box>
   );
 };

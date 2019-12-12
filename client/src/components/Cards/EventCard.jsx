@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box } from '@chakra-ui/core';
+import { Box, Image } from '@chakra-ui/core';
 
 const EventCard = props => {
+  const { event } = props; 
   return (
     <>
       <Box p={1} height='80vh' borderColor='blue' borderStyle='solid'>
@@ -12,19 +13,19 @@ const EventCard = props => {
           borderStyle='solid'
           borderColor='black'
         >
-          <h2>Dec 10</h2>
+          <h2>{event.datewhen}</h2>
         </Box>
         <Box>
-          <h1>Gallery Showing</h1>
+          <h1>{event.title}</h1>
         </Box>
         <Box>
-          <h2>Image here</h2>
+          <Image src={event.picture} /> 
         </Box>
         <Box>
-          <p>Event description</p>
+          <p>{event.blurb}</p>
         </Box>
         <Box>
-          <p>Event Address</p>
+          <p>{event.location}</p>
         </Box>
       </Box>
     </>
