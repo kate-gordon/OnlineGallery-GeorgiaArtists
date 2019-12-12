@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@chakra-ui/core';
+import { Link } from 'react-router-dom';
 
 import './navbar.css';
 
@@ -8,7 +8,7 @@ const Navbar = () => {
     <div className='navbar'>
       <ul className='navList'>
         <li>
-          <Link to='/home' className='navListItem'>
+          <Link to='/' className='navListItem'>
             GALLERY
           </Link>
         </li>

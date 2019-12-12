@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Image, IconButton } from "@chakra-ui/core";
+import { Box, Image, IconButton } from '@chakra-ui/core';
 
 const SingleArtPiece = () => {
   return (
@@ -14,7 +14,7 @@ const SingleArtPiece = () => {
         <h3>$400</h3>
       </Box>
       <IconButton aria-label='Add to cart' size='xs' icon='add'>
-        <Link to={`/gallery/${piece.title}`} /> 
+        <Link to={`/gallery/${piece.title}`} />
       </IconButton>
     </>
   );
