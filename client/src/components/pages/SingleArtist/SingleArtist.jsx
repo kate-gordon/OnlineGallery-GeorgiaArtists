@@ -5,7 +5,7 @@ import axios from 'axios';
 import artistImg from './artistImg.png';
 
 const SingleArtist = () => {
-    const [artist, setArtist] =useState([]); 
+  const [artist, setArtist] = useState([]);
 
     // Get artist ID from URL params
 
@@ -22,9 +22,9 @@ const SingleArtist = () => {
       }).catch ( error => console.log(error))
     }; 
 
-    useEffect(() => {
-        fetchArtist();    
-    }, []); 
+  useEffect(() => {
+    fetchArtist();
+  }, []);
 
     return (
         <>

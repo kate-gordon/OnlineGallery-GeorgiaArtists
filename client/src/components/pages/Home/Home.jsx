@@ -4,22 +4,8 @@ import axios from "axios";
 
 import { Box } from "@chakra-ui/core";
 
-const Home = () => {
-  const [artPieces, setArtPieces] = useState([]);
-
-  const fetchArtPieceData = () => {
-    let uri = "http://admin.insae.org/api/artworks/all";
-    axios
-      .get(uri)
-      .then(data => {
-        setArtPieces(data.data);
-      })
-      .catch(error => console.log(error));
-  };
-
-  useEffect(() => {
-    fetchArtPieceData();
-  }, []);
+const Home = props => {
+  const { artPieces } = props; 
 
   return (
     <>

@@ -18,7 +18,7 @@ const ArtistCard = props => {
           <p>{artist.blurb}</p>
         </Box>
         <Box p={1} d='flex' justifyContent='flex-end'>
-          <Link to={`/artists/artist/${artist.artist_id}`}>Click Me</Link>
+          <Button><Link to={`/artists/artist/${artist.artist_id}`}>Click Me</Link></Button>
         </Box>
       </Box>
     </>
