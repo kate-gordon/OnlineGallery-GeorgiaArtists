@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { StateContext } from "../../context";
 
 import { Box, Button, Image, IconButton } from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
   const { piece } = props;
+  const [value, dispatch] = useContext(StateContext);
+
+  const handleClick = e => {
+    dispatch({
+      type: "addCartItem",
+      item: piece,
+    });
+  };
 
   return (
     <Box size='sm' p={2}>
@@ -14,7 +23,13 @@ const ArtPieceCard = props => {
         src={piece.picture}
         alt={piece.title}
       />
-      <IconButton aria-label='Add to cart' size='xs' icon='add'></IconButton>
+      <IconButton
+        onClick={handleClick}
+        aria-label='Add to cart'
+        size='xs'
+        icon='add'
+        value={piece}
+      ></IconButton>
       <Box>
         <h1>{piece.title}</h1>
         <h2>${piece.price}</h2>
@@ -24,7 +39,9 @@ const ArtPieceCard = props => {
           By {piece.firstname} {piece.lastname}
         </h2>
       </Box>
-      <Button><Link to={`/piece/${piece.artwork_id}`}>Click Me</Link></Button>
+      <Button>
+        <Link to={`/piece/${piece.artwork_id}`}>Click Me</Link>
+      </Button>
     </Box>
   );
 };

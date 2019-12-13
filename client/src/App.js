@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import { Route, Switch } from "react-router-dom";
 import { Grid, ThemeProvider } from "@chakra-ui/core";
 import axios from "axios";
+
+import { StateProvider } from "./context";
 
 import SingleArtist from "../src/components/pages/SingleArtist";
 import SingleArtPiece from "../src/components/pages/SingleArtPiece";
@@ -20,7 +22,22 @@ function App() {
   const [artists, setArtists] = useState([]);
   const [artPieces, setArtPieces] = useState([]);
 
-// Fetching Artist Data 
+  const initialState = {
+    cart: [],
+  };
+
+  const myReducer = (state, action) => {
+    switch (action.type) {
+      case "addCartItem":
+        return {
+          cart: [...state.cart, action.item],
+        };
+      default:
+        return state;
+    }
+  };
+
+  // Fetching Artist Data
 
   const fetchData = () => {
     let uri = "http://admin.insae.org/api/artists/all";
@@ -32,7 +49,7 @@ function App() {
       .catch(error => console.log(error));
   };
 
-  // Fetching Artwork Data 
+  // Fetching Artwork Data
 
   const fetchArtPieceData = () => {
     let uri = "http://admin.insae.org/api/artworks/all";
@@ -44,7 +61,7 @@ function App() {
       .catch(error => console.log(error));
   };
 
-  // Sets state one time with array of artists and array of art pieces 
+  // Sets state one time with array of artists and array of art pieces
 
   useEffect(() => {
     fetchData();
@@ -54,36 +71,38 @@ function App() {
   return (
     <div className='App'>
       <ThemeProvider>
-        <Header />
-        <Grid p={20} templateColumns='repeat(3, 1fr)' gap={6}>
-          <Switch>
-            <Route path='/piece/:id'>
-              <SingleArtPiece />
-            </Route>
-            <Route exact path='/'>
-              <Home artPieces={artPieces} />
-            </Route>
-            <Route path='/artists/artist/:id'>
-              <SingleArtist />
-            </Route>
-            <Route path='/artists'>
-              <Artists artists={artists} />
-            </Route>
-            <Route path='/about'>
-              <About />
-            </Route>
-            <Route path='/events'>
-              <Events />
-            </Route>
-            <Route path='/cart'>
-              <Cart />
-            </Route>
-            <Route path='/checkout'>
-              <Checkout />
-            </Route>
-          </Switch>
-        </Grid>
-        <Footer />
+        <StateProvider reducer={myReducer} initialState={initialState}>
+          <Header />
+          <Grid p={20} templateColumns='repeat(3, 1fr)' gap={6}>
+            <Switch>
+              <Route path='/piece/:id'>
+                <SingleArtPiece />
+              </Route>
+              <Route exact path='/'>
+                <Home artPieces={artPieces} />
+              </Route>
+              <Route path='/artists/artist/:id'>
+                <SingleArtist />
+              </Route>
+              <Route path='/artists'>
+                <Artists artists={artists} />
+              </Route>
+              <Route path='/about'>
+                <About />
+              </Route>
+              <Route path='/events'>
+                <Events />
+              </Route>
+              <Route path='/cart'>
+                <Cart />
+              </Route>
+              <Route path='/checkout'>
+                <Checkout />
+              </Route>
+            </Switch>
+          </Grid>
+          <Footer />
+        </StateProvider>
       </ThemeProvider>
     </div>
   );
