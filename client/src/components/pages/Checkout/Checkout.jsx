@@ -1,5 +1,6 @@
 import React from 'react';
 import StripeButton from '../../Stripe/StripeButton';
+import PaymentForm from '../Checkout';
 
 const Checkout = () => {
   return (
