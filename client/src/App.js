@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { Grid, ThemeProvider } from "@chakra-ui/core";
-import axios from "axios";
-
 import { StateProvider } from "./context";
+import axios from "axios";
 
 import SingleArtist from "../src/components/pages/SingleArtist";
 import SingleArtPiece from "../src/components/pages/SingleArtPiece";
@@ -14,7 +13,7 @@ import Cart from "../src/components/pages/Cart";
 import About from "../src/components/pages/About";
 import Events from "../src/components/pages/Events";
 import Footer from "../src/components/Footer/Footer";
-import Checkout from "../src/components/pages/Checkout/Checkout";
+import Checkout from "./components/Stripe/CheckoutButton";
 
 import "./App.css";
 
@@ -23,14 +22,14 @@ function App() {
   const [artPieces, setArtPieces] = useState([]);
 
   const initialState = {
-    cart: [],
+    cart: []
   };
 
   const myReducer = (state, action) => {
     switch (action.type) {
       case "addCartItem":
         return {
-          cart: [...state.cart, action.item],
+          cart: [...state.cart, action.item]
         };
       default:
         return state;
