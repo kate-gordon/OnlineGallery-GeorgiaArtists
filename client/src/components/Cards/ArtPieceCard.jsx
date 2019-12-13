@@ -11,7 +11,7 @@ const ArtPieceCard = props => {
   const handleClick = e => {
     dispatch({
       type: "addCartItem",
-      item: piece,
+      item: piece
     });
   };
 
@@ -23,13 +23,17 @@ const ArtPieceCard = props => {
         src={piece.picture}
         alt={piece.title}
       />
-      <IconButton
-        onClick={handleClick}
-        aria-label='Add to cart'
-        size='xs'
-        icon='add'
-        value={piece}
-      ></IconButton>
+      {piece.sold ? (
+        <h2>Sold</h2>
+      ) : (
+        <IconButton
+          onClick={handleClick}
+          aria-label='Add to cart'
+          size='xs'
+          icon='add'
+          value={piece}
+        ></IconButton>
+      )}
       <Box>
         <h1>{piece.title}</h1>
         <h2>${piece.price}</h2>
