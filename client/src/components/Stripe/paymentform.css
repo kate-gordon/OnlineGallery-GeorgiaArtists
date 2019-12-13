@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+
+.PaymentForm {
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}

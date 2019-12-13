@@ -13,7 +13,9 @@ const Header = () => {
     <div className='header'>
       <div className='headerContent'>
         <Box>
-          <Link to='/'>Georgia Artists with DisAbilities</Link>
+          <Link to='/' className='orgName'>
+            Georgia Artists with DisAbilities
+          </Link>
         </Box>
         <Box>
           <Image
