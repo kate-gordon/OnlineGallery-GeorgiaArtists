@@ -17,6 +17,7 @@ const eventsAPIRouter = require("./routes/apiEvents");
 const adminRouter = require("./routes/admin");
 const artistsAdminRouter = require("./routes/adminArtists");
 const artworksAdminRouter = require("./routes/adminArtworks");
+const eventsAdminRouter = require("./routes/adminEvents");
 
 app.engine("html", es6Renderer);
 app.set("views", "./views");
@@ -46,5 +47,6 @@ app.use("/api/events", eventsAPIRouter);
 app.use("/", adminRouter);
 app.use("/admin/artists", artistsAdminRouter);
 app.use("/admin/artworks", artworksAdminRouter);
+app.use("/admin/events", eventsAdminRouter);
 
 module.exports = app;

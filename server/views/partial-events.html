@@ -1,0 +1,42 @@
+<div style="border: 1px solid black">
+  <h3>add event:</h3>
+  <form method="POST" action="/admin/events/add" enctype="multipart/form-data">
+    <label
+      >Title
+      <input name="title" type="text" />
+    </label>
+    <label
+      >Date
+      <input name="date" type="date" />
+    </label>
+    <label>
+      Time
+      <input name="time" type="time" />
+    </label>
+    <label>
+      Location
+      <input name="location" type="text" />
+    </label>
+    <label
+      >Picture
+      <input name="picture" type="file" />
+    </label>
+    <label
+      >Blurb
+      <textarea name="blurb" rows="5" cols="30"></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div style="border: 1px solid black">
+  <h3>remove event:</h3>
+  ${events.map(event => `
+  <form method="POST" action="/admin/events/remove">
+    <input type="hidden" name="event_id" value="${event.event_id}" />
+    <label>
+      ${event.title} - ${event.datewhen}
+      <button type="submit">Delete</button>
+    </label>
+  </form>
+  `)}
+</div>
