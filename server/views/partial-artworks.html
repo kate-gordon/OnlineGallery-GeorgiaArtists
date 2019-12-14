@@ -1,0 +1,86 @@
+<div style="border: 1px solid black">
+  <h3>add artwork:</h3>
+  <form
+    method="POST"
+    action="/admin/artworks/add"
+    enctype="multipart/form-data"
+  >
+    <label
+      >Title
+      <input name="title" type="text" />
+    </label>
+    <label
+      >Medium
+      <input name="medium" type="text" />
+    </label>
+    <label
+      >Price
+      <input name="price" type="number" />
+    </label>
+    <label
+      >Award
+      <input name="award" type="text" />
+    </label>
+    <label
+      >Picture
+      <input name="picture" type="file" />
+    </label>
+    ${artists.map(artist=>`
+    <label
+      >${artist.firstname} ${artist.lastname}
+      <input type="radio" value="${artist.artist_id}" name="artist" />
+    </label>
+    `)}
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div style="border: 1px solid black">
+  <h3>remove artwork:</h3>
+  ${artworks.map(artwork => `
+  <form method="POST" action="/admin/artworks/remove">
+    <input type="hidden" name="artwork_id" value="${artwork.artwork_id}" />
+    <label>
+      ${artwork.title} - ${artwork.medium} by ${artwork.firstname}
+      ${artwork.lastname}
+      <button type="submit">Delete</button>
+    </label>
+  </form>
+  `)}
+</div>
+<div style="border: 1px solid black">
+  <h3>edit artwork:</h3>
+  ${artworks.map(artwork => `
+  <form method="POST" action="/admin/artworks/edit">
+    <input type="hidden" name="artwork_id" value="${artwork.artwork_id}" />
+    <label
+      >Title
+      <input name="title" type="text" value="${artwork.title}" />
+    </label>
+    <label
+      >Medium
+      <input name="medium" type="text" value="${artwork.medium}" />
+    </label>
+    <label
+      >Price
+      <input name="price" type="number" value="${artwork.price}" />
+    </label>
+    <label
+      >Award
+      <input name="award" type="text" value="${artwork.award}" />
+    </label>
+    ${artists.map(artist=>`
+    <label
+      >${artist.firstname} ${artist.lastname} ${artist.artist_id ===
+      artwork.artist ? `<input
+        type="radio"
+        value="${artist.artist_id}"
+        name="artist"
+        checked
+      />
+      `: `<input type="radio" value="${artist.artist_id}" name="artist" />`}
+    </label>
+    `)}
+    <button type="submit">Update</button>
+  </form>
+  `)}
+</div>

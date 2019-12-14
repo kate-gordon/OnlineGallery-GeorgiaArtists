@@ -30,7 +30,42 @@
 </div>
 <div style="border: 1px solid black">
   <h3>remove artists:</h3>
+  ${artists.map(artist => `
+  <form method="POST" action="/admin/artists/remove">
+    <input type="hidden" name="artist_id" value="${artist.artist_id}" />
+    <label>
+      ${artist.firstname} ${artist.lastname}
+      <button type="submit">Delete</button>
+    </label>
+  </form>
+  `)}
 </div>
 <div style="border: 1px solid black">
   <h3>edit artists:</h3>
+  ${artists.map(artist => `
+  <form method="POST" action="/admin/artists/edit">
+    <input type="hidden" name="artist_id" value="${artist.artist_id}" />
+    <label
+      >First Name
+      <input name="firstname" type="text" value="${artist.firstname}" />
+    </label>
+    <label
+      >Last Name
+      <input name="lastname" type="text" value="${artist.lastname}" />
+    </label>
+    <label
+      >City
+      <input name="city" type="text" value="${artist.city}" />
+    </label>
+    <label
+      >Email
+      <input name="email" type="email" value="${artist.email}" />
+    </label>
+    <label
+      >Blurb
+      <textarea name="blurb" rows="5" cols="30">${artist.blurb}</textarea>
+    </label>
+    <button type="submit">Update</button>
+  </form>
+  `)}
 </div>

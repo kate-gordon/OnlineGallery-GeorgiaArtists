@@ -1,19 +1,26 @@
 const db = require("../utilities/conn");
 
-const addArtist = async (firstname, lastname, city, email, portrait, blurb) => {
-  return new Promise(async (resolve, reject) => {
-    response = await db.any(
-      `INSERT INTO artists (firstname, lastname, city, email, portrait, blurb) VALUES ($1,$2,$3,$4,$5,$6) RETURNING artist_id;`,
-      [firstname, lastname, city, email, portrait, blurb]
-    );
-    console.log(response);
-    if (response[0].artist_id) {
-      resolve(response.artist_id);
-    }
-    reject("Failed to add artist");
-  });
+const addArtist = (firstname, lastname, city, email, portrait, blurb) => {
+  db.any(
+    `INSERT INTO artists (firstname, lastname, city, email, portrait, blurb) VALUES ($1,$2,$3,$4,$5,$6);`,
+    [firstname, lastname, city, email, portrait, blurb]
+  );
+};
+
+const removeArtist = id => {
+  db.any(`DELETE FROM artworks WHERE artist = ${id}`);
+  db.any(`DELETE FROM artists WHERE artist_id=${id}`);
+};
+
+const editArtist = (artist_id, firstname, lastname, city, email, blurb) => {
+  db.any(
+    `UPDATE artists SET firstname = $1, lastname = $2, city = $3, email = $4, blurb = $5 WHERE artist_id=$6;`,
+    [firstname, lastname, city, email, blurb, artist_id]
+  );
 };
 
 module.exports = {
-  addArtist
+  addArtist,
+  removeArtist,
+  editArtist
 };
