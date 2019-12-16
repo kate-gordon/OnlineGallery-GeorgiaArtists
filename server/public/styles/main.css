@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+/* NAV BAR */
+nav {
+  background-color: lightgray;
+  display: flex;
+  padding-left: 8px;
+}
+nav div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 35%;
+}
+nav div a {
+  color: black;
+  font-size: 1.3em;
+}
+/* ARTISTS */
+#editArtists {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+#artistList {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid black;
+  height: 100%;
+}
+#artistList p {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 5px;
+}
+#artistList button {
+  font-size: 1.2em;
+  padding: 4px;
+  border: none;
+  border-bottom: 1px black solid;
+  outline: none;
+}
+.artisthide {
+  display: none;
+}
+.artistshow {
+  padding: 10px;
+}
+.artistshow form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+.artistshow form label {
+  margin: 2px;
+}
+.artistshow form label input {
+  font-size: 0.8em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.artistshow form label textarea {
+  font-size: 0.8em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.artistshow form button {
+  font-size: 1.2em;
+}
+.artistbutton {
+  background-color: lightgrey;
+}
+.artistbuttonselect {
+  background-color: darkgrey;
+}
+#deleteForm {
+  margin: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#deleteForm button {
+  color: red;
+}
+
+/* GALLERY */
+
+/* EVENTS */

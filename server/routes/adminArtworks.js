@@ -43,6 +43,7 @@ router.post("/add", artworkUpload.single("picture"), async function(
   next
 ) {
   if (req.session.is_logged_in) {
+    console.log(req.body);
     const { title, medium, price, award, artist } = req.body;
     addArtwork(
       title,

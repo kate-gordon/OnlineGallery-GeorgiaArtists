@@ -25,16 +25,17 @@
       >Picture
       <input name="picture" type="file" />
     </label>
-    ${artists.map(artist=>`
-    <label
-      >${artist.firstname} ${artist.lastname}
-      <input type="radio" value="${artist.artist_id}" name="artist" />
-    </label>
-    `)}
+    <select name="artist">
+      ${artists.map(artist=>`
+      <option value="${artist.artist_id}"
+        >${artist.firstname} ${artist.lastname}</option
+      >
+      `)}
+    </select>
     <button type="submit">Submit</button>
   </form>
 </div>
-<div style="border: 1px solid black">
+<!-- <div style="border: 1px solid black">
   <h3>remove artwork:</h3>
   ${artworks.map(artwork => `
   <form method="POST" action="/admin/artworks/remove">
@@ -46,7 +47,7 @@
     </label>
   </form>
   `)}
-</div>
+</div> -->
 <div style="border: 1px solid black">
   <h3>edit artwork:</h3>
   ${artworks.map(artwork => `
@@ -68,18 +69,16 @@
       >Award
       <input name="award" type="text" value="${artwork.award}" />
     </label>
-    ${artists.map(artist=>`
-    <label
-      >${artist.firstname} ${artist.lastname} ${artist.artist_id ===
-      artwork.artist ? `<input
-        type="radio"
-        value="${artist.artist_id}"
-        name="artist"
-        checked
-      />
-      `: `<input type="radio" value="${artist.artist_id}" name="artist" />`}
-    </label>
-    `)}
+    <select name="artist">
+      ${artists.map(artist=>` ${artist.artist_id === artwork.artist ?`
+      <option value="${artist.artist_id}" selected
+        >${artist.firstname} ${artist.lastname}</option
+      >
+      `:`<option value="${artist.artist_id}"
+        >${artist.firstname} ${artist.lastname}</option
+      >
+      `}`)}
+    </select>
     <button type="submit">Update</button>
   </form>
   `)}
