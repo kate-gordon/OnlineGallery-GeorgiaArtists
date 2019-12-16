@@ -1,9 +1,24 @@
 const express = require("express");
 const router = express.Router();
-const { allevents, eventid } = require("../models/api-events");
+const {
+  allevents,
+  futureevents,
+  pastevents,
+  eventid
+} = require("../models/api-events");
 
 router.get("/all", async function(req, res, next) {
   const response = await allevents();
+  res.send(response);
+});
+
+router.get("/future", async function(req, res, next) {
+  const response = await futureevents();
+  res.send(response);
+});
+
+router.get("/past", async function(req, res, next) {
+  const response = await pastevents();
   res.send(response);
 });
 
