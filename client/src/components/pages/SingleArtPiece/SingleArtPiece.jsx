@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
+import { StateContext } from "../../../context";
 import { Link, useRouteMatch } from "react-router-dom";
 import { Box, Image, IconButton } from "@chakra-ui/core";
 
 const SingleArtPiece = () => {
   const [artPiece, setArtPiece] = useState([]);
+  const [value, dispatch] = useContext(StateContext);
 
   let match = useRouteMatch("/piece/:id");
   const id = match.params.id;
@@ -24,6 +26,13 @@ const SingleArtPiece = () => {
     fetchArtPiece();
   }, []);
 
+  const handleClick = e => {
+    dispatch({
+      type: "addCartItem",
+      item: artPiece
+    });
+  };
+
   return (
     <>
       <Box>
@@ -36,7 +45,12 @@ const SingleArtPiece = () => {
         </h2>
         <h3>${artPiece.price}</h3>
       </Box>
-      <IconButton aria-label='Add to cart' size='xs' icon='add'></IconButton>
+      <IconButton
+        onClick={handleClick}
+        aria-label='Add to cart'
+        size='xs'
+        icon='add'
+      ></IconButton>
     </>
   );
 };
