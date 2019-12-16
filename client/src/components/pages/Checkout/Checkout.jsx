@@ -5,7 +5,7 @@ import PaymentForm from '../Checkout';
 const Checkout = () => {
   return (
     <div>
-      <h1>Checkout page test.</h1>
+      <h1>Checkout</h1>
       <StripeButton />
     </div>
   );
