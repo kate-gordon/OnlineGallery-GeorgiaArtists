@@ -7,22 +7,37 @@ const EventCard = props => {
   const { event } = props;
   return (
     <>
-      <Box p={1} height='80vh' borderColor='blue' borderStyle='solid'>
-        <Box
-          width='100px'
-          height='100px'
-          bg='white'
-          borderStyle='solid'
-          borderColor='black'
-        >
-          <Moment date={event.datewhen} format='MMM Do' />
+      <Box
+        p={1}
+        width='100%'
+        borderColor='blue'
+        borderStyle='solid'
+        boxShadow='4px 4px 2px 2px grey'
+      >
+        <Box d='flex' p={3}>
+          <Box
+            width='80px'
+            height='80px'
+            bg='white'
+            borderStyle='solid'
+            borderColor='black'
+            d='flex'
+            justifyContent='center'
+            alignItems='center'
+            m={2}
+          >
+            <h2>
+              <Moment date={event.datewhen} format='MMM D' />
+            </h2>
+          </Box>
+          <h2>{event.title}</h2>      
         </Box>
         <Box>
-          <h1>{event.title}</h1>
+          <Image width='80%' src={event.picture} />
         </Box>
-        <Box>
-          <Image src={event.picture} />
-        </Box>
+        <h3>
+            <Moment date={event.datewhen} format='h: mm A' />
+          </h3>
         <Box>
           <p>{event.blurb}</p>
         </Box>
