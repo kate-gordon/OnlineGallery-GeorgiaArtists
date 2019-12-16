@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-
 import EventCard from "../../Cards/EventCard";
+
+import { Grid } from "@chakra-ui/core";
 
 const Events = () => {
   const [events, setEvents] = useState([]);
@@ -23,10 +24,11 @@ const Events = () => {
 
   return (
     <>
-    
-      {events.map((event, id) => {
-        return <EventCard key={events[id].event_id} event={events[id]} />;
-      })}
+      <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+        {events.map((event, id) => {
+          return <EventCard key={events[id].event_id} event={events[id]} />;
+        })}
+      </Grid>
     </>
   );
 };
