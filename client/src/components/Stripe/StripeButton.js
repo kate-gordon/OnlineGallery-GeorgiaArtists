@@ -30,7 +30,6 @@ const StripeButton = () => {
       amount={999} //Amount in cents $9.99
       token={onToken}
       stripeKey={publishableKey}
-      image='https://www.vidhub.co' //Pop-in header image
       billingAddress={false}
     />
   );

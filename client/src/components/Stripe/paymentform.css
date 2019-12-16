@@ -2,7 +2,7 @@ body {
   margin: 0;
 }
 
-.PaymentForm {
+.Hotkey {
   height: 100vh;
   display: grid;
   justify-items: center;
