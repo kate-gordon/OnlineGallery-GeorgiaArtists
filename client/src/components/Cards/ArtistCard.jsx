@@ -27,7 +27,7 @@ const ArtistCard = props => {
           <h3>{artist.city}, GA</h3>
         </Box>
         <Box p={4}>
-          <p>{artist.blurb}</p>
+          <p>{artist.blurb.substring(0, 400)}...</p>
         </Box>
         <Box p={1} d='flex' justifyContent='flex-end'>
           <Button>
