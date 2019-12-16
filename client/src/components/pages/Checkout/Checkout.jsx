@@ -2,7 +2,7 @@ import React from 'react';
 // import StripeButton from '../../Stripe/StripeButton';
 // import PaymentForm from '../Checkout';
 // import HotkeyForm from '../../Stripe/HotkeyForm';
-import CheckoutForm from '../../Stripe/CheckoutForm';
+import CheckoutForm from '../Cart/CheckoutForm/CheckoutForm';
 // import { Elements, StripeProvider } from 'react-stripe-elements';
 
 const Checkout = () => {

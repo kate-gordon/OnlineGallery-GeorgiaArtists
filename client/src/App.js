@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "@chakra-ui/core";
-import { StateProvider } from "./context";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { ThemeProvider } from '@chakra-ui/core';
+import { StateProvider } from './context';
+import axios from 'axios';
 
-import SingleArtist from "../src/components/pages/SingleArtist";
-import SingleArtPiece from "../src/components/pages/SingleArtPiece";
-import Artists from "../src/components/pages/Artists";
-import Header from "../src/components/Header/Header";
-import Home from "../src/components/pages/Home";
-import Cart from "../src/components/pages/Cart";
-import About from "../src/components/pages/About";
-import Events from "../src/components/pages/Events";
-import Footer from "../src/components/Footer/Footer";
-import Checkout from "./components/pages/Checkout/Checkout";
+import SingleArtist from '../src/components/pages/SingleArtist';
+import SingleArtPiece from '../src/components/pages/SingleArtPiece';
+import Artists from '../src/components/pages/Artists';
+import Header from '../src/components/Header/Header';
+import Home from '../src/components/pages/Home';
+import Cart from '../src/components/pages/Cart';
+import About from '../src/components/pages/About';
+import Events from '../src/components/pages/Events';
+import Footer from '../src/components/Footer/Footer';
+import Checkout from './components/pages/Checkout/Checkout';
 
-import "./App.css";
+import './App.css';
 
 function App() {
   const [artists, setArtists] = useState([]);
@@ -27,7 +27,7 @@ function App() {
 
   const myReducer = (state, action) => {
     switch (action.type) {
-      case "addCartItem":
+      case 'addCartItem':
         return {
           cart: [...state.cart, action.item]
         };
@@ -39,7 +39,7 @@ function App() {
   // Fetching Artist Data
 
   const fetchData = () => {
-    let uri = "http://admin.insae.org/api/artists/all";
+    let uri = 'http://admin.insae.org/api/artists/all';
     axios
       .get(uri)
       .then(data => {
@@ -51,7 +51,7 @@ function App() {
   // Fetching Artwork Data
 
   const fetchArtPieceData = () => {
-    let uri = "http://admin.insae.org/api/artworks/all";
+    let uri = 'http://admin.insae.org/api/artworks/all';
     axios
       .get(uri)
       .then(data => {
@@ -94,9 +94,6 @@ function App() {
             </Route>
             <Route path='/cart'>
               <Cart />
-            </Route>
-            <Route path='/checkout'>
-              <Checkout />
             </Route>
           </Switch>
 
