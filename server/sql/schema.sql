@@ -29,7 +29,8 @@ CREATE TABLE events (
     datewhen TIMESTAMP,
     location VARCHAR(200),
     picture VARCHAR(180),
-    blurb VARCHAR (2000)
+    blurb VARCHAR (2000),
+    cancelled boolean DEFAULT 'f'
 );
 
 CREATE TABLE subscribers (

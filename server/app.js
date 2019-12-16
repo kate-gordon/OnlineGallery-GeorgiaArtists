@@ -11,17 +11,13 @@ const express = require("express"),
 require("dotenv").config();
 const app = express();
 
-const artistsAPIRouter = require("./routes/apiArtists");
-const artworksAPIRouter = require("./routes/apiArtworks");
-const eventsAPIRouter = require("./routes/apiEvents");
-const adminRouter = require("./routes/admin");
-const artistsAdminRouter = require("./routes/adminArtists");
-const artworksAdminRouter = require("./routes/adminArtworks");
-const eventsAdminRouter = require("./routes/adminEvents");
+//HTML Renderer
 
 app.engine("html", es6Renderer);
 app.set("views", "./views");
 app.set("view engine", "html");
+
+//Utilities
 
 app.use(compression());
 app.use(helmet());
@@ -40,6 +36,18 @@ app.use(
     is_logged_in: false
   })
 );
+
+//Routers
+
+const artistsAPIRouter = require("./routes/apiArtists");
+const artworksAPIRouter = require("./routes/apiArtworks");
+const eventsAPIRouter = require("./routes/apiEvents");
+const adminRouter = require("./routes/admin");
+const artistsAdminRouter = require("./routes/adminArtists");
+const artworksAdminRouter = require("./routes/adminArtworks");
+const eventsAdminRouter = require("./routes/adminEvents");
+
+//Routes
 
 app.use("/api/artists", artistsAPIRouter);
 app.use("/api/artworks", artworksAPIRouter);

@@ -1,5 +1,7 @@
 const db = require("../utilities/conn");
 
+//Grabs all events from database
+
 const allevents = async () => {
   try {
     const response = await db.any(`SELECT * FROM events ORDER BY datewhen`);
@@ -8,6 +10,8 @@ const allevents = async () => {
     return `Internal Database Error: ${err}`;
   }
 };
+
+//Grabs only today and future events from database
 
 const futureevents = async () => {
   try {
@@ -20,6 +24,8 @@ const futureevents = async () => {
   }
 };
 
+//Grabs only past events from database
+
 const pastevents = async () => {
   try {
     const response = await db.any(
@@ -30,6 +36,8 @@ const pastevents = async () => {
     return `Internal Database Error: ${err}`;
   }
 };
+
+//Grabs a single event from database
 
 const eventid = async id => {
   try {

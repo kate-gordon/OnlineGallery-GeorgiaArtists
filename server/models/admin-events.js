@@ -11,7 +11,15 @@ const removeEvent = id => {
   db.any(`DELETE FROM events WHERE event_id = ${id}`);
 };
 
+const editEvent = (title, datewhen, location, blurb, cancelled, event_id) => {
+  db.any(
+    `UPDATE events SET title = $1, datewhen = $2, location = $3, blurb =$4, cancelled =$5 WHERE event_id=$6;`,
+    [title, datewhen, location, blurb, cancelled, event_id]
+  );
+};
+
 module.exports = {
   addEvent,
-  removeEvent
+  removeEvent,
+  editEvent
 };

@@ -8,6 +8,8 @@ const {
 const { allartists } = require("../models/api-artists");
 const multer = require("multer");
 
+//Artist image storage using Multer. Images will go to URL/images/artists/
+
 const artistStorage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "public/images/artists/");
@@ -17,6 +19,8 @@ const artistStorage = multer.diskStorage({
   }
 });
 const artistUpload = multer({ storage: artistStorage });
+
+//Router for artists admin page
 
 router.get("/", async function(req, res, next) {
   if (req.session.is_logged_in) {
@@ -33,6 +37,8 @@ router.get("/", async function(req, res, next) {
     res.status(401).redirect("/");
   }
 });
+
+//Post router for adding new artist
 
 router.post("/add", artistUpload.single("portrait"), async function(
   req,
@@ -55,6 +61,8 @@ router.post("/add", artistUpload.single("portrait"), async function(
   }
 });
 
+//Post router for removing an artist
+
 router.post("/remove", function(req, res, next) {
   if (req.session.is_logged_in) {
     const { artist_id } = req.body;
@@ -64,6 +72,8 @@ router.post("/remove", function(req, res, next) {
     res.status(401).redirect("/");
   }
 });
+
+//Post router for editing an artist
 
 router.post("/edit", async function(req, res, next) {
   if (req.session.is_logged_in) {
