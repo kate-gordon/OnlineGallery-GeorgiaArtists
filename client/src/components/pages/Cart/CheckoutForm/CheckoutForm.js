@@ -2,6 +2,14 @@ import React, { useState, useContext } from 'react';
 import { StateContext } from '../../../../context';
 // import { CardElement, injectStripe } from 'react-stripe-elements';
 import axios from 'axios';
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Select
+} from '@chakra-ui/core';
 
 const CheckoutForm = () => {
   const [{ cart }] = useContext(StateContext);
@@ -25,8 +33,8 @@ const CheckoutForm = () => {
         const theData = {
           amount: totalPrice * 100,
           stripeToken: token.id,
-          token: '123abc123abc',
-          email: 'susan@something.com',
+          token: '123abc123',
+          email: 'puja@something.com',
           artworkIdArray,
           clientName
         };
@@ -53,19 +61,34 @@ const CheckoutForm = () => {
   if (clientNameIsValid) shouldBeDisabled = false;
   return (
     // input fields for guest's info - name, address, etc before Stripe
-    <form className='checkout' onSubmit={submit}>
-      {/*input fields template below*/}
-      <input
-        name='clientName'
-        onChange={({ target: { value: name } }) => {
-          setClientName(name);
-        }}
-      />
-      <p>Would you like to complete the purchase?</p>
+    <FormControl isRequired onSubmit={submit}>
+      <FormLabel htmlFor='fname'>First name</FormLabel>
+      <Input id='fname' placeholder='First name' />
+      <FormLabel htmlFor='lname'>Last name</FormLabel>
+      <Input id='lname' placeholder='Last name' />
+      <FormLabel htmlFor='address'>Street Address</FormLabel>
+      <Input id='address' placeholder='Street address' />
+      <FormLabel htmlFor='city'>City</FormLabel>
+      <Input id='city' placeholder='City' />
+      <FormLabel htmlFor='state'>State</FormLabel>
+      <Select id='state' placeholder='State' />
+      <FormLabel htmlFor='zip'>Zip Code</FormLabel>
+      <Input id='zip' placeholder='Zip Code' />
 
-      {/*<CardElement />*/}
-      <button disabled={shouldBeDisabled}>Purchase</button>
-    </form>
+      <form className='checkout' onSubmit={submit}>
+        {/*input fields template below*/}
+        <input
+          name='clientName'
+          onChange={({ target: { value: name } }) => {
+            setClientName(name);
+          }}
+        />
+        <p>Would you like to complete the purchase?</p>
+
+        {/*<CardElement />*/}
+        <button disabled={shouldBeDisabled}>Purchase</button>
+      </form>
+    </FormControl>
   );
 };
 
