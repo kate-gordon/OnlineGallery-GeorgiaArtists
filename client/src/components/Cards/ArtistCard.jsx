@@ -13,6 +13,7 @@ const ArtistCard = props => {
         flexDirection='column'
         boxShadow='4px 4px 2px 2px grey'
         width='100%'
+        m={2}
       >
         <Box p={4}>
           <h1>
