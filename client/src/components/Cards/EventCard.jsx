@@ -1,10 +1,11 @@
-import React from 'react'
-import Moment from 'react-moment'
+import React from "react";
+import Moment from "react-moment";
+import "moment-timezone";
 
-import { Box, Image } from '@chakra-ui/core'
+import { Box, Image } from "@chakra-ui/core";
 
 const EventCard = props => {
-  const { event } = props
+  const { event } = props;
   return (
     <>
       <Box
@@ -36,7 +37,7 @@ const EventCard = props => {
           <Image width='70%' src={event.picture} />
         </Box>
         <h3>
-          <Moment date={event.datewhen} format='MMM D h: mm A' />
+          <Moment date={event.datewhen} format='h:mm a' tz='Europe/London' />
         </h3>
         <Box>
           <p>{event.blurb}</p>
@@ -46,7 +47,7 @@ const EventCard = props => {
         </Box>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default EventCard
+export default EventCard;

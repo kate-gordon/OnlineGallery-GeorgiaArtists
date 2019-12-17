@@ -5,6 +5,7 @@ import { Box, Button, Image } from "@chakra-ui/core";
 
 const ArtistCard = props => {
   const { artist } = props;
+  
   return (
     <>
       <Box
