@@ -1,4 +1,4 @@
-function artistSelect(id) {
+function select(id) {
   currentbutton = document.getElementById(`buttid_${id}`);
   currentdiv = document.getElementById(`divid_${id}`);
   olddiv = document.querySelector(".show");

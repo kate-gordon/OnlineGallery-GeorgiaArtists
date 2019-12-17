@@ -1,7 +1,7 @@
 <div id="edit">
   <div id="list">
     <p>New Artwork</p>
-    <button id="buttid_0" class="button" onclick="artistSelect(0)">
+    <button id="buttid_0" class="button" onclick="select(0)">
       Add New Artwork
     </button>
     <p>Edit Artwork</p>
@@ -11,7 +11,7 @@
     <button
       id="buttid_${artwork.artwork_id}"
       class="button"
-      onclick="artistSelect(${artwork.artwork_id})"
+      onclick="select(${artwork.artwork_id})"
     >
       ${artwork.title} - ${artwork.medium}
     </button>
@@ -97,4 +97,4 @@
     `).join('')}
   </div>
 </div>
-<script src="/scripts/adminArtists.js"></script>
+<script src="/scripts/admin.js"></script>

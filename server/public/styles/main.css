@@ -19,7 +19,7 @@ nav div a {
   color: black;
   font-size: 1.3em;
 }
-/* ARTISTS */
+/* ARTISTS & GALLERY */
 #edit {
   display: grid;
   grid-template-columns: 400px 1fr;
@@ -89,7 +89,3 @@ nav div a {
 #deleteForm button {
   color: red;
 }
-
-/* GALLERY */
-
-/* EVENTS */
