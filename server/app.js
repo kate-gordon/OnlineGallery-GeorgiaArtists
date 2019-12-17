@@ -1,30 +1,30 @@
-const express = require("express"),
-  cookieParser = require("cookie-parser"),
-  compression = require("compression"),
-  helmet = require("helmet"),
-  cors = require("cors"),
-  es6Renderer = require("express-es6-template-engine"),
-  session = require("express-session"),
-  FileStore = require("session-file-store")(session),
-  logger = require("morgan");
+const express = require('express'),
+  cookieParser = require('cookie-parser'),
+  compression = require('compression'),
+  helmet = require('helmet'),
+  cors = require('cors'),
+  es6Renderer = require('express-es6-template-engine'),
+  session = require('express-session'),
+  FileStore = require('session-file-store')(session),
+  logger = require('morgan');
 
-require("dotenv").config();
+require('dotenv').config();
 const app = express();
 
-const artistsRouter = require("./routes/artists");
-const artworksRouter = require("./routes/artworks");
-const eventsRouter = require("./routes/events");
-const adminRouter = require("./routes/admin");
+const artistsRouter = require('./routes/artists');
+const artworksRouter = require('./routes/artworks');
+const eventsRouter = require('./routes/events');
+const adminRouter = require('./routes/admin');
 
-app.engine("html", es6Renderer);
-app.set("views", "./views");
-app.set("view engine", "html");
+app.engine('html', es6Renderer);
+app.set('views', './views');
+app.set('view engine', 'html');
 
 app.use(compression());
 app.use(helmet());
 app.use(cors());
-app.use("/images", express.static("public"));
-app.use(logger("dev"));
+app.use('/images', express.static('public'));
+app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -38,9 +38,10 @@ app.use(
   })
 );
 
-app.use("/api/artists", artistsRouter);
-app.use("/api/artworks", artworksRouter);
-app.use("/api/events", eventsRouter);
-app.use("/", adminRouter);
+app.use('/api/artists', artistsRouter);
+app.use('/api/artworks', artworksRouter);
+app.use('/api/events', eventsRouter);
+app.use('/api/checkout', checkoutRouter);
+app.use('/', adminRouter);
 
 module.exports = app;
