@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
 import { StateContext } from '../../../context';
 import { Box, Grid } from '@chakra-ui/core';
-import CheckoutForm from './CheckoutForm/CheckoutForm';
+// import CheckoutForm from './CheckoutForm/CheckoutForm';
+import Checkout2 from './CheckoutForm/Checkout2';
 
 import './cart.css';
 
@@ -22,8 +23,7 @@ const Cart = () => {
           <ul>{cartLi}</ul>
         </Box>
         <Box p={4}>
-          <h2>Checkout:</h2>
-          <CheckoutForm />
+          <Checkout2 />
         </Box>
       </Grid>
     </>
