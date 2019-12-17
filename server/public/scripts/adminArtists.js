@@ -1,15 +1,15 @@
 function artistSelect(id) {
   currentbutton = document.getElementById(`buttid_${id}`);
   currentdiv = document.getElementById(`divid_${id}`);
-  olddiv = document.querySelector(".artistshow");
-  oldbutt = document.querySelector(".artistbuttonselect");
+  olddiv = document.querySelector(".show");
+  oldbutt = document.querySelector(".buttonselect");
 
   if (olddiv) {
-    olddiv.className = "artisthide";
+    olddiv.className = "hide";
   }
   if (oldbutt) {
-    oldbutt.className = "artistbutton";
+    oldbutt.className = "button";
   }
-  currentbutton.className = "artistbuttonselect";
-  currentdiv.className = "artistshow";
+  currentbutton.className = "buttonselect";
+  currentdiv.className = "show";
 }

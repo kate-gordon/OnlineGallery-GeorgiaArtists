@@ -20,64 +20,64 @@ nav div a {
   font-size: 1.3em;
 }
 /* ARTISTS */
-#editArtists {
+#edit {
   display: grid;
   grid-template-columns: 400px 1fr;
 }
-#artistList {
+#list {
   display: flex;
   flex-direction: column;
   padding: 20px;
   border-right: 1px solid black;
   height: 100%;
 }
-#artistList p {
+#list p {
   font-size: 1.5em;
   text-align: center;
   margin: 5px;
 }
-#artistList button {
+#list button {
   font-size: 1.2em;
   padding: 4px;
   border: none;
   border-bottom: 1px black solid;
   outline: none;
 }
-.artisthide {
+.hide {
   display: none;
 }
-.artistshow {
+.show {
   padding: 10px;
 }
-.artistshow form {
+.show form {
   display: flex;
   flex-direction: column;
   font-size: 1.5em;
 }
-.artistshow form label {
+.show form label {
   margin: 2px;
 }
-.artistshow form label input {
+.show form label input {
   font-size: 0.8em;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
-.artistshow form label textarea {
+.show form label textarea {
   font-size: 0.8em;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
-.artistshow form button {
+.show form button {
   font-size: 1.2em;
 }
-.artistbutton {
+.button {
   background-color: lightgrey;
 }
-.artistbuttonselect {
+.buttonselect {
   background-color: darkgrey;
 }
 #deleteForm {

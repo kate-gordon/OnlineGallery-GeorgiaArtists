@@ -1,26 +1,14 @@
-<!-- <div style="border: 1px solid black">
-  <h3>remove artists:</h3>
-  ${artists.map(artist => `
-  <form method="POST" action="/admin/artists/remove">
-    <input type="hidden" name="artist_id" value="${artist.artist_id}" />
-    <label>
-      ${artist.firstname} ${artist.lastname}
-      <button type="submit">Delete</button>
-    </label>
-  </form>
-  `)}
-</div> -->
-<div id="editArtists">
-  <div id="artistList">
+<div id="edit">
+  <div id="list">
     <p>New Artist</p>
-    <button id="buttid_0" class="artistbutton" onclick="artistSelect(0)">
+    <button id="buttid_0" class="button" onclick="artistSelect(0)">
       Add New Artist
     </button>
     <p>Edit Artist</p>
     ${artists.map(artist=> `
     <button
       id="buttid_${artist.artist_id}"
-      class="artistbutton"
+      class="button"
       onclick="artistSelect(${artist.artist_id})"
     >
       ${artist.firstname} ${artist.lastname}
@@ -28,7 +16,7 @@
     ` ).join('')}
   </div>
   <div>
-    <div id="divid_0" class="artisthide">
+    <div id="divid_0" class="hide">
       <form
         method="POST"
         action="/admin/artists/add"
@@ -62,7 +50,7 @@
       </form>
     </div>
     ${artists.map(artist => `
-    <div id="divid_${artist.artist_id}" class="artisthide">
+    <div id="divid_${artist.artist_id}" class="hide">
       <form method="POST" action="/admin/artists/edit" id="artistform">
         <input type="hidden" name="artist_id" value="${artist.artist_id}" />
         <label

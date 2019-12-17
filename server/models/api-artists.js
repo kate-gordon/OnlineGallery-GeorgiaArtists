@@ -2,7 +2,7 @@ const db = require("../utilities/conn");
 
 const allartists = async () => {
   try {
-    const response = await db.any(`SELECT * FROM artists`);
+    const response = await db.any(`SELECT * FROM artists ORDER BY lastname`);
     return response;
   } catch (err) {
     return `Internal Database Error: ${err}`;
