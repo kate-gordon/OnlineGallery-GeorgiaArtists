@@ -1,7 +1,6 @@
 .navList {
   display: flex;
   list-style-type: none;
-  text-decoration: none;
   align-items: center;
   justify-content: space-between;
   padding-left: 20%;
@@ -9,9 +8,8 @@
 }
 
 .navListItem {
-  pad1remding: ;
-}
-
-.navbar {
-  grid-column: 2;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 1rem;
+  color: black; 
 }
