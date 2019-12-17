@@ -33,8 +33,8 @@ const CheckoutForm = () => {
         const theData = {
           amount: totalPrice * 100,
           stripeToken: token.id,
-          token: '123abc123abc',
-          email: 'susan@something.com',
+          token: '123abc123',
+          email: 'puja@something.com',
           artworkIdArray,
           clientName
         };
