@@ -11,19 +11,18 @@ const express = require("express"),
 require("dotenv").config();
 const app = express();
 
-const artistsRouter = require("./routes/artists");
-const artworksRouter = require("./routes/artworks");
-const eventsRouter = require("./routes/events");
-const adminRouter = require("./routes/admin");
+//HTML Renderer
 
 app.engine("html", es6Renderer);
 app.set("views", "./views");
 app.set("view engine", "html");
 
+//Utilities
+
 app.use(compression());
 app.use(helmet());
 app.use(cors());
-app.use("/images", express.static("public"));
+app.use("/", express.static("public"));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -38,9 +37,26 @@ app.use(
   })
 );
 
-app.use("/api/artists", artistsRouter);
-app.use("/api/artworks", artworksRouter);
-app.use("/api/events", eventsRouter);
+//Routers
+
+const artistsAPIRouter = require("./routes/apiArtists");
+const artworksAPIRouter = require("./routes/apiArtworks");
+const eventsAPIRouter = require("./routes/apiEvents");
+const checkoutAPIRouter = require("./routes/apiCheckout");
+const adminRouter = require("./routes/admin");
+const artistsAdminRouter = require("./routes/adminArtists");
+const artworksAdminRouter = require("./routes/adminArtworks");
+const eventsAdminRouter = require("./routes/adminEvents");
+
+//Routes
+
+app.use("/api/artists", artistsAPIRouter);
+app.use("/api/artworks", artworksAPIRouter);
+app.use("/api/events", eventsAPIRouter);
+app.use("/api/checkout", checkoutAPIRouter);
 app.use("/", adminRouter);
+app.use("/admin/artists", artistsAdminRouter);
+app.use("/admin/artworks", artworksAdminRouter);
+app.use("/admin/events", eventsAdminRouter);
 
 module.exports = app;

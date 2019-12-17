@@ -1,0 +1,181 @@
+<!-- <div style="border: 1px solid black">
+  <h3>add event:</h3>
+  <form method="POST" action="/admin/events/add" enctype="multipart/form-data">
+    <label
+      >Title
+      <input name="title" type="text" />
+    </label>
+    <label
+      >Date
+      <input name="date" type="date" />
+    </label>
+    <label>
+      Time
+      <input name="time" type="time" />
+    </label>
+    <label>
+      Location
+      <input name="location" type="text" />
+    </label>
+    <label
+      >Picture
+      <input name="picture" type="file" />
+    </label>
+    <label
+      >Blurb
+      <textarea name="blurb" rows="5" cols="30"></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+<div style="border: 1px solid black">
+  <h3>remove event:</h3>
+  ${events.map(event => `
+  <form method="POST" action="/admin/events/remove">
+    <input type="hidden" name="event_id" value="${event.event_id}" />
+    <label>
+      ${event.title} - ${event.datewhen}
+      <button type="submit">Delete</button>
+    </label>
+  </form>
+  `)}
+</div>
+<div style="border: 1px solid black">
+  <h3>edit event:</h3>
+  ${events.map(event => `
+  <form method="POST" action="/admin/events/edit">
+    <input type="hidden" name="event_id" value="${event.event_id}" />
+    <label
+      >Title
+      <input name="title" type="text" value="${event.title}" />
+    </label>
+    <label
+      >Date
+      <input
+        name="date"
+        type="date"
+        value="${event.datewhen.getFullYear()}-${('0' + event.datewhen.getDay()).slice(-2)}-${(('0' + event.datewhen.getDate()).slice(-2))}"
+      />
+    </label>
+    <label>
+      Time
+      <input
+        name="time"
+        type="time"
+        value="${('0' + event.datewhen.getHours()).slice(-2)}:${('0' + event.datewhen.getMinutes()).slice(-2)}"
+      />
+    </label>
+    <label>
+      Location
+      <input name="location" type="text" value="${event.location}" />
+    </label>
+    <label
+      >Blurb
+      <textarea name="blurb" rows="5" cols="30">${event.blurb}</textarea>
+    </label>
+    <label
+      >Cancel event? ${event.cancelled ?`
+      <input type="checkbox" name="cancelled" checked />
+      `:`<input type="checkbox" name="cancelled" />`}</label
+    >
+    <button type="submit">Update</button>
+  </form>
+  `)}
+</div> -->
+
+<div id="edit">
+  <div id="list">
+    <p>New Event</p>
+    <button id="buttid_0" class="button" onclick="select(0)">
+      Add New Event
+    </button>
+    <p>Edit Event</p>
+    ${events.map(event=> `
+    <button
+      id="buttid_${event.event_id}"
+      class="button"
+      onclick="select(${event.event_id})"
+    >
+      ${event.title} -
+      ${event.datewhen.getDay()}/${event.datewhen.getDate()}/${event.datewhen.getFullYear()}
+    </button>
+    ` ).join('')}
+  </div>
+  <div>
+    <div id="divid_0" class="hide">
+      <form
+        method="POST"
+        action="/admin/events/add"
+        enctype="multipart/form-data"
+      >
+        <label
+          >Title
+          <input name="title" type="text" />
+        </label>
+        <label
+          >Date
+          <input name="date" type="date" />
+        </label>
+        <label>
+          Time
+          <input name="time" type="time" />
+        </label>
+        <label>
+          Location
+          <input name="location" type="text" />
+        </label>
+        <label
+          >Picture
+          <input name="picture" type="file" />
+        </label>
+        <label
+          >Blurb
+          <textarea name="blurb" rows="5" cols="30"></textarea>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    ${events.map(event => `
+    <div id="divid_${event.event_id}" class="hide">
+      <form method="POST" action="/admin/events/edit">
+        <input type="hidden" name="event_id" value="${event.event_id}" />
+        <label
+          >Title
+          <input name="title" type="text" value="${event.title}" />
+        </label>
+        <label
+          >Date
+          <input
+            name="date"
+            type="date"
+            value="${event.datewhen.getFullYear()}-${('0' + event.datewhen.getDay()).slice(-2)}-${(('0' + event.datewhen.getDate()).slice(-2))}"
+          />
+        </label>
+        <label>
+          Time
+          <input
+            name="time"
+            type="time"
+            value="${('0' + event.datewhen.getHours()).slice(-2)}:${('0' + event.datewhen.getMinutes()).slice(-2)}"
+          />
+        </label>
+        <label>
+          Location
+          <input name="location" type="text" value="${event.location}" />
+        </label>
+        <label
+          >Blurb
+          <textarea name="blurb" rows="5" cols="30">${event.blurb}</textarea>
+        </label>
+        <label
+          >Cancel event? ${event.cancelled ?`
+          <input type="checkbox" name="cancelled" checked />
+          `:`<input type="checkbox" name="cancelled" />`}</label
+        >
+        <button type="submit">Update</button>
+      </form>
+    </div>
+    `).join('')}
+  </div>
+</div>
+<script src="/scripts/admin.js"></script>
