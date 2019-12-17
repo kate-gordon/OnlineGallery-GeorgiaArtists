@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+/* NAV BAR */
+nav {
+  background-color: lightgray;
+  display: flex;
+  padding-left: 8px;
+}
+nav div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 35%;
+}
+nav div a {
+  color: black;
+  font-size: 1.3em;
+}
+/* ARTISTS & GALLERY */
+#edit {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+}
+#list {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-right: 1px solid black;
+  height: 100%;
+}
+#list p {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 5px;
+}
+#list button {
+  font-size: 1.2em;
+  padding: 4px;
+  border: none;
+  border-bottom: 1px black solid;
+  outline: none;
+}
+.hide {
+  display: none;
+}
+.show {
+  padding: 10px;
+}
+.show form {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+}
+.show form label {
+  margin: 2px;
+}
+.show form label input {
+  font-size: 0.8em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.show form label textarea {
+  font-size: 0.8em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.show form button {
+  font-size: 1.2em;
+}
+.button {
+  background-color: lightgrey;
+}
+.buttonselect {
+  background-color: darkgrey;
+}
+#deleteForm {
+  margin: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#deleteForm button {
+  color: red;
+}

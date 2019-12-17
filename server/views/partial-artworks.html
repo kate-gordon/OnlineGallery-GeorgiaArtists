@@ -1,0 +1,100 @@
+<div id="edit">
+  <div id="list">
+    <p>New Artwork</p>
+    <button id="buttid_0" class="button" onclick="select(0)">
+      Add New Artwork
+    </button>
+    <p>Edit Artwork</p>
+    ${artists.map(artist=> `
+    <h3>${artist.firstname} ${artist.lastname}</h3>
+    ${artworks.map(artwork =>` ${artwork.artist === artist.artist_id ?`
+    <button
+      id="buttid_${artwork.artwork_id}"
+      class="button"
+      onclick="select(${artwork.artwork_id})"
+    >
+      ${artwork.title} - ${artwork.medium}
+    </button>
+    `:""}` ).join('')}` ).join('')}
+  </div>
+  <div>
+    <div id="divid_0" class="hide">
+      <form
+        method="POST"
+        action="/admin/artworks/add"
+        enctype="multipart/form-data"
+      >
+        <label
+          >Title
+          <input name="title" type="text" />
+        </label>
+        <label
+          >Medium
+          <input name="medium" type="text" />
+        </label>
+        <label
+          >Price
+          <input name="price" type="number" />
+        </label>
+        <label
+          >Award
+          <input name="award" type="text" />
+        </label>
+        <label
+          >Picture
+          <input name="picture" type="file" />
+        </label>
+        <select name="artist">
+          ${artists.map(artist=>`
+          <option value="${artist.artist_id}"
+            >${artist.firstname} ${artist.lastname}</option
+          >
+          `)}
+        </select>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    ${artworks.map(artwork => `
+    <div id="divid_${artwork.artwork_id}" class="hide">
+      <form method="POST" action="/admin/artworks/edit">
+        <input type="hidden" name="artwork_id" value="${artwork.artwork_id}" />
+        <label
+          >Title
+          <input name="title" type="text" value="${artwork.title}" />
+        </label>
+        <label
+          >Medium
+          <input name="medium" type="text" value="${artwork.medium}" />
+        </label>
+        <label
+          >Price
+          <input name="price" type="number" value="${artwork.price}" />
+        </label>
+        <label
+          >Award
+          <input name="award" type="text" value="${artwork.award}" />
+        </label>
+        <select name="artist">
+          ${artists.map(artist=>` ${artist.artist_id === artwork.artist ?`
+          <option value="${artist.artist_id}" selected
+            >${artist.firstname} ${artist.lastname}</option
+          >
+          `:`<option value="${artist.artist_id}"
+            >${artist.firstname} ${artist.lastname}</option
+          >
+          `}`)}
+        </select>
+        <button type="submit">Update</button>
+      </form>
+      <form method="POST" action="/admin/artworks/remove" id="deleteForm">
+        <input type="hidden" name="artwork_id" value="${artwork.artwork_id}" />
+        <label>
+          Remove ${artwork.firstname} ${artwork.lastname}
+          <button type="submit">Delete</button>
+        </label>
+      </form>
+    </div>
+    `).join('')}
+  </div>
+</div>
+<script src="/scripts/admin.js"></script>

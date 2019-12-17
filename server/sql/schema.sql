@@ -8,7 +8,7 @@ CREATE TABLE artists (
     lastname VARCHAR(30),
     city VARCHAR(50),
     email VARCHAR(50),
-    portrait VARCHAR(80),
+    portrait VARCHAR(180),
     blurb VARCHAR (2000)
 );
 
@@ -18,7 +18,7 @@ title VARCHAR(100),
 medium VARCHAR(50),
 artist INTEGER REFERENCES artists(artist_id),
 price float,
-picture VARCHAR(80),
+picture VARCHAR(180),
 sold boolean DEFAULT 'f', 
 award VARCHAR(100)
 );
@@ -28,8 +28,9 @@ CREATE TABLE events (
     title VARCHAR(200),
     datewhen TIMESTAMP,
     location VARCHAR(200),
-    picture VARCHAR(80),
-    blurb VARCHAR (2000)
+    picture VARCHAR(180),
+    blurb VARCHAR (2000),
+    cancelled boolean DEFAULT 'f'
 );
 
 CREATE TABLE subscribers (
