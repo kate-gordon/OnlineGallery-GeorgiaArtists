@@ -34,15 +34,15 @@ const ArtistCard = props => {
           <p>{artist.blurb.substring(0, 200)}...</p>
         </Box>
         <Box p={2} d='flex' justifyContent='flex-end' alignItems='center'>
-          <IconButton
-            icon={MdMoreHoriz}
-            bg='gray.600'
-            color='gray.50'
-            variant='solid'
-            size='lg'
-          >
-            <Link to={`/artists/artist/${artist.artist_id}`}></Link>
-          </IconButton>
+          <Link to={`/artists/artist/${artist.artist_id}`}>
+            <IconButton
+              icon={MdMoreHoriz}
+              bg='gray.600'
+              color='gray.50'
+              variant='solid'
+              size='lg'
+            ></IconButton>
+          </Link>
         </Box>
       </Box>
     </>

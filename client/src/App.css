@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Arimo&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
 
 .App {
   text-align: center;
 }
 
 body {
-  font-family: "Arimo", sans-serif;
-  background-color: #F2EFE9;
+  font-family: 'Arimo', sans-serif;
+  background-color: #e2e8f0;
   margin-right: 8rem;
   margin-left: 8rem;
 }

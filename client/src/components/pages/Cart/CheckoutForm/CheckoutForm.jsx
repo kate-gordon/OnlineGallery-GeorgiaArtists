@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
-import { StateContext } from "../../../../context";
-import Checkout from "react-stripe-checkout";
-import axios from "axios";
-import { Redirect } from "react-router";
+import React, { useContext, useState } from 'react';
+import { StateContext } from '../../../../context';
+import Checkout from 'react-stripe-checkout';
+import axios from 'axios';
+import { Redirect } from 'react-router';
+import { Button } from '@chakra-ui/core';
 
 const CheckoutForm = props => {
   const [{ cart }] = useContext(StateContext);
@@ -12,28 +13,29 @@ const CheckoutForm = props => {
   const onClose = () => {
     let idArray = [];
     cart.map(item => idArray.push(item.artwork_id));
-    axios.post("http://admin.insae.org/api/artworks/sold", { ids: idArray });
+    axios.post('http://admin.insae.org/api/artworks/sold', { ids: idArray });
     dispatch({
-      type: "clearCart"
+      type: 'clearCart'
     });
     const updateArt = props.fetchArtPieceData;
     setRedirect(false);
   };
   return (
-    <div className="checkoutForm">
+    <div className='checkoutForm btn btn-primary'>
       <Checkout
-        label="Checkout"
-        name="Checkout"
-        description="Complete your purchase"
-        panelLabel="Submit Payment"
+        label='Checkout'
+        name='Checkout'
+        description='Complete your purchase'
+        panelLabel='Submit Payment'
         amount={totalPrice * 100}
-        currency="USD"
+        currency='USD'
         shippingAddress
         billingAddress
-        stripeKey="pk_test_4v8zi9Y35PCIfLBnAbUZUKcc00BdZcXFx5"
+        stripeKey='pk_test_4v8zi9Y35PCIfLBnAbUZUKcc00BdZcXFx5'
         token={onClose}
+        allowRememberMe='false'
       />
-      {redirect ? "" : <Redirect to="/order" />}
+      {redirect ? '' : <Redirect to='/order' />}
     </div>
   );
 };
