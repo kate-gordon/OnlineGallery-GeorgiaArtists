@@ -15,6 +15,7 @@ import Events from '../src/components/pages/Events';
 import Footer from '../src/components/Footer/Footer';
 import Checkout from './components/pages/Checkout/Checkout';
 
+import customTheme from './theme';
 import './App.css';
 
 function App() {
@@ -84,7 +85,7 @@ function App() {
 
   return (
     <div className='App'>
-      <ThemeProvider>
+      <ThemeProvider theme={customTheme}>
         <StateProvider reducer={myReducer} initialState={initialState}>
           <Header />
 
