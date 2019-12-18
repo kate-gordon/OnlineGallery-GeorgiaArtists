@@ -20,6 +20,12 @@ nav div a {
   font-size: 1.3em;
 }
 /* ARTISTS & GALLERY */
+#welcome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #edit {
   display: grid;
   grid-template-columns: 400px 1fr;
@@ -65,6 +71,13 @@ nav div a {
   box-sizing: border-box;
 }
 .show form label textarea {
+  font-size: 0.8em;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.show form select {
   font-size: 0.8em;
   width: 100%;
   padding: 12px 20px;
