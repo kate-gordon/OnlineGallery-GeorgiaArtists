@@ -23,7 +23,7 @@ const Header = () => {
       <Box gridColumn='2' gridRow='2'>
         <Image
           src={palette2}
-          alt='artist palette with colorful paint logo'
+          alt='solid dark gray artist palette logo'
           width='100px'
           objectFit='contain'
         />

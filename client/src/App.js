@@ -1,26 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "@chakra-ui/core";
-import { StateProvider } from "./context";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { ThemeProvider } from '@chakra-ui/core';
+import { StateProvider } from './context';
+import axios from 'axios';
 
-import SingleArtist from "../src/components/pages/SingleArtist";
-import SingleArtPiece from "../src/components/pages/SingleArtPiece";
-import Artists from "../src/components/pages/Artists";
-import Header from "../src/components/Header/Header";
-import Home from "../src/components/pages/Home";
-import Cart from "../src/components/pages/Cart";
-import About from "../src/components/pages/About";
-import Events from "../src/components/pages/Events";
-import Footer from "../src/components/Footer/Footer";
-import Checkout from "./components/pages/Checkout/Checkout";
+import SingleArtist from '../src/components/pages/SingleArtist';
+import SingleArtPiece from '../src/components/pages/SingleArtPiece';
+import Artists from '../src/components/pages/Artists';
+import Header from '../src/components/Header/Header';
+import Home from '../src/components/pages/Home';
+import Cart from '../src/components/pages/Cart';
+import About from '../src/components/pages/About';
+import Events from '../src/components/pages/Events';
+import Footer from '../src/components/Footer/Footer';
+import Checkout from './components/pages/Checkout/Checkout';
 
-<<<<<<< HEAD
 import customTheme from './theme';
 import './App.css';
-=======
-import "./App.css";
->>>>>>> 6bea642f675435644dee15e4d1346f65d7acca0f
 
 function App() {
   const [artists, setArtists] = useState([]);
@@ -32,7 +28,7 @@ function App() {
 
   const myReducer = (state, action) => {
     switch (action.type) {
-      case "addCartItem":
+      case 'addCartItem':
         let idArray = [];
         state.cart.map(item => idArray.push(item.artwork_id));
         if (!idArray.includes(action.item.artwork_id)) {
@@ -43,15 +39,15 @@ function App() {
         return {
           cart: [...state.cart]
         };
-      case "removeCartItem":
+      case 'removeCartItem':
         let newCart = [];
         state.cart.map(item =>
-          item.artwork_id === action.item.artwork_id ? "" : newCart.push(item)
+          item.artwork_id === action.item.artwork_id ? '' : newCart.push(item)
         );
         return {
           cart: [...newCart]
         };
-      case "clearCart":
+      case 'clearCart':
         return {
           cart: []
         };
@@ -63,7 +59,7 @@ function App() {
   // Fetching Artist Data
 
   const fetchData = () => {
-    let uri = "http://admin.insae.org/api/artists/all";
+    let uri = 'http://admin.insae.org/api/artists/all';
     axios
       .get(uri)
       .then(data => {
@@ -75,7 +71,7 @@ function App() {
   // Fetching Artwork Data
 
   const fetchArtPieceData = () => {
-    let uri = "http://admin.insae.org/api/artworks/all";
+    let uri = 'http://admin.insae.org/api/artworks/all';
     axios
       .get(uri)
       .then(data => {
@@ -98,25 +94,25 @@ function App() {
           <Header />
 
           <Switch>
-            <Route path="/piece/:id">
+            <Route path='/piece/:id'>
               <SingleArtPiece />
             </Route>
-            <Route exact path="/">
+            <Route exact path='/'>
               <Home artPieces={artPieces} />
             </Route>
-            <Route path="/artists/artist/:id">
+            <Route path='/artists/artist/:id'>
               <SingleArtist />
             </Route>
-            <Route path="/artists">
+            <Route path='/artists'>
               <Artists artists={artists} />
             </Route>
-            <Route path="/about">
+            <Route path='/about'>
               <About />
             </Route>
-            <Route path="/events">
+            <Route path='/events'>
               <Events />
             </Route>
-            <Route path="/cart">
+            <Route path='/cart'>
               <Cart />
             </Route>
           </Switch>
