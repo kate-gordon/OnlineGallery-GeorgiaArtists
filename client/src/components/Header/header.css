@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Bitter|Lilita+One&display=swap');
 
-* {
-  font-family: 'Bitter', serif;
+html {
+  padding: 0;
 }
 
 .headerContent {
