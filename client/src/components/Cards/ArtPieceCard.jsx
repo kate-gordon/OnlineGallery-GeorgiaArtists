@@ -43,21 +43,22 @@ const ArtPieceCard = props => {
     )
   ) : null;
 
-  // const growCard = hover ? {{transform: 'scale(3)'}} : null;
+  const growCard = hover ? { transform: "scale(1.2)" } : null;
 
   return (
     <>
       <Box
-        // style={growCard}
         onMouseEnter={onHover}
         onMouseLeave={onHover}
         width='90%'
+        height='auto'
         p={2}
         m={2}
       >
         <Box position='relative'>
           <Link to={`/piece/${piece.artwork_id}`}>
             <Image
+              style={growCard}
               htmlWidth='100%'
               htmlHeight='auto'
               src={piece.picture}
@@ -75,9 +76,6 @@ const ArtPieceCard = props => {
             By {piece.firstname} {piece.lastname}
           </h3>
         </Box>
-        <Button d='none'>
-          <Link to={`/piece/${piece.artwork_id}`}>Click Me</Link>
-        </Button>
       </Box>
     </>
   );

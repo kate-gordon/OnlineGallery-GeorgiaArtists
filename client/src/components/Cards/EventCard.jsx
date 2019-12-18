@@ -45,7 +45,6 @@ const EventCard = props => {
         <Box>
           <p>{event.blurb}</p>
         </Box>
-        
       </Box>
     </>
   );
