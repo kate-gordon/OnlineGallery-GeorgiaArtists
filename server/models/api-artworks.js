@@ -36,10 +36,7 @@ const artistart = async id => {
 
 const artwork_sold = async ids => {
   const response = await db.any(
-    `UPDATE artworks SET sold='true' WHERE artwork_id IN (${ids.substring(
-      1,
-      ids.length - 1
-    )})`
+    `UPDATE artworks SET sold='true' WHERE artwork_id IN (${ids.toString()})`
   );
   console.log(response);
 };

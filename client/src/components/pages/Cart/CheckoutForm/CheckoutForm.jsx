@@ -11,6 +11,7 @@ const CheckoutForm = () => {
     console.log("hey there");
     let idArray = [];
     cart.map(item => idArray.push(item.artwork_id));
+    console.log("my array", idArray);
     axios.post("http://admin.insae.org/api/artworks/sold", { ids: idArray });
     dispatch({
       type: "clearCart"
