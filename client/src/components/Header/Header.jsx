@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Button, Grid, Flex, Image, Text } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
-import palette2 from './palette2.svg';
+import palettelogo from './palettelogo.png';
 import Navbar from './Navbar/Navbar';
 import { MdShoppingCart } from 'react-icons/md';
 
@@ -22,7 +22,7 @@ const Header = () => {
       </Flex>
       <Box gridColumn='2' gridRow='2'>
         <Image
-          src={palette2}
+          src={palettelogo}
           alt='solid dark gray artist palette logo'
           width='100px'
           objectFit='contain'

@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StateContext } from "../../context";
 
-import { Box, Button, Image, IconButton } from "@chakra-ui/core";
+import { Box, Button, Image, IconButton, Text } from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
   const { piece } = props;
@@ -43,21 +43,22 @@ const ArtPieceCard = props => {
     )
   ) : null;
 
-  // const growCard = hover ? {{transform: 'scale(3)'}} : null;
+  const growCard = hover ? { transform: "scale(1.2)" } : null;
 
   return (
     <>
       <Box
-        // style={growCard}
         onMouseEnter={onHover}
         onMouseLeave={onHover}
         width='90%'
+        height='auto'
         p={2}
         m={2}
       >
         <Box position='relative'>
           <Link to={`/piece/${piece.artwork_id}`}>
             <Image
+              style={growCard}
               htmlWidth='100%'
               htmlHeight='auto'
               src={piece.picture}
@@ -69,15 +70,17 @@ const ArtPieceCard = props => {
             {addToCartBox}
           </Box>
         </Box>
-        <Box d='flex' flexDirection='column' alignItems='start'>
-          <h2>{piece.title}</h2>
-          <h3>
+        <Box
+          d='flex'
+          flexDirection='column'
+          alignItems='flex-start'
+          justifyContent='flex-start'
+        >
+          <Text fontSize='3xl'>{piece.title}</Text>
+          <Text fontSize='2xl'>
             By {piece.firstname} {piece.lastname}
-          </h3>
+          </Text>
         </Box>
-        <Button d='none'>
-          <Link to={`/piece/${piece.artwork_id}`}>Click Me</Link>
-        </Button>
       </Box>
     </>
   );
