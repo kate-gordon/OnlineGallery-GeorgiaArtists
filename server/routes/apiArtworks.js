@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { allartworks, artworkid } = require("../models/api-artworks");
+const { allartworks, artworkid, artistart } = require("../models/api-artworks");
 
 router.get("/all", async function(req, res, next) {
   const response = await allartworks();
@@ -10,6 +10,12 @@ router.get("/all", async function(req, res, next) {
 router.get("/id/:id", async function(req, res, next) {
   const { id } = req.params;
   const response = await artworkid(id);
+  res.send(response);
+});
+
+router.get("/artist/:id", async function(req, res, next) {
+  const { id } = req.params;
+  const response = await artistart(id);
   res.send(response);
 });
 
