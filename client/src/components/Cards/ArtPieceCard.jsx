@@ -28,7 +28,7 @@ const ArtPieceCard = props => {
         d='flex'
         p={2}
         borderStyle='solid'
-        style={{ color: "#021714", backgroundColor: "#F0F0F0" }}
+        style={{ color: '#021714', backgroundColor: '#F0F0F0' }}
       >
         <h2>${piece.price}</h2>
         <IconButton
@@ -68,17 +68,10 @@ const ArtPieceCard = props => {
           </Box>
         </Box>
         <Box d='flex' flexDirection='column' alignItems='start'>
-<<<<<<< HEAD
-          <h1>{piece.title}</h1>
-          <h2>
-            By {piece.firstname} {piece.lastname}{' '}
-          </h2>
-=======
           <h2>{piece.title}</h2>
           <h3>
             By {piece.firstname} {piece.lastname}
           </h3>
->>>>>>> d4ac355cc9e714b585c2be019b15fe7a62cb900a
         </Box>
         <Button d='none'>
           <Link to={`/piece/${piece.artwork_id}`}>Click Me</Link>
