@@ -9,7 +9,7 @@ const Footer = () => {
       <Grid
         borderTop='solid'
         className='header'
-        templateColumns='repeat(4, 1fr)'
+        templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]}
         m={4}
         p={4}
       >

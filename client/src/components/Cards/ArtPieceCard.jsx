@@ -43,10 +43,12 @@ const ArtPieceCard = props => {
     )
   ) : null;
 
+  // const growCard = hover ? {{transform: 'scale(3)'}} : null;
+
   return (
     <>
       <Box
-        className='withCartBtn'
+        // style={growCard}
         onMouseEnter={onHover}
         onMouseLeave={onHover}
         width='90%'
