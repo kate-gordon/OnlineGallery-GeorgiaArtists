@@ -38,7 +38,6 @@ const artwork_sold = async ids => {
   const response = await db.any(
     `UPDATE artworks SET sold='true' WHERE artwork_id IN (${ids.toString()})`
   );
-  console.log(response);
 };
 
 module.exports = {

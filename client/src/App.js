@@ -13,7 +13,7 @@ import Cart from '../src/components/pages/Cart';
 import About from '../src/components/pages/About';
 import Events from '../src/components/pages/Events';
 import Footer from '../src/components/Footer/Footer';
-import Checkout from './components/pages/Checkout/Checkout';
+import Order from './components/pages/Cart/Order';
 
 import customTheme from './theme';
 import './App.css';
@@ -113,7 +113,10 @@ function App() {
               <Events />
             </Route>
             <Route path='/cart'>
-              <Cart />
+              <Cart fetchArtPieceData={fetchArtPieceData()} />
+            </Route>
+            <Route path='/order'>
+              <Order />
             </Route>
           </Switch>
 
