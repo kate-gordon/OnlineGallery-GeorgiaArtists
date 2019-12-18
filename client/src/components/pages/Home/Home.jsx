@@ -10,7 +10,12 @@ const Home = props => {
   return (
     <>
       <Grid
-        templateColumns='repeat(3, 1fr)'
+        templateColumns={[
+          "repeat(1, 1fr)",
+          "repeat(1, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(3, 1fr)"
+        ]}
         mt={4}
         gap={6}
       >

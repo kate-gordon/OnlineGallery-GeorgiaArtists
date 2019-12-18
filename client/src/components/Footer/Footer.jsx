@@ -11,6 +11,7 @@ const Footer = () => {
         className='header'
         templateColumns='repeat(4, 1fr)'
         m={4}
+        p={4}
       >
         <Box d='flex' alignItems='center' justifyContent='center'>
           Built with <Box as={MdFavorite} /> by
