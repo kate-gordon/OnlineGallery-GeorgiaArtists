@@ -49,7 +49,7 @@ const ArtPieceCard = props => {
         className='withCartBtn'
         onMouseEnter={onHover}
         onMouseLeave={onHover}
-        width='90%'
+        width= '90%'
         p={2}
         m={2}
       >

@@ -36,15 +36,16 @@ const EventCard = props => {
         <Box>
           <Image width='70%' src={event.picture} />
         </Box>
-        <h3>
+        <h2>
           <Moment date={event.datewhen} format='h:mm a' tz='Europe/London' />
-        </h3>
+        </h2>
+        <Box>
+          <h3>{event.location}</h3>
+        </Box>
         <Box>
           <p>{event.blurb}</p>
         </Box>
-        <Box>
-          <p>{event.location}</p>
-        </Box>
+        
       </Box>
     </>
   );
