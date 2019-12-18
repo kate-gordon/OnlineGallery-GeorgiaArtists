@@ -1,7 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-import { Box, Button, Image } from "@chakra-ui/core";
+import { Box, IconButton, Image } from '@chakra-ui/core';
+import { MdMoreHoriz } from 'react-icons/md';
 
 const ArtistCard = props => {
   const { artist } = props;
@@ -14,10 +15,10 @@ const ArtistCard = props => {
         boxShadow='4px 4px 2px 2px grey'
         width='90%'
         m={3}
-        style={{ backgroundColor: "#E5E2DD" }}
+        style={{ backgroundColor: '#E5E2DD' }}
       >
         <Box p={2}>
-          <h1 style={{ borderBottom: "1px solid black" }}>
+          <h1 style={{ borderBottom: '1px solid black' }}>
             {artist.firstname} {artist.lastname}
           </h1>
           <Image
@@ -32,10 +33,16 @@ const ArtistCard = props => {
         <Box p={2}>
           <p>{artist.blurb.substring(0, 200)}...</p>
         </Box>
-        <Box p={2} d='flex' justifyContent='flex-end'>
-          <Button>
-            <Link to={`/artists/artist/${artist.artist_id}`}>More Info</Link>
-          </Button>
+        <Box p={2} d='flex' justifyContent='flex-end' alignItems='center'>
+          <IconButton
+            icon={MdMoreHoriz}
+            bg='gray.600'
+            color='gray.50'
+            variant='solid'
+            size='lg'
+          >
+            <Link to={`/artists/artist/${artist.artist_id}`}></Link>
+          </IconButton>
         </Box>
       </Box>
     </>

@@ -13,8 +13,9 @@ import Cart from "../src/components/pages/Cart";
 import About from "../src/components/pages/About";
 import Events from "../src/components/pages/Events";
 import Footer from "../src/components/Footer/Footer";
-import Checkout from "./components/pages/Checkout/Checkout";
+import Order from "./components/pages/Cart/Order";
 
+import customTheme from "./theme";
 import "./App.css";
 
 function App() {
@@ -87,32 +88,35 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <ThemeProvider>
         <StateProvider reducer={myReducer} initialState={initialState}>
           <Header />
 
           <Switch>
-            <Route path="/piece/:id">
+            <Route path='/piece/:id'>
               <SingleArtPiece />
             </Route>
-            <Route exact path="/">
+            <Route exact path='/'>
               <Home artPieces={artPieces} />
             </Route>
-            <Route path="/artists/artist/:id">
+            <Route path='/artists/artist/:id'>
               <SingleArtist />
             </Route>
-            <Route path="/artists">
+            <Route path='/artists'>
               <Artists artists={artists} />
             </Route>
-            <Route path="/about">
+            <Route path='/about'>
               <About />
             </Route>
-            <Route path="/events">
+            <Route path='/events'>
               <Events />
             </Route>
-            <Route path="/cart">
-              <Cart />
+            <Route path='/cart'>
+              <Cart fetchArtPieceData={fetchArtPieceData()} />
+            </Route>
+            <Route path='/order'>
+              <Order />
             </Route>
           </Switch>
 

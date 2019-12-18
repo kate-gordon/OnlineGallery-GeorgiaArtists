@@ -2,20 +2,22 @@ import React, { useContext, useState } from "react";
 import { StateContext } from "../../../../context";
 import Checkout from "react-stripe-checkout";
 import axios from "axios";
+import { Redirect } from "react-router";
 
-const CheckoutForm = () => {
+const CheckoutForm = props => {
   const [{ cart }] = useContext(StateContext);
   const [value, dispatch] = useContext(StateContext);
+  const [redirect, setRedirect] = useState([]);
   const totalPrice = cart.reduce((a, { price }) => a + price, 0);
   const onClose = () => {
-    console.log("hey there");
     let idArray = [];
     cart.map(item => idArray.push(item.artwork_id));
-    console.log("my array", idArray);
     axios.post("http://admin.insae.org/api/artworks/sold", { ids: idArray });
     dispatch({
       type: "clearCart"
     });
+    const updateArt = props.fetchArtPieceData;
+    setRedirect(false);
   };
   return (
     <div className="checkoutForm">
@@ -31,6 +33,7 @@ const CheckoutForm = () => {
         stripeKey="pk_test_4v8zi9Y35PCIfLBnAbUZUKcc00BdZcXFx5"
         token={onClose}
       />
+      {redirect ? "" : <Redirect to="/order" />}
     </div>
   );
 };
