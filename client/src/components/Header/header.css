@@ -1,28 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Bitter|Lilita+One&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Bitter|Lilita+One&display=swap");
 
-* {
-  font-family: 'Bitter', serif;
-}
-
-.headerContent {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-
-.gridItem1 {
-  grid-area: 1 / 1 / 2 / 2;
-}
-.gridItem2 {
-  grid-area: 1 / 2 / 2 / 3;
-}
-.gridItem3 {
-  grid-area: 1 / 3 / 2 / 4;
-}
-
-.orgName,
-.cartButton {
+.orgName {
   text-decoration: none;
+  color: #f9f9f9;
+}
+
+.header {
+  background-color: #021714;
+  padding: 1rem;
 }

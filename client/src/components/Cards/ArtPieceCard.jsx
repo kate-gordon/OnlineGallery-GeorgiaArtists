@@ -24,7 +24,7 @@ const ArtPieceCard = props => {
     piece.sold ? (
       <h2>SOLD</h2>
     ) : (
-      <Box style={{ color: "white" }} d='flex'>
+      <Box d='flex' style={{ color: "#F9F9F9" }}>
         <h2>${piece.price}</h2>
         <IconButton
           className='iconBtn'
