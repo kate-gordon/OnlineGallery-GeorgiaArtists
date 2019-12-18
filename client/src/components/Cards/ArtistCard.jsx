@@ -5,7 +5,7 @@ import { Box, Button, Image } from "@chakra-ui/core";
 
 const ArtistCard = props => {
   const { artist } = props;
-  
+
   return (
     <>
       <Box
@@ -13,10 +13,11 @@ const ArtistCard = props => {
         d='flex'
         flexDirection='column'
         boxShadow='4px 4px 2px 2px grey'
-        width='100%'
-        m={2}
+        width='90%'
+        m={6}
+        style={{ backgroundColor: "#F9F9F9" }}
       >
-        <Box p={4}>
+        <Box p={2}>
           <h1>
             {artist.firstname} {artist.lastname}
           </h1>
@@ -28,10 +29,10 @@ const ArtistCard = props => {
           />
           <h3>{artist.city}, GA</h3>
         </Box>
-        <Box p={4}>
-          <p>{artist.blurb.substring(0, 400)}...</p>
+        <Box p={2}>
+          <p>{artist.blurb.substring(0, 200)}...</p>
         </Box>
-        <Box p={1} d='flex' justifyContent='flex-end'>
+        <Box p={2} d='flex' justifyContent='flex-end'>
           <Button>
             <Link to={`/artists/artist/${artist.artist_id}`}>More Info</Link>
           </Button>
