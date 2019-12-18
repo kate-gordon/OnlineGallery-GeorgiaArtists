@@ -4,6 +4,7 @@
     <button id="buttid_0" class="button" onclick="select(0)">
       Add New Artwork
     </button>
+    <p></p>
     <p>Edit Artwork</p>
     ${artists.map(artist=> `
     <h3>${artist.firstname} ${artist.lastname}</h3>
@@ -40,17 +41,17 @@
           >Award
           <input name="award" type="text" />
         </label>
-        <label
-          >Picture
-          <input name="picture" type="file" />
-        </label>
-        <select name="artist">
-          ${artists.map(artist=>`
-          <option value="${artist.artist_id}"
-            >${artist.firstname} ${artist.lastname}</option
-          >
-          `)}
-        </select>
+        <label>Picture <input name="picture" type="file" /> </label
+        ><label
+          >Artist:
+          <select name="artist">
+            ${artists.map(artist=>`
+            <option value="${artist.artist_id}"
+              >${artist.firstname} ${artist.lastname}</option
+            >
+            `)}
+          </select></label
+        >
         <button type="submit">Submit</button>
       </form>
     </div>
@@ -74,16 +75,19 @@
           >Award
           <input name="award" type="text" value="${artwork.award}" />
         </label>
-        <select name="artist">
-          ${artists.map(artist=>` ${artist.artist_id === artwork.artist ?`
-          <option value="${artist.artist_id}" selected
-            >${artist.firstname} ${artist.lastname}</option
-          >
-          `:`<option value="${artist.artist_id}"
-            >${artist.firstname} ${artist.lastname}</option
-          >
-          `}`)}
-        </select>
+        <label
+          >Artist:
+          <select name="artist">
+            ${artists.map(artist=>` ${artist.artist_id === artwork.artist ?`
+            <option value="${artist.artist_id}" selected
+              >${artist.firstname} ${artist.lastname}</option
+            >
+            `:`<option value="${artist.artist_id}"
+              >${artist.firstname} ${artist.lastname}</option
+            >
+            `}`)}
+          </select></label
+        >
         <button type="submit">Update</button>
       </form>
       <form method="POST" action="/admin/artworks/remove" id="deleteForm">

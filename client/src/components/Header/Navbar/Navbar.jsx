@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import React from "react";
+import { Link, NavLink } from "react-router-dom";
 
-import './navbar.css'
+import "./navbar.css";
 
 const Navbar = () => {
   return (
@@ -9,7 +9,7 @@ const Navbar = () => {
       <ul className='navList'>
         <li>
           <NavLink
-            activeStyle={{ color: 'pink', fontWeight: 'bold' }}
+            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
             to='/'
             exact
             className='navListItem'
@@ -21,7 +21,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to='/artists'
-            activeStyle={{ color: 'pink' }}
+            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
             className='navListItem'
           >
             ARTISTS
@@ -31,7 +31,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to='/about'
-            activeStyle={{ color: 'pink' }}
+            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
             className='navListItem'
           >
             ABOUT US
@@ -42,14 +42,14 @@ const Navbar = () => {
           <NavLink
             to='/events'
             className='navListItem'
-            activeStyle={{ color: 'pink' }}
+            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
           >
             EVENTS
           </NavLink>
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

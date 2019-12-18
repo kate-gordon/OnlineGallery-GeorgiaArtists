@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Arimo&display=swap");
+
 .App {
   text-align: center;
-  padding: 20px;
-  margin: 1rem;
+}
+
+body {
+  font-family: "Arimo", sans-serif;
+  background-color: #fffbf5;
 }
 
 @keyframes App-logo-spin {
@@ -13,5 +18,3 @@
     transform: rotate(360deg);
   }
 }
-
-

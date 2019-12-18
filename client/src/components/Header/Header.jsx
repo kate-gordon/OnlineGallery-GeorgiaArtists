@@ -1,16 +1,16 @@
-import React from 'react'
-import { Box, Button, Grid, Image } from '@chakra-ui/core'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Box, Button, Grid, Image } from "@chakra-ui/core";
+import { Link } from "react-router-dom";
 
-import logo from './logo.png'
-import Navbar from './Navbar/Navbar'
-import { MdShoppingCart } from 'react-icons/md'
+import palette2 from "./palette2.svg";
+import Navbar from "./Navbar/Navbar";
+import { MdShoppingCart } from "react-icons/md";
 
-import './header.css'
+import "./header.css";
 
 const Header = () => {
   return (
-    <Grid templateColumns='repeat(3, 10% 80% 10%)' gap={5}>
+    <Grid className='header' templateColumns='repeat(3, 10% 80% 10%)'>
       <Box>
         <Link to='/' className='orgName'>
           Georgia Artists with DisAbilities
@@ -18,9 +18,9 @@ const Header = () => {
       </Box>
       <Box>
         <Image
-          src={logo}
+          src={palette2}
           alt='artist palette with colorful paint logo'
-          width='200px'
+          width='100px'
           objectFit='contain'
         />
         <Navbar />
@@ -34,7 +34,7 @@ const Header = () => {
         </Link>
       </Box>
     </Grid>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
