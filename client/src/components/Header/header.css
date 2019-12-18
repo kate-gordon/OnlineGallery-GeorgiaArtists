@@ -2,11 +2,12 @@
 
 .orgName {
   text-decoration: none;
-  color: #f9f9f9;
+  color: #021714;
 }
 
 .header {
-  background-color: #021714;
+  /* background-color: #0D0D0D; */
   padding: 1rem;
-  margin: 0;
+  /* margin: 2rem; */
+  /* border-bottom: 2px solid #021714; */
 }

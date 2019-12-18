@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
     <div>
-      <p>Footer</p>
+      <p>I am a Footer</p>
     </div>
   );
 };

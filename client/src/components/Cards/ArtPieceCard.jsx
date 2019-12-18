@@ -52,7 +52,7 @@ const ArtPieceCard = props => {
           <Link to={`/piece/${piece.artwork_id}`}>
             <Image
               htmlWidth='100%'
-              htmlHeight='300px'
+              htmlHeight='auto'
               src={piece.picture}
               alt={piece.title}
               boxShadow='4px 4px 2px 2px grey'
@@ -63,10 +63,10 @@ const ArtPieceCard = props => {
           </Box>
         </Box>
         <Box d='flex' flexDirection='column' alignItems='start'>
-          <h1>{piece.title}</h1>
-          <h2>
+          <h2>{piece.title}</h2>
+          <h3>
             By {piece.firstname} {piece.lastname}{" "}
-          </h2>
+          </h3>
         </Box>
         <Button d='none'>
           <Link to={`/piece/${piece.artwork_id}`}>Click Me</Link>

@@ -9,16 +9,15 @@ const ArtistCard = props => {
   return (
     <>
       <Box
-        borderStyle='solid'
         d='flex'
         flexDirection='column'
         boxShadow='4px 4px 2px 2px grey'
         width='90%'
-        m={6}
-        style={{ backgroundColor: "#F9F9F9" }}
+        m={3}
+        style={{ backgroundColor: "#E5E2DD" }}
       >
         <Box p={2}>
-          <h1>
+          <h1 style={{ borderBottom: "1px solid black" }}>
             {artist.firstname} {artist.lastname}
           </h1>
           <Image
@@ -26,6 +25,7 @@ const ArtistCard = props => {
             rounded='full'
             src={artist.portrait}
             alt='artist portrait'
+            p={4}
           />
           <h3>{artist.city}, GA</h3>
         </Box>

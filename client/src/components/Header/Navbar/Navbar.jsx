@@ -9,7 +9,7 @@ const Navbar = () => {
       <ul className='navList'>
         <li>
           <NavLink
-            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
             to='/'
             exact
             className='navListItem'
@@ -21,7 +21,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to='/artists'
-            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
             className='navListItem'
           >
             ARTISTS
@@ -31,7 +31,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to='/about'
-            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
             className='navListItem'
           >
             ABOUT US
@@ -42,7 +42,7 @@ const Navbar = () => {
           <NavLink
             to='/events'
             className='navListItem'
-            activeStyle={{ color: "#FFFBF5", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
           >
             EVENTS
           </NavLink>

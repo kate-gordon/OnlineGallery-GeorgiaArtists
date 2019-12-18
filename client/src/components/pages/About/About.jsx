@@ -6,7 +6,7 @@ import "./about.css";
 const About = () => {
   return (
     <>
-      <Grid templateColumns='repeat(2, 1fr)' gap={6} m={3}>
+      <Grid height='100vh' templateColumns='repeat(2, 1fr)' gap={6} m={3}>
         <Flex
           flexDirection='column'
           alignItems='center'
