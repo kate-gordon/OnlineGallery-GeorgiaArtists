@@ -1,8 +1,6 @@
 import React from 'react';
-// import StripeButton from '../../Stripe/StripeButton';
-// import PaymentForm from '../Checkout';
-// import HotkeyForm from '../../Stripe/HotkeyForm';
-import CheckoutForm from '../Cart/CheckoutForm/CheckoutForm';
+// import CheckoutForm from '../Cart/CheckoutForm/CheckoutForm';
+import CheckoutForm from '../Cart/CheckoutForm/CheckoutFormDepr';
 // import { Elements, StripeProvider } from 'react-stripe-elements';
 
 const Checkout = () => {
@@ -14,6 +12,7 @@ const Checkout = () => {
     //   <div>
     //     <h1>Checkout</h1>
     //     <Elements>
+    // <CheckoutForm />
     <CheckoutForm />
     //     </Elements>
     //   </div>

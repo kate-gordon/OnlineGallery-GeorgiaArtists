@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const stripe = require('stripe')('sk_test_3WZs8QaHa9dMKe30OwahrIPt00wgwusRtK');
+const stripe = require('stripe')('pk_test_4v8zi9Y35PCIfLBnAbUZUKcc00BdZcXFx5');
 
 router.post('/', async (req, res) => {
   const { stripeToken, amount, email, artworkIdArray } = req.body;

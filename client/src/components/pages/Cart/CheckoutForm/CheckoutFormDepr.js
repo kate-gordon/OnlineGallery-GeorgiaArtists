@@ -11,7 +11,7 @@ import {
   Select
 } from '@chakra-ui/core';
 
-const CheckoutForm = () => {
+const CheckoutFormDepr = () => {
   const [{ cart }] = useContext(StateContext);
   console.log(cart);
   const artworkIdArray = cart.map(({ artwork_id }) => artwork_id);
@@ -92,5 +92,5 @@ const CheckoutForm = () => {
   );
 };
 
-export default CheckoutForm;
+export default CheckoutFormDepr;
 // export default injectStripe(CheckoutForm);
