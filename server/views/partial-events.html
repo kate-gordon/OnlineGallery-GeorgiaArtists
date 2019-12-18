@@ -89,7 +89,7 @@
         >
         <button type="submit">Update</button>
       </form>
-      <form method="POST" action="/admin/events/remove">
+      <form method="POST" action="/admin/events/remove" id="deleteform">
         <input type="hidden" name="event_id" value="${event.event_id}" />
         <label>
           ${event.title} - ${event.datewhen}
