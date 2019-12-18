@@ -66,7 +66,7 @@ const ArtPieceCard = props => {
               boxShadow='4px 4px 2px 2px grey'
             />
           </Link>
-          <Box position='absolute' right='0' top='0'>
+          <Box position='absolute' right='-10%' top='-10%'>
             {addToCartBox}
           </Box>
         </Box>
