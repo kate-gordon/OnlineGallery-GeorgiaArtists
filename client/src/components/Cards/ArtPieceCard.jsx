@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import { StateContext } from "../../context";
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { StateContext } from '../../context';
 
-import { Box, Button, Image, IconButton } from "@chakra-ui/core";
+import { Box, Button, Image, IconButton } from '@chakra-ui/core';
 
 const ArtPieceCard = props => {
   const { piece } = props;
@@ -11,7 +11,7 @@ const ArtPieceCard = props => {
 
   const handleClick = e => {
     dispatch({
-      type: "addCartItem",
+      type: 'addCartItem',
       item: piece
     });
   };
@@ -24,7 +24,7 @@ const ArtPieceCard = props => {
     piece.sold ? (
       <h2>SOLD</h2>
     ) : (
-      <Box d='flex' style={{ color: "#F9F9F9" }}>
+      <Box d='flex' style={{ color: '#F9F9F9' }}>
         <h2>${piece.price}</h2>
         <IconButton
           className='iconBtn'
@@ -65,7 +65,7 @@ const ArtPieceCard = props => {
         <Box d='flex' flexDirection='column' alignItems='start'>
           <h1>{piece.title}</h1>
           <h2>
-            By {piece.firstname} {piece.lastname}{" "}
+            By {piece.firstname} {piece.lastname}{' '}
           </h2>
         </Box>
         <Button d='none'>

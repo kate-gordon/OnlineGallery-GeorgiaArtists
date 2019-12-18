@@ -3,14 +3,12 @@ import { StateContext } from '../../../../context';
 import Checkout from 'react-stripe-checkout';
 import axios from 'axios';
 
-import './checkoutform.css';
-
 const CheckoutForm = () => {
   const [{ cart }] = useContext(StateContext);
   console.log(cart);
   const artworkIdArray = cart.map(({ artwork_id }) => artwork_id);
   const totalPrice = cart.reduce((a, { price }) => a + price, 0);
-  console.log(totalPrice);
+  console.log('Total price: ', totalPrice);
   // const [complete, setComplete] = useState(false);
   const submit = async ev => {
     ev.preventDefault(ev);
@@ -36,7 +34,7 @@ const CheckoutForm = () => {
       }
     });
     handler.open();
-    console.log(cart);
+    console.log('This is cart:', cart);
   };
   return (
     <div className='checkoutForm'>
@@ -45,7 +43,7 @@ const CheckoutForm = () => {
         name='Checkout'
         description='Complete your purchase'
         panelLabel='Submit Payment'
-        amount={1000000}
+        amount={totalPrice * 100}
         currency='USD'
         shippingAddress
         billingAddress

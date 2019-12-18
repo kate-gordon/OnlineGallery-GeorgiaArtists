@@ -28,8 +28,23 @@ function App() {
   const myReducer = (state, action) => {
     switch (action.type) {
       case 'addCartItem':
+        let idArray = [];
+        state.cart.map(item => idArray.push(item.artwork_id));
+        if (!idArray.includes(action.item.artwork_id)) {
+          return {
+            cart: [...state.cart, action.item]
+          };
+        }
         return {
-          cart: [...state.cart, action.item]
+          cart: [...state.cart]
+        };
+      case 'removeCartItem':
+        let newCart = [];
+        state.cart.map(item =>
+          item.artwork_id === action.item.artwork_id ? '' : newCart.push(item)
+        );
+        return {
+          cart: [...newCart]
         };
       default:
         return state;
