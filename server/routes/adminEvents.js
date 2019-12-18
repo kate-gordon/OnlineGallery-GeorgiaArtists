@@ -67,7 +67,6 @@ router.post("/edit", async function(req, res, next) {
     if (req.body.cancelled) {
       cancelled = true;
     }
-    console.log(cancelled);
     editEvent(title, `${date} ${time}`, location, blurb, cancelled, event_id);
     res.status(200).redirect("/admin/events");
   } else {

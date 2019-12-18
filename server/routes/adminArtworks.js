@@ -72,7 +72,11 @@ router.post("/remove", function(req, res, next) {
 router.post("/edit", async function(req, res, next) {
   if (req.session.is_logged_in) {
     const { artwork_id, title, medium, price, award, artist } = req.body;
-    editArtwork(artwork_id, title, medium, price, award, artist);
+    let sold = false;
+    if (req.body.cancelled) {
+      sold = true;
+    }
+    editArtwork(artwork_id, title, medium, price, award, artist, sold);
     res.status(200).redirect("/admin/artworks");
   } else {
     res.status(401).redirect("/");

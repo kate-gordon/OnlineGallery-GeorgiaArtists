@@ -76,6 +76,11 @@
           <input name="award" type="text" value="${artwork.award}" />
         </label>
         <label
+          >Artwork sold? ${artwork.sold ?`
+          <input type="checkbox" name="sold" checked />
+          `:`<input type="checkbox" name="sold" />`}</label
+        >
+        <label
           >Artist:
           <select name="artist">
             ${artists.map(artist=>` ${artist.artist_id === artwork.artist ?`
