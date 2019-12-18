@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import ArtPieceCard from '../../Cards/ArtPieceCard';
+import React from "react";
+import { Link } from "react-router-dom";
+import ArtPieceCard from "../../Cards/ArtPieceCard";
 
-import { Grid } from '@chakra-ui/core';
+import { Grid } from "@chakra-ui/core";
 
 const Home = props => {
   const { artPieces } = props;

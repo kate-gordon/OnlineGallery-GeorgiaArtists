@@ -10,12 +10,11 @@ const EventCard = props => {
     <>
       <Box
         m={3}
-        width='100%'
-        borderColor='blue'
-        borderStyle='solid'
+        width='90%'
         boxShadow='4px 4px 2px 2px grey'
+        style={{ backgroundColor: "#E5E2DD" }}
       >
-        <Box d='flex' p={3}>
+        <Box d='flex' p={2}>
           <Box
             width='80px'
             height='80px'
@@ -25,6 +24,7 @@ const EventCard = props => {
             d='flex'
             justifyContent='center'
             alignItems='center'
+            p={2}
             m={2}
           >
             <h2>

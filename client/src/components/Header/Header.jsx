@@ -10,13 +10,25 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <Grid className='header' templateColumns='repeat(3, 10% 80% 10%)'>
-      <Box>
-        <Link to='/' className='orgName'>
-          Georgia Artists with DisAbilities
-        </Link>
+    <Grid
+      className='header'
+      templateColumns='repeat(3, 20% 60% 20%)'
+      gridTemplateRows='repeat(, 1fr)'
+    >
+      <Box
+        d='flex'
+        alignItems='center'
+        justifyContent='center'
+        m={4}
+        gridRow='1'
+      >
+        <h3>
+          <Link to='/' className='orgName'>
+            Georgia Artists with DisAbilities
+          </Link>
+        </h3>
       </Box>
-      <Box>
+      <Box gridColumn='2' gridRow='2'>
         <Image
           src={palette2}
           alt='artist palette with colorful paint logo'
@@ -25,7 +37,14 @@ const Header = () => {
         />
         <Navbar />
       </Box>
-      <Box>
+      <Box
+        d='flex'
+        alignItems='center'
+        justifyContent='center'
+        p={4}
+        gridRow='1'
+        gridColumn='3'
+      >
         <Link to='/cart' className='cartButton'>
           <Button size='xs'>
             <MdShoppingCart />

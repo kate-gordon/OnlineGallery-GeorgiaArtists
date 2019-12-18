@@ -1,18 +1,25 @@
 import React from "react";
 
-import { Box, Grid, Flex } from "@chakra-ui/core";
+import { Box, Grid, Flex, Image } from "@chakra-ui/core";
 import "./about.css";
+import gawdlogo from "./gawdlogo.png";
 
 const About = () => {
   return (
     <>
-      <Grid templateColumns='repeat(2, 1fr)' gap={6} m={3}>
+      <Grid
+        height='80vh'
+        className='header'
+        templateColumns='repeat(3, 45% 10% 45%)'
+      >
         <Flex
           flexDirection='column'
           alignItems='center'
           justifyContent='center'
           p={4}
           m={2}
+          boxShadow='4px 4px 2px 2px grey'
+          style={{ backgroundColor: "#E5E2DD" }}
         >
           <h1>Georgia Artists with DisAbilities</h1>
           Georgia Artists with DisAbilities was founded in 1985, with a main
@@ -22,12 +29,23 @@ const About = () => {
           who have visions and dreams, but have no way of making it a reality.
           We help make it a reality for them.
         </Flex>
+        <Box d='flex' alignItems='center' justifyContent='center'>
+          <Image
+            src={gawdlogo}
+            rounded='full'
+            alt='logo from G.A.W.D. website'
+            width='100px'
+            objectFit='contain'
+          />
+        </Box>
         <Flex
           flexDirection='column'
           alignItems='center'
           justifyContent='center'
           p={4}
           m={2}
+          boxShadow='4px 4px 2px 2px grey'
+          style={{ backgroundColor: "#E5E2DD" }}
         >
           <h2>Our Mission Statement:</h2>
           <p>
