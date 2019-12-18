@@ -15,7 +15,12 @@ import Events from "../src/components/pages/Events";
 import Footer from "../src/components/Footer/Footer";
 import Order from "./components/pages/Cart/Order";
 
+<<<<<<< HEAD
+import customTheme from './theme';
+import './App.css';
+=======
 import "./App.css";
+>>>>>>> 6bea642f675435644dee15e4d1346f65d7acca0f
 
 function App() {
   const [artists, setArtists] = useState([]);
@@ -87,8 +92,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <ThemeProvider>
+    <div className='App'>
+      <ThemeProvider theme={customTheme}>
         <StateProvider reducer={myReducer} initialState={initialState}>
           <Header />
 
