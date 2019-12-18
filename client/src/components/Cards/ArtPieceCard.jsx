@@ -44,11 +44,11 @@ const ArtPieceCard = props => {
         className='withCartBtn'
         onMouseEnter={onHover}
         onMouseLeave={onHover}
-        width='100%'
+        width='90%'
         p={2}
         m={2}
       >
-        <Box width='90%' position='relative'>
+        <Box position='relative'>
           <Link to={`/piece/${piece.artwork_id}`}>
             <Image
               htmlWidth='100%'
