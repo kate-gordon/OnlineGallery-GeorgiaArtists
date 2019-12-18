@@ -15,6 +15,7 @@ import Events from "../src/components/pages/Events";
 import Footer from "../src/components/Footer/Footer";
 import Order from "./components/pages/Cart/Order";
 
+import customTheme from "./theme";
 import "./App.css";
 
 function App() {
