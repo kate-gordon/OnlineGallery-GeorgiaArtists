@@ -4,10 +4,12 @@ import axios from "axios";
 
 import artistImg from "./artistImg.png";
 
+import { Box, Image, Grid } from "@chakra-ui/core";
+
 const SingleArtist = () => {
   const [artist, setArtist] = useState([]);
   const [artistWork, setArtistWork] = useState([]);
-
+  console.log(artistWork);
   // Get artist ID from URL params
 
   let match = useRouteMatch("/artists/artist/:id");
@@ -24,6 +26,8 @@ const SingleArtist = () => {
       })
       .catch(error => console.log(error));
   };
+
+  // Get art pieces by the specific artist
 
   const fetchArtistWork = () => {
     let uri = `http://admin.insae.org/api/artworks/artist/${id}`;
@@ -43,20 +47,38 @@ const SingleArtist = () => {
 
   return (
     <>
-      <h1>
-        {artist.firstname} {artist.lastname}
-      </h1>
-      <h2>{artist.city}, GA</h2>
-      <img alt='' src={artist.portrait} />
-      <p>{artist.blurb}</p>
-      <div role='group' className='imgContainer'>
-        <img alt='' src={artistWork.picture} />
-        <h3>Art Title</h3>
-      </div>
-      <div role='group' className='imgContainer'>
-        <img alt='' src={artistImg} />
-        <h3>Art Title</h3>
-      </div>
+      <Grid height='100vh' templateColumns='repeat(2, 1fr)' gap={6}>
+        <Box
+          d='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexDirection='column'
+          width='90%'
+        >
+          <h1>
+            {artist.firstname} {artist.lastname}
+          </h1>
+          <Image size='300px' rounded='full' alt='' src={artist.portrait} />
+          <h3>{artist.city}, GA</h3>
+        </Box>
+        <Box
+          d='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexDirection='column'
+          width='90%'
+        >
+          <p>{artist.blurb}</p>
+          <Image
+            htmlWidth='50%'
+            htmlHeight='auto'
+            alt=''
+            src={artistWork.picture}
+            p={4}
+          />
+          <h3>{artistWork.title}</h3>
+        </Box>
+      </Grid>
     </>
   );
 };

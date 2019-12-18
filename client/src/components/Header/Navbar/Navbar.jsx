@@ -9,7 +9,7 @@ const Navbar = () => {
       <ul className='navList'>
         <li>
           <NavLink
-            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
             to='/'
             exact
             className='navListItem'
@@ -21,7 +21,7 @@ const Navbar = () => {
         <li>
           <NavLink
             to='/artists'
-            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
             className='navListItem'
           >
             ARTISTS

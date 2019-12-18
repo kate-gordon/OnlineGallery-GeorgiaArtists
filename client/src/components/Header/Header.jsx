@@ -10,11 +10,13 @@ import "./header.css";
 
 const Header = () => {
   return (
-    <Grid className='header' templateColumns='repeat(3, 10% 80% 10%)'>
+    <Grid className='header' templateColumns='repeat(3, 20% 60% 20%)'>
       <Box>
-        <Link to='/' className='orgName'>
-          Georgia Artists with DisAbilities
-        </Link>
+        <h2>
+          <Link to='/' className='orgName'>
+            Georgia Artists with DisAbilities
+          </Link>
+        </h2>
       </Box>
       <Box>
         <Image

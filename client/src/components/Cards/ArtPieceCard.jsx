@@ -24,7 +24,12 @@ const ArtPieceCard = props => {
     piece.sold ? (
       <h2>SOLD</h2>
     ) : (
-      <Box d='flex' style={{ color: "#F9F9F9" }}>
+      <Box
+        d='flex'
+        p={2}
+        borderStyle='solid'
+        style={{ color: "#021714", backgroundColor: "#F0F0F0" }}
+      >
         <h2>${piece.price}</h2>
         <IconButton
           className='iconBtn'
@@ -65,7 +70,7 @@ const ArtPieceCard = props => {
         <Box d='flex' flexDirection='column' alignItems='start'>
           <h2>{piece.title}</h2>
           <h3>
-            By {piece.firstname} {piece.lastname}{" "}
+            By {piece.firstname} {piece.lastname}
           </h3>
         </Box>
         <Button d='none'>
