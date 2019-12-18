@@ -17,14 +17,7 @@ const Header = () => {
     >
       <Flex gridRow='1'>
         <Link to='/' className='orgName'>
-          <Text fontSize='2xl'>
-            Georgia
-            Artists
-            
-            with
-           
-             DisAbilities
-          </Text>
+          <Text fontSize='2xl'>Georgia Artists with DisAbilities</Text>
         </Link>
       </Flex>
       <Box gridColumn='2' gridRow='2'>

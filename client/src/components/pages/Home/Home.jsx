@@ -9,7 +9,11 @@ const Home = props => {
 
   return (
     <>
-      <Grid templateColumns='repeat(3, 1fr)' mt={4} gap={6}>
+      <Grid
+        templateColumns='repeat(3, 1fr)'
+        mt={4}
+        gap={6}
+      >
         {artPieces.map((artpiece, id) => {
           return <ArtPieceCard key={artPieces[id].id} piece={artPieces[id]} />;
         })}
