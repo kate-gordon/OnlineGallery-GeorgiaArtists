@@ -1,6 +1,6 @@
 import React from 'react';
 // import CheckoutForm from '../Cart/CheckoutForm/CheckoutForm';
-import Checkout2 from '../Cart/CheckoutForm/Checkout2';
+import CheckoutForm from '../Cart/CheckoutForm/CheckoutFormDepr';
 // import { Elements, StripeProvider } from 'react-stripe-elements';
 
 const Checkout = () => {
@@ -13,7 +13,7 @@ const Checkout = () => {
     //     <h1>Checkout</h1>
     //     <Elements>
     // <CheckoutForm />
-    <Checkout2 />
+    <CheckoutForm />
     //     </Elements>
     //   </div>
     // </StripeProvider>

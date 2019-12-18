@@ -3,9 +3,9 @@ import { StateContext } from '../../../../context';
 import Checkout from 'react-stripe-checkout';
 import axios from 'axios';
 
-import './checkout2.css';
+import './checkoutform.css';
 
-const Checkout2 = () => {
+const CheckoutForm = () => {
   const [{ cart }] = useContext(StateContext);
   console.log(cart);
   const artworkIdArray = cart.map(({ artwork_id }) => artwork_id);
@@ -39,7 +39,7 @@ const Checkout2 = () => {
     console.log(cart);
   };
   return (
-    <div className='checkout2'>
+    <div className='checkoutForm'>
       <Checkout
         label='Checkout'
         name='Checkout'
@@ -55,4 +55,4 @@ const Checkout2 = () => {
   );
 };
 
-export default Checkout2;
+export default CheckoutForm;
