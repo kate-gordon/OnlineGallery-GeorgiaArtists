@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StateContext } from "../../context";
 
-import { Box, Button, Image, IconButton } from "@chakra-ui/core";
+import { Box, Button, Image, IconButton, Text } from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
   const { piece } = props;
@@ -70,11 +70,16 @@ const ArtPieceCard = props => {
             {addToCartBox}
           </Box>
         </Box>
-        <Box d='flex' flexDirection='column' alignItems='start'>
-          <h2>{piece.title}</h2>
-          <h3>
+        <Box
+          d='flex'
+          flexDirection='column'
+          alignItems='flex-start'
+          justifyContent='flex-start'
+        >
+          <Text fontSize='3xl'>{piece.title}</Text>
+          <Text fontSize='2xl'>
             By {piece.firstname} {piece.lastname}
-          </h3>
+          </Text>
         </Box>
       </Box>
     </>

@@ -10,6 +10,7 @@ const EventCard = props => {
     <>
       <Box
         m={3}
+        p={3}
         width='90%'
         boxShadow='4px 4px 2px 2px grey'
         style={{ backgroundColor: "#E5E2DD" }}
