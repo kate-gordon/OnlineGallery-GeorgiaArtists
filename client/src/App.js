@@ -13,9 +13,14 @@ import Cart from "../src/components/pages/Cart";
 import About from "../src/components/pages/About";
 import Events from "../src/components/pages/Events";
 import Footer from "../src/components/Footer/Footer";
-import Checkout from "./components/pages/Checkout/Checkout";
+import Order from "./components/pages/Cart/Order";
 
+<<<<<<< HEAD
+import customTheme from './theme';
+import './App.css';
+=======
 import "./App.css";
+>>>>>>> 6bea642f675435644dee15e4d1346f65d7acca0f
 
 function App() {
   const [artists, setArtists] = useState([]);
@@ -87,8 +92,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <ThemeProvider>
+    <div className='App'>
+      <ThemeProvider theme={customTheme}>
         <StateProvider reducer={myReducer} initialState={initialState}>
           <Header />
 
@@ -112,7 +117,10 @@ function App() {
               <Events />
             </Route>
             <Route path="/cart">
-              <Cart />
+              <Cart fetchArtPieceData={fetchArtPieceData()} />
+            </Route>
+            <Route path="/order">
+              <Order />
             </Route>
           </Switch>
 
