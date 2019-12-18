@@ -22,6 +22,7 @@ const Cart = () => {
     <>
       <Grid templateColumns='repeat(2, 1fr)' gap={6} height='100vh'>
         <Box p={4}>
+<<<<<<< HEAD
           {!cartArray[0] ? (
             'Your cart is empty.'
           ) : (
@@ -31,6 +32,11 @@ const Cart = () => {
               <ul>{cartLi}</ul>
             </>
           )}
+=======
+          <h1>Your Cart</h1>
+          {/*<ul>{cartLi}</ul>*/}
+          <CartCard />
+>>>>>>> puja-branch
         </Box>
         <Box p={4}>
           {totalPrice === 0 ? '' : <h2>Cart Total: ${totalPrice}</h2>}

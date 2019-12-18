@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Bitter|Lilita+One&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Bitter|Lilita+One&display=swap');
 
 .orgName {
   text-decoration: none;
@@ -8,5 +8,5 @@
 .header {
   background-color: #021714;
   padding: 1rem;
-  margin:0; 
+  margin: 0;
 }
