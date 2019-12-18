@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Grid, Image } from "@chakra-ui/core";
+import { Box, Button, Grid, Flex, Image, Text } from "@chakra-ui/core";
 import { Link } from "react-router-dom";
 
 import palette2 from "./palette2.svg";
@@ -12,22 +12,21 @@ const Header = () => {
   return (
     <Grid
       className='header'
-      templateColumns='repeat(3, 20% 60% 20%)'
+      templateColumns='repeat(3, 25% 50% 25%)'
       gridTemplateRows='repeat(, 1fr)'
     >
-      <Box
-        d='flex'
-        alignItems='center'
-        justifyContent='center'
-        m={4}
-        gridRow='1'
-      >
-        <h3>
-          <Link to='/' className='orgName'>
-            Georgia Artists with DisAbilities
-          </Link>
-        </h3>
-      </Box>
+      <Flex gridRow='1'>
+        <Link to='/' className='orgName'>
+          <Text fontSize='2xl'>
+            Georgia
+            Artists
+            
+            with
+           
+             DisAbilities
+          </Text>
+        </Link>
+      </Flex>
       <Box gridColumn='2' gridRow='2'>
         <Image
           src={palette2}
