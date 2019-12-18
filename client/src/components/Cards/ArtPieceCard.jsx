@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { StateContext } from '../../context';
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { StateContext } from "../../context";
 
-import { Box, Button, Image, IconButton } from '@chakra-ui/core';
+import { Box, Button, Image, IconButton } from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
   const { piece } = props;
@@ -11,7 +11,7 @@ const ArtPieceCard = props => {
 
   const handleClick = e => {
     dispatch({
-      type: 'addCartItem',
+      type: "addCartItem",
       item: piece
     });
   };
@@ -28,7 +28,7 @@ const ArtPieceCard = props => {
         d='flex'
         p={2}
         borderStyle='solid'
-        style={{ color: '#021714', backgroundColor: '#F0F0F0' }}
+        style={{ color: "#021714", backgroundColor: "#F0F0F0" }}
       >
         <h2>${piece.price}</h2>
         <IconButton
@@ -49,7 +49,7 @@ const ArtPieceCard = props => {
         className='withCartBtn'
         onMouseEnter={onHover}
         onMouseLeave={onHover}
-        width= '90%'
+        width='90%'
         p={2}
         m={2}
       >
