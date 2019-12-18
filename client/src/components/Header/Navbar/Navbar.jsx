@@ -1,54 +1,59 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 
+import { Box, Text } from "@chakra-ui/core";
 import "./navbar.css";
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
-      <ul className='navList'>
-        <li>
-          <NavLink
-            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
-            to='/'
-            exact
-            className='navListItem'
-          >
-            gallery
-          </NavLink>
-        </li>
+    <Box
+      fontSize={["sm", "md", "lg", "xl"]}
+      d='flex'
+      flexDirection={["column", "column", "row", "row"]}
+      alignItems='center'
+      justifyContent='space-around'
+    >
+      <Text>
+        <NavLink
+          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+          to='/'
+          exact
+          className='navListItem'
+        >
+          gallery
+        </NavLink>
+      </Text>
 
-        <li>
-          <NavLink
-            to='/artists'
-            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
-            className='navListItem'
-          >
-            artists
-          </NavLink>
-        </li>
+      <Text>
+        <NavLink
+          to='/artists'
+          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+          className='navListItem'
+        >
+          artists
+        </NavLink>
+      </Text>
 
-        <li>
-          <NavLink
-            to='/about'
-            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
-            className='navListItem'
-          >
-            about us
-          </NavLink>
-        </li>
+      <Text>
+        <NavLink
+          to='/about'
+          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+          className='navListItem'
+        >
+          about us
+        </NavLink>
+      </Text>
 
-        <li>
-          <NavLink
-            to='/events'
-            className='navListItem'
-            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
-          >
-            events
-          </NavLink>
-        </li>
-      </ul>
-    </div>
+      <Text>
+        <NavLink
+          to='/events'
+          className='navListItem'
+          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+        >
+          events
+        </NavLink>
+      </Text>
+    </Box>
   );
 };
 

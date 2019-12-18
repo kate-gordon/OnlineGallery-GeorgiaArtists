@@ -50,12 +50,26 @@ const SingleArtPiece = () => {
             By {artPiece.firstname} {artPiece.lastname}
           </h2>
           <h3>${artPiece.price}</h3>
-          <IconButton
-            onClick={handleClick}
-            aria-label='Add to cart'
-            size='xs'
-            icon='add'
-          />
+          {artPiece.sold ? (
+            <h2>SOLD</h2>
+          ) : (
+            <Box
+              d='flex'
+              p={2}
+              borderStyle='solid'
+              style={{ color: "#021714", backgroundColor: "#F0F0F0" }}
+            >
+              <h2>${artPiece.price}</h2>
+              <IconButton
+                className='iconBtn'
+                onClick={handleClick}
+                aria-label='Add to cart'
+                size='xs'
+                icon='add'
+                value={artPiece}
+              />
+            </Box>
+          )}
         </Box>
       </Grid>
     </>
