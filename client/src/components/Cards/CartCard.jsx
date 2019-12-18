@@ -14,7 +14,11 @@ const CartCard = props => {
   //   });
   // };
 
-  return <></>;
+  return (
+    <>
+      <Box></Box>
+    </>
+  );
 };
 
 export default CartCard;

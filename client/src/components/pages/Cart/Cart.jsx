@@ -20,7 +20,7 @@ const Cart = () => {
       <Grid templateColumns='repeat(2, 1fr)' gap={6} height='100vh'>
         <Box p={4}>
           <h1>Your Cart</h1>
-          <ul>{cartLi}</ul>
+          {/*<ul>{cartLi}</ul>*/}
           <CartCard />
         </Box>
         <Box p={4}>
