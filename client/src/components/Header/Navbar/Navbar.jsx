@@ -14,7 +14,7 @@ const Navbar = () => {
             exact
             className='navListItem'
           >
-            GALLERY
+            gallery
           </NavLink>
         </li>
 
@@ -24,17 +24,17 @@ const Navbar = () => {
             activeStyle={{ color: "#021714", fontSize: "1.728em" }}
             className='navListItem'
           >
-            ARTISTS
+            artists
           </NavLink>
         </li>
 
         <li>
           <NavLink
             to='/about'
-            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
             className='navListItem'
           >
-            ABOUT US
+            about us
           </NavLink>
         </li>
 
@@ -42,9 +42,9 @@ const Navbar = () => {
           <NavLink
             to='/events'
             className='navListItem'
-            activeStyle={{ color: "#021714", fontSize: "1.5em" }}
+            activeStyle={{ color: "#021714", fontSize: "1.728em" }}
           >
-            EVENTS
+            events
           </NavLink>
         </li>
       </ul>

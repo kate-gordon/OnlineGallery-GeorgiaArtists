@@ -10,7 +10,7 @@ const About = () => {
       <Grid
         height='80vh'
         className='header'
-        templateColumns='repeat(3, 40% 20% 40%)'
+        templateColumns='repeat(3, 45% 10% 45%)'
       >
         <Flex
           flexDirection='column'
@@ -18,6 +18,8 @@ const About = () => {
           justifyContent='center'
           p={4}
           m={2}
+          boxShadow='4px 4px 2px 2px grey'
+          style={{ backgroundColor: "#E5E2DD" }}
         >
           <h1>Georgia Artists with DisAbilities</h1>
           Georgia Artists with DisAbilities was founded in 1985, with a main
@@ -42,6 +44,8 @@ const About = () => {
           justifyContent='center'
           p={4}
           m={2}
+          boxShadow='4px 4px 2px 2px grey'
+          style={{ backgroundColor: "#E5E2DD" }}
         >
           <h2>Our Mission Statement:</h2>
           <p>

@@ -5,6 +5,8 @@
   justify-content: space-between;
   padding-left: .5rem;
   padding-right: .5rem;
+  margin-right: 6rem;
+  margin-left: 6rem;
 }
 
 .navListItem {
