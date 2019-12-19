@@ -1,8 +1,8 @@
-import React from "react";
-import Moment from "react-moment";
-import "moment-timezone";
+import React from 'react';
+import Moment from 'react-moment';
+import 'moment-timezone';
 
-import { Box, Image, Text } from "@chakra-ui/core";
+import { Box, Image, Text } from '@chakra-ui/core';
 
 const EventCard = props => {
   const { event } = props;
@@ -13,7 +13,7 @@ const EventCard = props => {
         p={3}
         width='90%'
         boxShadow='4px 4px 2px 2px grey'
-        style={{ backgroundColor: "#E5E2DD" }}
+        backgroundColor='gray.200'
       >
         <Box d='flex' p={2}>
           <Box

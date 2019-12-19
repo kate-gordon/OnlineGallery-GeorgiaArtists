@@ -10,46 +10,68 @@ import './header.css';
 
 const Header = () => {
   return (
-    <Grid
-      className='header'
-      templateColumns='repeat(3, 25% 50% 25%)'
-      gridTemplateRows='repeat(, 1fr)'
-    >
-      <Flex gridRow='1'>
-        <Link to='/' className='orgName'>
-          <Text fontSize='2xl'>Georgia Artists with DisAbilities</Text>
-        </Link>
-      </Flex>
-      <Box gridColumn='2' gridRow='2'>
-        <Image
-          src={palettelogo}
-          alt='solid dark gray artist palette logo'
-          width='100px'
-          objectFit='contain'
-        />
-        <Navbar />
-      </Box>
-      <Box
-        d='flex'
-        alignItems='center'
-        justifyContent='center'
-        p={4}
-        gridRow='1'
-        gridColumn='3'
+    <>
+      <Grid
+        className='header'
+        templateColumns='1fr 2fr 1fr'
+        gridTemplateRows='1fr'
       >
-        <Link to='/cart' className='cartButton'>
-          <Button
-            rightIcon={MdShoppingCart}
-            bg='gray.600'
-            color='gray.50'
-            variant='solid'
-            size='lg'
-          >
-            Cart
-          </Button>
-        </Link>
-      </Box>
-    </Grid>
+        <Flex gridRow='1'>
+          <Link to='/' className='orgName'>
+            <Text
+              fontSize='3xl'
+              fontFamily='fira-sans-condensed'
+              lineHeight='1.8rem'
+              textAlign='left'
+            >
+              Georgia Artists <br />
+              with DisAbilities
+            </Text>
+          </Link>
+        </Flex>
+        <Box gridColumn='2' gridRow='2'>
+          <Image
+            src={palettelogo}
+            alt='solid dark gray artist palette logo'
+            width='100px'
+            objectFit='contain'
+          />
+        </Box>
+
+        <Box
+          d='flex'
+          alignItems='center'
+          justifyContent='center'
+          p={4}
+          gridRow='1'
+          gridColumn='3'
+        >
+          <Link to='/cart' className='cartButton'>
+            <Button
+              rightIcon={MdShoppingCart}
+              bg='gray.600'
+              color='gray.50'
+              variant='solid'
+              size='lg'
+              _hover={{ bg: 'blue.100', color: 'gray.600', cursor: 'pointer' }}
+            >
+              Cart
+            </Button>
+          </Link>
+        </Box>
+      </Grid>
+      <Grid className='navbar' templateColumns='1fr 4fr 1fr'>
+        <Box
+          d='inline-block'
+          alignItems='center'
+          justifyContent='space-around'
+          p={2}
+          gridColumn='2'
+        >
+          <Navbar />
+        </Box>
+      </Grid>
+    </>
   );
 };
 

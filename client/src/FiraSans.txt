@@ -1,0 +1,180 @@
+@import url("https://use.typekit.net/eff0kvb.css");
+
+Fira Sans Regular
+font-family: fira-sans, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+
+Fira Sans Italic
+font-family: fira-sans, sans-serif;
+font-weight: 400;
+font-style: italic;
+
+
+Fira Sans Medium
+font-family: fira-sans, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+
+Fira Sans Medium Italic
+font-family: fira-sans, sans-serif;
+font-weight: 500;
+font-style: italic;
+
+
+Fira Sans Light
+font-family: fira-sans, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+
+Fira Sans Light Italic
+font-family: fira-sans, sans-serif;
+font-weight: 300;
+font-style: italic;
+
+
+Fira Sans Bold
+font-family: fira-sans, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+
+Fira Sans Bold Italic
+font-family: fira-sans, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+
+Fira Sans Thin
+font-family: fira-sans, sans-serif;
+font-weight: 100;
+font-style: normal;
+
+
+Fira Sans Thin Italic
+font-family: fira-sans, sans-serif;
+font-weight: 100;
+font-style: italic;
+
+
+Fira Sans ExtraBold
+font-family: fira-sans, sans-serif;
+font-weight: 800;
+font-style: normal;
+
+
+Fira Sans ExtraBold Italic
+font-family: fira-sans, sans-serif;
+font-weight: 800;
+font-style: italic;
+
+
+Fira Sans Ultra
+font-family: fira-sans, sans-serif;
+font-weight: 900;
+font-style: normal;
+
+
+Fira Sans Ultra Italic
+font-family: fira-sans, sans-serif;
+font-weight: 900;
+font-style: italic;
+
+
+Fira Sans SemiBold
+font-family: fira-sans, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+
+Fira Sans SemiBold Italic
+font-family: fira-sans, sans-serif;
+font-weight: 600;
+font-style: italic;
+
+
+Fira Sans Condensed Italic
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 300;
+font-style: italic;
+
+
+Fira Sans Condensed Regular
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+
+Fira Sans Condensed Medium Italic
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 400;
+font-style: italic;
+
+
+Fira Sans Condensed Medium
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+
+Fira Sans Condensed Semibold Italic
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 500;
+font-style: italic;
+
+
+Fira Sans Condensed SemiBold
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+
+Fira Sans Condensed Bold
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+
+Fira Sans Condensed Bold Italic
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 600;
+font-style: italic;
+
+
+Fira Sans Condensed Extrabold Italic
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 700;
+font-style: italic;
+
+
+Fira Sans Condensed ExtraBold
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+
+Fira Sans Condensed Heavy
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 800;
+font-style: normal;
+
+
+Fira Sans Condensed Heavy Italic
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 800;
+font-style: italic;
+
+
+Fira Sans Condensed Ultra
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 900;
+font-style: normal;
+
+
+Fira Sans Condensed Ultra Italic
+font-family: fira-sans-condensed, sans-serif;
+font-weight: 900;
+font-style: italic;

@@ -1,21 +1,26 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { Box, Text } from "@chakra-ui/core";
-import "./navbar.css";
+import { Box, Text } from '@chakra-ui/core';
+import './navbar.css';
 
 const Navbar = () => {
   return (
     <Box
-      fontSize={["sm", "md", "lg", "xl"]}
+      fontSize={['sm', 'md', 'lg', 'xl']}
       d='flex'
-      flexDirection={["column", "column", "row", "row"]}
+      flexDirection={['column', 'column', 'row', 'row']}
       alignItems='center'
       justifyContent='space-around'
     >
       <Text>
         <NavLink
-          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+          activeStyle={{
+            color: '#021714',
+            fontSize: '1.5em',
+            fontWeight: '700',
+            borderBottom: '2px solid black'
+          }}
           to='/'
           exact
           className='navListItem'
@@ -27,7 +32,12 @@ const Navbar = () => {
       <Text>
         <NavLink
           to='/artists'
-          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+          activeStyle={{
+            color: '#021714',
+            fontSize: '1.5em',
+            fontWeight: '700',
+            borderBottom: '2px solid black'
+          }}
           className='navListItem'
         >
           artists
@@ -37,7 +47,12 @@ const Navbar = () => {
       <Text>
         <NavLink
           to='/about'
-          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+          activeStyle={{
+            color: '#021714',
+            fontSize: '1.5em',
+            fontWeight: '700',
+            borderBottom: '2px solid black'
+          }}
           className='navListItem'
         >
           about us
@@ -48,7 +63,12 @@ const Navbar = () => {
         <NavLink
           to='/events'
           className='navListItem'
-          activeStyle={{ color: "#021714", fontSize: "1.728em" }}
+          activeStyle={{
+            color: '#021714',
+            fontSize: '1.5em',
+            fontWeight: '700',
+            borderBottom: '2px solid black'
+          }}
         >
           events
         </NavLink>

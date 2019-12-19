@@ -15,11 +15,11 @@ const ArtistCard = props => {
         boxShadow='4px 4px 2px 2px grey'
         width='90%'
         m={3}
-        style={{ backgroundColor: '#E5E2DD' }}
+        backgroundColor='gray.200'
       >
         <Box p={2}>
           <h1 style={{ borderBottom: '1px solid black' }}>
-            {artist.firstname} {artist.lastname}
+            {artist.firstname} <br /> {artist.lastname}
           </h1>
           <Image
             size='200px'

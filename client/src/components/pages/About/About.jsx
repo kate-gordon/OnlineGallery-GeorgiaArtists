@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Grid, Flex, Image } from "@chakra-ui/core";
-import "./about.css";
-import gawdlogo from "./gawdlogo.png";
+import { Box, Grid, Flex, Image } from '@chakra-ui/core';
+import './about.css';
+import gawdlogo from './gawdlogo.png';
 
 const About = () => {
   return (
@@ -19,7 +19,7 @@ const About = () => {
           p={4}
           m={2}
           boxShadow='4px 4px 2px 2px grey'
-          style={{ backgroundColor: "#E5E2DD" }}
+          backgroundColor='gray.200'
         >
           <h1>Georgia Artists with DisAbilities</h1>
           Georgia Artists with DisAbilities was founded in 1985, with a main
@@ -45,7 +45,7 @@ const About = () => {
           p={4}
           m={2}
           boxShadow='4px 4px 2px 2px grey'
-          style={{ backgroundColor: "#E5E2DD" }}
+          backgroundColor='gray.200'
         >
           <h2>Our Mission Statement:</h2>
           <p>
