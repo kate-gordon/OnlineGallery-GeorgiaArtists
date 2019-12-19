@@ -6,13 +6,13 @@ import './about.css';
 const About = () => {
   return (
     <>
-      <Grid height='80vh' className='header' templateColumns='1fr 1fr'>
+      <Grid height='50vh' className='header' templateColumns='1fr 1fr'>
         <Flex
           flexDirection='column'
           alignItems='center'
           justifyContent='center'
           p={4}
-          m={2}
+          m={5}
           boxShadow='4px 4px 2px 2px grey'
           backgroundColor='gray.200'
         >
@@ -29,7 +29,7 @@ const About = () => {
           alignItems='center'
           justifyContent='center'
           p={4}
-          m={2}
+          m={5}
           boxShadow='4px 4px 2px 2px grey'
           backgroundColor='gray.200'
         >
