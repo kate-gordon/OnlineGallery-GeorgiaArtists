@@ -9,7 +9,7 @@ const Navbar = () => {
     <Box
       fontSize={['sm', 'md', 'lg', 'xl']}
       d='flex'
-      flexDirection={['column', 'column', 'row', 'row']}
+      flexDirection={['column', 'column', 'column', 'row']}
       alignItems='center'
       justifyContent='space-around'
     >

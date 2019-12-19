@@ -19,8 +19,8 @@ const Cart = () => {
   // console.log(value);
   return (
     <>
-      <Grid templateColumns='repeat(2, 1fr)' gap={6} height='100vh'>
-        <Box p={4}>
+      <Grid templateColumns='3fr 1fr' gap={6} height='100vh'>
+        <Box d='flex' p={4}>
           {!cartArray[0] ? (
             'Your cart is empty.'
           ) : (

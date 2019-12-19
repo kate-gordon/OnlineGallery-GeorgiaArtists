@@ -134,10 +134,10 @@ const ArtPieceCard = props => {
           alignItems='flex-start'
           justifyContent='flex-start'
         >
-          <Text fontSize='3xl' fontFamily='fira-sans'>
+          <Text fontSize='3xl' fontFamily='fira-sans' m={0} textAlign='left'>
             {piece.title}
           </Text>
-          <Text fontSize='2xl' fontFamily='fira-sans'>
+          <Text fontSize='2xl' fontFamily='fira-sans' m={0} textAlign='left'>
             By: {piece.firstname} {piece.lastname}
           </Text>
         </Box>
