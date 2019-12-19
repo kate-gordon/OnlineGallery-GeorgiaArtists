@@ -13,7 +13,7 @@ const ArtistCard = props => {
   };
 
   const growCard = hover
-    ? { transform: "scale(1.1)", transition: "all 0.2s ease 0s" }
+    ? { transform: "scale(1.05)", transition: "all 0.2s ease 0s" }
     : null;
 
   return (
