@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import ArtPieceCard from '../../Cards/ArtPieceCard';
-import ReactPaginate from 'react-paginate';
+import React, { Component } from "react";
+import ArtPieceCard from "../../Cards/ArtPieceCard";
+import ReactPaginate from "react-paginate";
 
-import { Grid } from '@chakra-ui/core';
-import './home.css';
+import { Grid } from "@chakra-ui/core";
+import "./home.css";
 
 export class GalleryList extends Component {
   render() {
@@ -34,7 +34,7 @@ class Home extends Component {
     });
   }
   handlePageClick = data => {
-    console.log('hi', data);
+    console.log("hi", data);
     let selected = data.selected;
     let offset = Math.ceil(selected * 6);
 
@@ -47,10 +47,10 @@ class Home extends Component {
       <>
         <Grid
           templateColumns={[
-            'repeat(1, 1fr)',
-            'repeat(1, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(3, 1fr)'
+            "repeat(1, 1fr)",
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)"
           ]}
           mt={4}
           gap={6}
@@ -58,18 +58,20 @@ class Home extends Component {
           <GalleryList data={this.state.data} />
         </Grid>
         <ReactPaginate
-          previousLabel={'previous'}
-          nextLabel={'next'}
-          breakLabel={'...'}
-          breakClassName={'break-me'}
+          previousLabel={"previous"}
+          nextLabel={"next"}
+          breakLabel={"..."}
+          breakClassName={"break-me"}
           pageCount={this.state.pageCount}
           marginPagesDisplayed={1}
           pageRangeDisplayed={3}
           onPageChange={this.handlePageClick}
-          containerClassName={'pagination'}
-          pageLinkClassName={'pages'}
-          activeClassName={'activePage'}
-          activeLinkClassName={'activeLink'}
+          containerClassName={"pagination"}
+          pageLinkClassName={"pages"}
+          activeClassName={"activePage"}
+          activeLinkClassName={"activeLink"}
+          nextLinkClassName={"nextButton"}
+          previousLinkClassName={"prevButton"}
         />
       </>
     );

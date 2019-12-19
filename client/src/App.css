@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Arimo&display=swap');
-@import url('https://use.typekit.net/eff0kvb.css');
+@import url("https://fonts.googleapis.com/css?family=Arimo&display=swap");
+@import url("https://use.typekit.net/eff0kvb.css");
 
 .App {
   text-align: center;
@@ -7,7 +7,7 @@
 
 body,
 Text {
-  font-family: 'fira-sans', sans-serif;
+  font-family: "fira-sans", sans-serif;
   font-weight: 400;
   font-style: normal;
   /* font-family: 'Arimo', sans-serif; */

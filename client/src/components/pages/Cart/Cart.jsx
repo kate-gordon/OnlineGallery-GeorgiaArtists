@@ -19,7 +19,7 @@ const Cart = () => {
   // console.log(value);
   return (
     <>
-      <Grid templateColumns='3fr 1fr' gap={6} height='100vh'>
+      <Grid templateColumns='3fr 1fr' gap={6} height='80vh'>
         <Box d='flex' p={4}>
           {!cartArray[0] ? (
             <Text fontSize='2xl' fontFamily='fira-sans'>
@@ -32,7 +32,7 @@ const Cart = () => {
                 Your Cart:{' '}
               </Heading>{' '}
               <br />
-              <ul>{cartLi}</ul>
+              {cartLi}
             </>
           )}
         </Box>

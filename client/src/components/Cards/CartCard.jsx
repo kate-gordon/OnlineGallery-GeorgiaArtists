@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { StateContext } from '../../context';
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { StateContext } from "../../context";
 
 import {
   Badge,
@@ -11,7 +11,7 @@ import {
   IconButton,
   Stack,
   Text
-} from '@chakra-ui/core';
+} from "@chakra-ui/core";
 
 const CartCard = props => {
   const [{ cart }] = useContext(StateContext);
@@ -21,7 +21,7 @@ const CartCard = props => {
   const [value, dispatch] = useContext(StateContext);
   const handleClick = e => {
     dispatch({
-      type: 'removeCartItem',
+      type: "removeCartItem",
       item: piece
     });
   };
@@ -30,12 +30,12 @@ const CartCard = props => {
     <Badge
       color='red.600'
       style={{
-        color: 'gray.900',
-        backgroundColor: 'gray.100',
-        fontSize: '1.2em',
-        padding: '20px'
+        color: "gray.900",
+        backgroundColor: "gray.100",
+        fontSize: "1.2em",
+        padding: "20px"
       }}
-      _hover={{ color: 'gray.900', backgroundColor: 'gray.100' }}
+      _hover={{ color: "gray.900", backgroundColor: "gray.100" }}
     ></Badge>
   );
   return (
@@ -44,13 +44,14 @@ const CartCard = props => {
         flexDirection='column'
         alignItems='flex-start'
         justifyContent='center'
+        position='relative'
         boxShadow='4px 4px 2px 2px grey'
         m={4}
         width='80%'
         maxWidth='500px'
         backgroundColor='gray.200'
       >
-        <Box position='relative'>
+        <Box>
           <IconButton
             position='absolute'
             right='0'

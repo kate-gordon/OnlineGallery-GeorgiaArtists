@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { StateContext } from '../../context';
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { StateContext } from "../../context";
 
 import {
   Box,
@@ -10,7 +10,7 @@ import {
   Badge,
   Text,
   Tooltip
-} from '@chakra-ui/core';
+} from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
   const [{ cart }] = useContext(StateContext);
@@ -22,13 +22,13 @@ const ArtPieceCard = props => {
 
   const handleAddClick = e => {
     dispatch({
-      type: 'addCartItem',
+      type: "addCartItem",
       item: piece
     });
   };
   const handleRemoveClick = e => {
     dispatch({
-      type: 'removeCartItem',
+      type: "removeCartItem",
       item: piece
     });
   };
@@ -42,26 +42,26 @@ const ArtPieceCard = props => {
       <Badge
         color='red.600'
         style={{
-          color: 'gray.900',
-          backgroundColor: 'gray.100',
-          fontSize: '1.2em',
-          padding: '20px'
+          color: "gray.900",
+          backgroundColor: "gray.100",
+          fontSize: "1.2em",
+          padding: "20px"
         }}
-        _hover={{ color: 'gray.900', backgroundColor: 'gray.100' }}
+        _hover={{ color: "gray.900", backgroundColor: "gray.100" }}
       >
         SOLD
       </Badge>
     ) : (
       <Badge
         style={{
-          color: 'gray.900',
-          backgroundColor: 'gray.100',
-          fontSize: '1.3em',
-          padding: '20px'
+          color: "gray.900",
+          backgroundColor: "gray.100",
+          fontSize: "1.3em",
+          padding: "20px"
         }}
-        _hover={{ color: 'gray.900', backgroundColor: 'gray.100' }}
+        _hover={{ color: "gray.900", backgroundColor: "gray.100" }}
       >
-        ${piece.price}{' '}
+        ${piece.price}{" "}
         {!cartArray.includes(piece.artwork_id) ? (
           <Tooltip hasArrow label='Add to Cart' placement='top' bg='cyan.700'>
             <IconButton
@@ -73,7 +73,7 @@ const ArtPieceCard = props => {
               size='sm'
               icon='add'
               value={piece}
-              _hover={{ color: 'gray.600', bg: 'gray.50' }}
+              _hover={{ color: "gray.600", bg: "gray.50" }}
             />
           </Tooltip>
         ) : (
@@ -100,7 +100,7 @@ const ArtPieceCard = props => {
   ) : null;
 
   const growCard = hover
-    ? { transform: 'scale(1.1)', transition: 'all 0.2s ease 0s' }
+    ? { transform: "scale(1.1)", transition: "all 0.2s ease 0s" }
     : null;
 
   return (
@@ -108,6 +108,7 @@ const ArtPieceCard = props => {
       <Box
         onMouseEnter={onHover}
         onMouseLeave={onHover}
+        style={growCard}
         width='90%'
         height='auto'
         p={2}
@@ -116,7 +117,6 @@ const ArtPieceCard = props => {
         <Box position='relative'>
           <Link to={`/piece/${piece.artwork_id}`}>
             <Image
-              style={growCard}
               htmlWidth='100%'
               htmlHeight='auto'
               src={piece.picture}
