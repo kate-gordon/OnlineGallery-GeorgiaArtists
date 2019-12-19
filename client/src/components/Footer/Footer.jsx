@@ -7,40 +7,40 @@ const Footer = () => {
   return (
     <>
       <Grid
-        borderTop='solid'
-        className='header'
+        borderTop="solid"
+        className="header"
         templateColumns={["repeat(1, 1fr)", "repeat(2, 1fr)", "repeat(4, 1fr)"]}
         m={4}
         p={4}
       >
-        <Box d='flex' alignItems='center' justifyContent='center'>
+        <Box d="flex" alignItems="center" justifyContent="center">
           Built with <Box as={MdFavorite} /> by
         </Box>
-        <Box d='flex' alignItems='center' justifyContent='center'>
+        <Box d="flex" alignItems="center" justifyContent="center">
           <a
             style={{ color: "black", textDecoration: "none" }}
-            target='_blank'
-            href='https://github.com/pujafitz'
+            target="_blank"
+            href="https://github.com/pujafitz"
           >
-            Puja FitzPatrick
+            Puja Fitzpatrick
             <Box as={GoMarkGithub} />
           </a>
         </Box>
-        <Box d='flex' alignItems='center' justifyContent='center'>
+        <Box d="flex" alignItems="center" justifyContent="center">
           <a
             style={{ color: "black", textDecoration: "none" }}
-            target='_blank'
-            href='https://github.com/cmkemp52'
+            target="_blank"
+            href="https://github.com/cmkemp52"
           >
             Christopher Kemp
             <Box as={GoMarkGithub} />
           </a>
         </Box>
-        <Box p={1} d='flex' alignItems='center' justifyContent='center'>
+        <Box p={1} d="flex" alignItems="center" justifyContent="center">
           <a
             style={{ color: "black", textDecoration: "none" }}
-            target='_blank'
-            href='https://github.com/kate-gordon'
+            target="_blank"
+            href="https://github.com/kate-gordon"
           >
             Kate Gordon
             <Box as={GoMarkGithub} />
