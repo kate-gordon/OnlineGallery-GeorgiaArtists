@@ -88,34 +88,34 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className='App'>
       <ThemeProvider>
         <StateProvider reducer={myReducer} initialState={initialState}>
           <Header />
 
           <Switch>
-            <Route path="/piece/:id">
+            <Route path='/piece/:id'>
               <SingleArtPiece />
             </Route>
-            <Route exact path="/">
+            <Route exact path='/'>
               {artPieces[0] ? <Home artPieces={artPieces} /> : null}
             </Route>
-            <Route path="/artists/artist/:id">
+            <Route path='/artists/artist/:id'>
               <SingleArtist />
             </Route>
-            <Route path="/artists">
+            <Route path='/artists'>
               {artists[0] ? <Artists artists={artists} /> : null}
             </Route>
-            <Route path="/about">
+            <Route path='/about'>
               <About />
             </Route>
-            <Route path="/events">
+            <Route path='/events'>
               <Events />
             </Route>
-            <Route path="/cart">
-              <Cart fetchArtPieceData={fetchArtPieceData()} />
+            <Route path='/cart'>
+              <Cart fetchArtPieceData={fetchArtPieceData} />
             </Route>
-            <Route path="/order">
+            <Route path='/order'>
               <Order />
             </Route>
           </Switch>
