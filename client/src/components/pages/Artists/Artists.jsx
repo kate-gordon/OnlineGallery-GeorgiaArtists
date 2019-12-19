@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import ArtistCard from "../../Cards/ArtistCard";
-import { Grid } from "@chakra-ui/core";
+import ArtistCard from '../../Cards/ArtistCard';
+import { Grid } from '@chakra-ui/core';
 // import "./artists.css";
 
 const Artists = props => {
