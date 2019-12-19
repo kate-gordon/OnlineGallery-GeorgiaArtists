@@ -1,8 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import { Box, Grid, Flex, Image } from '@chakra-ui/core';
-import './about.css';
-import gawdlogo from './gawdlogo.png';
+import { Box, Grid, Flex, Image } from "@chakra-ui/core";
+import "./about.css";
 
 const About = () => {
   return (
@@ -29,15 +28,7 @@ const About = () => {
           who have visions and dreams, but have no way of making it a reality.
           We help make it a reality for them.
         </Flex>
-        <Box d='flex' alignItems='center' justifyContent='center'>
-          <Image
-            src={gawdlogo}
-            rounded='full'
-            alt='logo from G.A.W.D. website'
-            width='100px'
-            objectFit='contain'
-          />
-        </Box>
+        <Box d='flex' alignItems='center' justifyContent='center'></Box>
         <Flex
           flexDirection='column'
           alignItems='center'
