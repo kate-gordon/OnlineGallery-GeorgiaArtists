@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Grid, Flex, Image, Text } from '@chakra-ui/core';
+import { Box, Button, Grid, Flex, Image, Text, Scale } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
 import palettelogo from './palettelogo.png';
@@ -53,7 +53,11 @@ const Header = () => {
               color='gray.50'
               variant='solid'
               size='lg'
-              _hover={{ bg: 'blue.100', color: 'gray.600', cursor: 'pointer' }}
+              _hover={{
+                bg: 'gray.200',
+                color: 'gray.900',
+                cursor: 'pointer'
+              }}
             >
               Cart
             </Button>

@@ -17,7 +17,6 @@ const Navbar = () => {
         <NavLink
           activeStyle={{
             color: '#021714',
-            fontSize: '1.5em',
             fontWeight: '700',
             borderBottom: '2px solid black'
           }}
@@ -34,7 +33,6 @@ const Navbar = () => {
           to='/artists'
           activeStyle={{
             color: '#021714',
-            fontSize: '1.5em',
             fontWeight: '700',
             borderBottom: '2px solid black'
           }}
@@ -49,7 +47,6 @@ const Navbar = () => {
           to='/about'
           activeStyle={{
             color: '#021714',
-            fontSize: '1.5em',
             fontWeight: '700',
             borderBottom: '2px solid black'
           }}
@@ -65,7 +62,6 @@ const Navbar = () => {
           className='navListItem'
           activeStyle={{
             color: '#021714',
-            fontSize: '1.5em',
             fontWeight: '700',
             borderBottom: '2px solid black'
           }}
