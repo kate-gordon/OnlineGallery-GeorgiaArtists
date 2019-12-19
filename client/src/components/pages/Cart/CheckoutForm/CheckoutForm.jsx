@@ -34,6 +34,13 @@ const CheckoutForm = props => {
         stripeKey='pk_test_4v8zi9Y35PCIfLBnAbUZUKcc00BdZcXFx5'
         token={onClose}
         allowRememberMe='false'
+        style={{
+          color: 'gray.900',
+          backgroundColor: 'gray.100',
+          fontSize: '1.2em',
+          padding: '20px'
+        }}
+        _hover={{ color: 'gray.900', backgroundColor: 'gray.100' }}
       />
       {redirect ? '' : <Redirect to='/order' />}
     </div>

@@ -28,9 +28,11 @@ const Cart = () => {
           ) : (
             <>
               {' '}
-              <Heading as='h1' fontSize='2xl' fontFamily='fira-sans'>
-                Your Cart:{' '}
-              </Heading>{' '}
+              <Box>
+                <Heading as='h1' fontSize='2xl' fontFamily='fira-sans'>
+                  Your Cart:{' '}
+                </Heading>{' '}
+              </Box>
               <br />
               {cartLi}
             </>

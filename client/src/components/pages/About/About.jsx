@@ -1,12 +1,7 @@
-import React from "react";
+import React from 'react';
 
-<<<<<<< HEAD
 import { Box, Grid, Flex, Image } from '@chakra-ui/core';
 import './about.css';
-=======
-import { Box, Grid, Flex, Image } from "@chakra-ui/core";
-import "./about.css";
->>>>>>> c70989b7a576d424a6bbbcb67963536251c9ea45
 
 const About = () => {
   return (
