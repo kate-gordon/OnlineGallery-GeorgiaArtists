@@ -21,7 +21,7 @@ const Header = () => {
           <Link to='/' className='orgName'>
             <Image
               src={gawdlogo}
-              alt='solid dark gray artist palette logo'
+              alt='Georgia Artists with DisAbilities logo'
               width='60%'
               objectFit='contain'
             />

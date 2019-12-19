@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import { Box, Grid, Flex, Image } from "@chakra-ui/core";
-import "./about.css";
+import { Box, Grid, Flex, Image } from '@chakra-ui/core';
+import './about.css';
 
 const About = () => {
   return (

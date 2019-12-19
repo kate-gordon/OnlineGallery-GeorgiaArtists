@@ -1,20 +1,35 @@
-
-
-
-.artistCards {
-    display: flex; 
-    justify-content: space-between;
-    margin: 6rem; 
-    padding-right: 10%; 
-    padding-left: 10%; 
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
 }
 
-.artistCardContainer {
-    width: 318px;
-    height: 478px;
-    left: 50px;
-    top: 199px;
-    margin: 1rem; 
-    padding: 20px; 
-    border: 2px solid black; 
+.pages {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #4a5568;
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.activeLink {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
+  color: #4a5568;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.activeLink:focus {
+  outline: 0;
+}
+
+.nextButton {
+  cursor: pointer;
+}
+.prevButton {
+  cursor: pointer;
 }

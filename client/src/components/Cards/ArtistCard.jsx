@@ -13,7 +13,7 @@ const ArtistCard = props => {
   };
 
   const growCard = hover
-    ? { transform: "scale(1.1)", transition: "all 0.2s ease 0s" }
+    ? { transform: "scale(1.05)", transition: "all 0.2s ease 0s" }
     : null;
 
   return (
@@ -34,7 +34,7 @@ const ArtistCard = props => {
             {artist.firstname} <br /> {artist.lastname}
           </h1>
           <Image
-            size='200px'
+            size='170px'
             rounded='full'
             src={artist.portrait}
             alt='artist portrait'

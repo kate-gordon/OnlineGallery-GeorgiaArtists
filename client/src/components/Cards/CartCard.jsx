@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { StateContext } from "../../context";
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { StateContext } from '../../context';
 
 import {
   Badge,
@@ -10,8 +10,9 @@ import {
   Image,
   IconButton,
   Stack,
-  Text
-} from "@chakra-ui/core";
+  Text,
+  Tooltip
+} from '@chakra-ui/core';
 
 const CartCard = props => {
   const [{ cart }] = useContext(StateContext);
@@ -21,23 +22,11 @@ const CartCard = props => {
   const [value, dispatch] = useContext(StateContext);
   const handleClick = e => {
     dispatch({
-      type: "removeCartItem",
+      type: 'removeCartItem',
       item: piece
     });
   };
 
-  const removeFromCartBox = (
-    <Badge
-      color='red.600'
-      style={{
-        color: "gray.900",
-        backgroundColor: "gray.100",
-        fontSize: "1.2em",
-        padding: "20px"
-      }}
-      _hover={{ color: "gray.900", backgroundColor: "gray.100" }}
-    ></Badge>
-  );
   return (
     <>
       <Flex
@@ -52,17 +41,28 @@ const CartCard = props => {
         backgroundColor='gray.200'
       >
         <Box>
-          <IconButton
-            position='absolute'
-            right='0'
-            top='0'
-            className='iconBtn'
-            onClick={handleClick}
-            aria-label='Remove from Cart'
-            size='xs'
-            icon='minus'
-            value={piece}
-          />
+          <Tooltip
+            hasArrow
+            label='Remove from Cart'
+            placement='top'
+            bg='red.600'
+          >
+            <IconButton
+              position='absolute'
+              right='4'
+              top='4'
+              className='iconBtn'
+              onClick={handleClick}
+              aria-label='Remove from Cart'
+              size='sm'
+              icon='minus'
+              value={piece}
+              bg='gray.600'
+              color='gray.50'
+              _hover={{ color: 'gray.600', bg: 'gray.50' }}
+            ></IconButton>
+          </Tooltip>
+
           <Image
             htmlWidth='70%'
             htmlHeight='auto'
