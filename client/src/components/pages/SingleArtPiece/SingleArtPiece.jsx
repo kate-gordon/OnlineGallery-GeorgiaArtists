@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 import { StateContext } from "../../../context";
-import { Link, useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import { Box, Grid, Image, IconButton } from "@chakra-ui/core";
 
 const SingleArtPiece = () => {

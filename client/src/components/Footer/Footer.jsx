@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, IconButton } from "@chakra-ui/core";
+import { Box, Grid } from "@chakra-ui/core";
 import { MdFavorite } from "react-icons/md";
 import { GoMarkGithub } from "react-icons/go";
 

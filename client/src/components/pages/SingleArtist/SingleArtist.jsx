@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useRouteMatch } from "react-router-dom";
 import axios from "axios";
 
-import artistImg from "./artistImg.png";
-
 import { Box, Image, Grid } from "@chakra-ui/core";
 
 const SingleArtist = () => {

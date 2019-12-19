@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StateContext } from "../../context";
 
-import { Box, Button, Image, IconButton, Text } from "@chakra-ui/core";
+import { Box, Image, IconButton, Text } from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
   const { piece } = props;
