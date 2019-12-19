@@ -34,7 +34,7 @@ const ArtistCard = props => {
             {artist.firstname} <br /> {artist.lastname}
           </h1>
           <Image
-            size='200px'
+            size='170px'
             rounded='full'
             src={artist.portrait}
             alt='artist portrait'
