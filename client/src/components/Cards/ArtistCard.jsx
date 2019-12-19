@@ -1,11 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-import { Box, IconButton, Image, Tooltip } from '@chakra-ui/core';
-import { MdMoreHoriz } from 'react-icons/md';
+import { Box, IconButton, Image, Tooltip } from "@chakra-ui/core";
+import { MdMoreHoriz } from "react-icons/md";
 
 const ArtistCard = props => {
   const { artist } = props;
+  const [hover, setHoverState] = useState(false);
+
+  const onHover = () => {
+    setHoverState(!hover);
+  };
+
+  const growCard = hover
+    ? { transform: "scale(1.05)", transition: "all 0.2s ease 0s" }
+    : null;
 
   return (
     <>
@@ -13,12 +22,15 @@ const ArtistCard = props => {
         d='flex'
         flexDirection='column'
         boxShadow='4px 4px 2px 2px grey'
+        style={growCard}
         width='90%'
+        onMouseEnter={onHover}
+        onMouseLeave={onHover}
         m={3}
         backgroundColor='gray.200'
       >
         <Box p={2}>
-          <h1 style={{ borderBottom: '1px solid black' }}>
+          <h1 style={{ borderBottom: "1px solid black" }}>
             {artist.firstname} <br /> {artist.lastname}
           </h1>
           <Image
@@ -43,9 +55,9 @@ const ArtistCard = props => {
                 variant='solid'
                 size='lg'
                 _hover={{
-                  bg: 'gray.200',
-                  color: 'gray.900',
-                  cursor: 'pointer'
+                  bg: "gray.200",
+                  color: "gray.900",
+                  cursor: "pointer"
                 }}
               ></IconButton>
             </Tooltip>

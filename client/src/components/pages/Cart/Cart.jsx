@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { StateContext } from "../../../context";
-import { Box, Grid, IconButton, Text } from "@chakra-ui/core";
-import CheckoutForm from "./CheckoutForm/CheckoutForm";
-import CartCard from "../../Cards/CartCard";
+import React, { useContext } from 'react';
+import { StateContext } from '../../../context';
+import { Box, Grid, Heading, IconButton, Text } from '@chakra-ui/core';
+import CheckoutForm from './CheckoutForm/CheckoutForm';
+import CartCard from '../../Cards/CartCard';
 
-import "./cart.css";
+import './cart.css';
 
 const Cart = () => {
   const [{ cart }] = useContext(StateContext);
@@ -22,20 +22,25 @@ const Cart = () => {
       <Grid templateColumns='3fr 1fr' gap={6} height='80vh'>
         <Box d='flex' p={4}>
           {!cartArray[0] ? (
-            "Your cart is empty."
+            <Text fontSize='2xl' fontFamily='fira-sans'>
+              Your cart is empty.
+            </Text>
           ) : (
             <>
-              {" "}
-              <Text fontSize='2xl' fontFamily='fira-sans'>
-                Your Cart:{" "}
-              </Text>
+              {' '}
+              <Box>
+                <Heading as='h1' fontSize='2xl' fontFamily='fira-sans'>
+                  Your Cart:{' '}
+                </Heading>{' '}
+              </Box>
+              <br />
               {cartLi}
             </>
           )}
         </Box>
         <Box p={4}>
           {totalPrice === 0 ? (
-            ""
+            ''
           ) : (
             <Text fontSize='2xl' fontFamily='fira-sans'>
               Cart Total: ${totalPrice}.00

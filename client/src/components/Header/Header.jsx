@@ -3,6 +3,7 @@ import { Box, Button, Grid, Flex, Image, Text, Scale } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
 import palettelogo from './palettelogo.png';
+import gawdlogo from './gawd_logo.png';
 import Navbar from './Navbar/Navbar';
 import { MdShoppingCart } from 'react-icons/md';
 
@@ -18,15 +19,12 @@ const Header = () => {
       >
         <Flex gridRow='1'>
           <Link to='/' className='orgName'>
-            <Text
-              fontSize='3xl'
-              fontFamily='fira-sans-condensed'
-              lineHeight='1.8rem'
-              textAlign='left'
-            >
-              Georgia Artists <br />
-              with DisAbilities
-            </Text>
+            <Image
+              src={gawdlogo}
+              alt='Georgia Artists with DisAbilities logo'
+              width='60%'
+              objectFit='contain'
+            />
           </Link>
         </Flex>
         <Box gridColumn='2' gridRow='2'>
