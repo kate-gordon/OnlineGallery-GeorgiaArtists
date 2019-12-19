@@ -1,5 +1,7 @@
 const db = require("../utilities/conn");
 
+//Adds artwork to database
+
 const addArtwork = (title, medium, price, award, picture, artist) => {
   db.any(
     `INSERT INTO artworks (title, medium, price, award, picture, artist) VALUES ($1,$2,$3,$4,$5,$6);`,
@@ -7,9 +9,13 @@ const addArtwork = (title, medium, price, award, picture, artist) => {
   );
 };
 
+//Removes artwork from database
+
 const removeArtwork = id => {
   db.any(`DELETE FROM artworks WHERE artwork_id=${id}`);
 };
+
+//Edits artwork in database
 
 const editArtwork = (artwork_id, title, medium, price, award, sold, artist) => {
   db.any(

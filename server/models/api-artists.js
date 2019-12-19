@@ -1,5 +1,7 @@
 const db = require("../utilities/conn");
 
+//Grabs all artists from database, ordered by last name
+
 const allartists = async () => {
   try {
     const response = await db.any(`SELECT * FROM artists ORDER BY lastname`);
@@ -8,6 +10,8 @@ const allartists = async () => {
     return `Internal Database Error: ${err}`;
   }
 };
+
+//Grabse a single artist by ID
 
 const artistid = async id => {
   try {

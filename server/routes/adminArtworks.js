@@ -9,6 +9,9 @@ const { allartists } = require("../models/api-artists");
 const { allartworks } = require("../models/api-artworks");
 const multer = require("multer");
 
+//Artwork image storage using Multer.
+//Images will go to URL/images/artworks/
+
 const artworkStorage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "public/images/artworks/");
@@ -18,6 +21,9 @@ const artworkStorage = multer.diskStorage({
   }
 });
 const artworkUpload = multer({ storage: artworkStorage });
+
+// Router get for the artwork management page
+// admin/artworks
 
 router.get("/", async function(req, res, next) {
   if (req.session.is_logged_in) {
@@ -36,6 +42,9 @@ router.get("/", async function(req, res, next) {
     res.status(401).redirect("/");
   }
 });
+
+//Router post for adding artwork.
+// admin/artworks/add
 
 router.post("/add", artworkUpload.single("picture"), async function(
   req,
@@ -59,6 +68,9 @@ router.post("/add", artworkUpload.single("picture"), async function(
   }
 });
 
+// Router post for deleting single artwork
+// admin/artworks/remove
+
 router.post("/remove", function(req, res, next) {
   if (req.session.is_logged_in) {
     const { artwork_id } = req.body;
@@ -68,6 +80,9 @@ router.post("/remove", function(req, res, next) {
     res.status(401).redirect("/");
   }
 });
+
+//Router post for editing an artwork
+// admin/artworks/edit
 
 router.post("/edit", async function(req, res, next) {
   if (req.session.is_logged_in) {

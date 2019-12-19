@@ -1,5 +1,7 @@
 <div id="edit">
-  <div id="list">
+  <!-- Lists out the artists to edit starting with a new artist option 
+  Onclick select runs a JS function that shows the selected artist page-->
+  <div id="list" style="overflow:auto;height: 90vh;">
     <p>New Artist</p>
     <button id="buttid_0" class="button" onclick="select(0)">
       Add New Artist
@@ -17,6 +19,7 @@
   </div>
   <div>
     <div id="divid_0" class="hide">
+      <!-- Form pushes images and data to be added to the database -->
       <form
         method="POST"
         action="/admin/artists/add"
@@ -51,6 +54,7 @@
     </div>
     ${artists.map(artist => `
     <div id="divid_${artist.artist_id}" class="hide">
+      <!-- Form populated by artist data pushes updated data to database -->
       <form method="POST" action="/admin/artists/edit" id="artistform">
         <input type="hidden" name="artist_id" value="${artist.artist_id}" />
         <label
@@ -76,6 +80,7 @@
         <button type="submit">Update</button>
       </form>
       <form method="POST" action="/admin/artists/remove" id="deleteForm">
+        <!-- Form removes artist -->
         <input type="hidden" name="artist_id" value="${artist.artist_id}" />
         <label>
           Remove ${artist.firstname} ${artist.lastname}

@@ -1,5 +1,7 @@
 const db = require("../utilities/conn");
 
+// Grabs all artworks from database
+
 const allartworks = async () => {
   try {
     const response = await db.any(
@@ -12,6 +14,8 @@ const allartworks = async () => {
   }
 };
 
+//Grabs a single artwork by ID
+
 const artworkid = async id => {
   try {
     const response = await db.any(
@@ -23,16 +27,18 @@ const artworkid = async id => {
   }
 };
 
+//Grabs all artworks by a single artist
+
 const artistart = async id => {
   try {
-    const response = await db.any(
-      `SELECT * FROM artworks LEFT JOIN artists ON artworks.artist=artists.artist_id WHERE artworks.artist=${id} `
-    );
+    const response = await db.any(`SELECT * FROM artworks WHERE artist=${id} `);
     return response[0];
   } catch (err) {
     return `Internal Database Error: ${err}`;
   }
 };
+
+//Sets all artworks in artwork_id array to sold
 
 const artwork_sold = async ids => {
   const response = await db.any(

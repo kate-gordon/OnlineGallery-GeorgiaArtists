@@ -42,7 +42,6 @@ app.use(
 const artistsAPIRouter = require("./routes/apiArtists");
 const artworksAPIRouter = require("./routes/apiArtworks");
 const eventsAPIRouter = require("./routes/apiEvents");
-const checkoutAPIRouter = require("./routes/apiCheckout");
 const adminRouter = require("./routes/admin");
 const artistsAdminRouter = require("./routes/adminArtists");
 const artworksAdminRouter = require("./routes/adminArtworks");
@@ -53,7 +52,6 @@ const eventsAdminRouter = require("./routes/adminEvents");
 app.use("/api/artists", artistsAPIRouter);
 app.use("/api/artworks", artworksAPIRouter);
 app.use("/api/events", eventsAPIRouter);
-app.use("/api/checkout", checkoutAPIRouter);
 app.use("/", adminRouter);
 app.use("/admin/artists", artistsAdminRouter);
 app.use("/admin/artworks", artworksAdminRouter);

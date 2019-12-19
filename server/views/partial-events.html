@@ -1,5 +1,7 @@
 <div id="edit">
-  <div id="list">
+  <div id="list" style="overflow:auto; height: 90vh;">
+    <!-- Lists out the events to edit starting with a new event option 
+  Onclick select runs a JS function that shows the selected event page-->
     <p>New Event</p>
     <button id="buttid_0" class="button" onclick="select(0)">
       Add New Event
@@ -18,6 +20,7 @@
   </div>
   <div>
     <div id="divid_0" class="hide">
+      <!-- Form pushes images and data to be added to the database -->
       <form
         method="POST"
         action="/admin/events/add"
@@ -52,6 +55,7 @@
     </div>
     ${events.map(event => `
     <div id="divid_${event.event_id}" class="hide">
+      <!-- Form populated by event data pushes updated data to database -->
       <form method="POST" action="/admin/events/edit">
         <input type="hidden" name="event_id" value="${event.event_id}" />
         <label
@@ -89,6 +93,7 @@
         >
         <button type="submit">Update</button>
       </form>
+      <!-- Form removes event -->
       <form method="POST" action="/admin/events/remove" id="deleteform">
         <input type="hidden" name="event_id" value="${event.event_id}" />
         <label>
