@@ -2,7 +2,15 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { StateContext } from '../../context';
 
-import { Box, Image, IconButton, Text, Tooltip } from '@chakra-ui/core';
+import {
+  Box,
+  Button,
+  IconButton,
+  Image,
+  Badge,
+  Text,
+  Tooltip
+} from '@chakra-ui/core';
 
 const ArtPieceCard = props => {
   const [{ cart }] = useContext(StateContext);
@@ -31,24 +39,41 @@ const ArtPieceCard = props => {
 
   const addToCartBox = hover ? (
     piece.sold ? (
-      <h2>SOLD</h2>
-    ) : (
-      <Box
-        d='flex'
-        p={2}
-        borderStyle='solid'
-        style={{ color: '#021714', backgroundColor: '#F0F0F0' }}
+      <Badge
+        color='red.600'
+        style={{
+          color: 'gray.900',
+          backgroundColor: 'gray.100',
+          fontSize: '1.2em',
+          padding: '20px'
+        }}
+        _hover={{ color: 'gray.900', backgroundColor: 'gray.100' }}
       >
-        <h2>${piece.price}</h2>
+        SOLD
+      </Badge>
+    ) : (
+      <Badge
+        style={{
+          color: 'gray.900',
+          backgroundColor: 'gray.100',
+          fontSize: '1.3em',
+          padding: '20px'
+        }}
+        _hover={{ color: 'gray.900', backgroundColor: 'gray.100' }}
+      >
+        ${piece.price}{' '}
         {!cartArray.includes(piece.artwork_id) ? (
           <Tooltip hasArrow label='Add to Cart' placement='top' bg='red.600'>
             <IconButton
+              bg='gray.600'
+              color='gray.50'
               className='iconBtn'
               onClick={handleAddClick}
               aria-label='Add to cart'
-              size='xs'
+              size='sm'
               icon='add'
               value={piece}
+              _hover={{ color: 'gray.600', bg: 'gray.50' }}
             />
           </Tooltip>
         ) : (
@@ -59,20 +84,24 @@ const ArtPieceCard = props => {
             bg='red.600'
           >
             <IconButton
+              bg='gray.600'
+              color='gray.50'
               className='iconBtn'
               onClick={handleRemoveClick}
               aria-label='Add to cart'
-              size='xs'
+              size='sm'
               icon='minus'
               value={piece}
             />
           </Tooltip>
         )}
-      </Box>
+      </Badge>
     )
   ) : null;
 
-  const growCard = hover ? { transform: 'scale(1.2)' } : null;
+  const growCard = hover
+    ? { transform: 'scale(1.1)', transition: 'all 0.2s ease 0s' }
+    : null;
 
   return (
     <>
@@ -105,9 +134,11 @@ const ArtPieceCard = props => {
           alignItems='flex-start'
           justifyContent='flex-start'
         >
-          <Text fontSize='3xl'>{piece.title}</Text>
-          <Text fontSize='2xl'>
-            By {piece.firstname} {piece.lastname}
+          <Text fontSize='3xl' fontFamily='fira-sans'>
+            {piece.title}
+          </Text>
+          <Text fontSize='2xl' fontFamily='fira-sans'>
+            By: {piece.firstname} {piece.lastname}
           </Text>
         </Box>
       </Box>

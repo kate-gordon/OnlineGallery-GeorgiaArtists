@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Box, IconButton, Image } from '@chakra-ui/core';
+import { Box, IconButton, Image, Tooltip } from '@chakra-ui/core';
 import { MdMoreHoriz } from 'react-icons/md';
 
 const ArtistCard = props => {
@@ -35,13 +35,20 @@ const ArtistCard = props => {
         </Box>
         <Box p={2} d='flex' justifyContent='flex-end' alignItems='center'>
           <Link to={`/artists/artist/${artist.artist_id}`}>
-            <IconButton
-              icon={MdMoreHoriz}
-              bg='gray.600'
-              color='gray.50'
-              variant='solid'
-              size='lg'
-            ></IconButton>
+            <Tooltip label='More info' placement='bottom'>
+              <IconButton
+                icon={MdMoreHoriz}
+                bg='gray.600'
+                color='gray.50'
+                variant='solid'
+                size='lg'
+                _hover={{
+                  bg: 'gray.200',
+                  color: 'gray.900',
+                  cursor: 'pointer'
+                }}
+              ></IconButton>
+            </Tooltip>
           </Link>
         </Box>
       </Box>
