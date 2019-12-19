@@ -1,0 +1,28 @@
+.pagination {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pages {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #4a5568;
+  color: white;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.activeLink {
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: white;
+  color: #4a5568;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.activeLink:focus {
+  outline: 0;
+}
