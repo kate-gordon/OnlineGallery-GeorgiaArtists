@@ -88,7 +88,7 @@ router.post("/edit", async function(req, res, next) {
   if (req.session.is_logged_in) {
     const { artwork_id, title, medium, price, award, artist } = req.body;
     let sold = false;
-    if (req.body.cancelled) {
+    if (req.body.sold) {
       sold = true;
     }
     editArtwork(artwork_id, title, medium, price, award, artist, sold);
