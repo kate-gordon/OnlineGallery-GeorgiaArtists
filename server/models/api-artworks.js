@@ -31,9 +31,7 @@ const artworkid = async id => {
 
 const artistart = async id => {
   try {
-    const response = await db.any(
-      `SELECT * FROM artworks LEFT JOIN artists ON artworks.artist=artists.artist_id WHERE artworks.artist=${id} `
-    );
+    const response = await db.any(`SELECT * FROM artworks WHERE artist=${id} `);
     return response[0];
   } catch (err) {
     return `Internal Database Error: ${err}`;

@@ -45,32 +45,33 @@ const SingleArtist = () => {
 
   return (
     <>
-      <Grid height='100vh' templateColumns='repeat(2, 1fr)' gap={6}>
+      <Grid height="100vh" templateColumns="repeat(2, 1fr)" gap={6}>
         <Box
-          d='flex'
-          alignItems='center'
-          justifyContent='center'
-          flexDirection='column'
-          width='90%'
+          d="flex"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          width="90%"
         >
           <h1>
             {artist.firstname} {artist.lastname}
           </h1>
-          <Image size='300px' rounded='full' alt='' src={artist.portrait} />
+          <Image size="300px" rounded="full" alt="" src={artist.portrait} />
           <h3>{artist.city}, GA</h3>
         </Box>
         <Box
-          d='flex'
-          alignItems='center'
-          justifyContent='center'
-          flexDirection='column'
-          width='90%'
+          d="flex"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+          width="90%"
         >
           <p>{artist.blurb}</p>
+
           <Image
-            htmlWidth='50%'
-            htmlHeight='auto'
-            alt=''
+            htmlWidth="50%"
+            htmlHeight="auto"
+            alt=""
             src={artistWork.picture}
             p={4}
           />
