@@ -63,7 +63,7 @@ const ArtPieceCard = props => {
       >
         ${piece.price}{' '}
         {!cartArray.includes(piece.artwork_id) ? (
-          <Tooltip hasArrow label='Add to Cart' placement='top' bg='red.600'>
+          <Tooltip hasArrow label='Add to Cart' placement='top' bg='cyan.700'>
             <IconButton
               bg='gray.600'
               color='gray.50'
