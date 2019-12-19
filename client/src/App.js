@@ -104,7 +104,7 @@ function App() {
               <SingleArtist />
             </Route>
             <Route path="/artists">
-              <Artists artists={artists} />
+              {artists[0] ? <Artists artists={artists} /> : null}
             </Route>
             <Route path="/about">
               <About />
