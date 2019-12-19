@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { StateContext } from '../../../context';
-import { Box, Grid, IconButton, Text } from '@chakra-ui/core';
+import { Box, Grid, Heading, IconButton, Text } from '@chakra-ui/core';
 import CheckoutForm from './CheckoutForm/CheckoutForm';
 import CartCard from '../../Cards/CartCard';
 
@@ -22,13 +22,16 @@ const Cart = () => {
       <Grid templateColumns='3fr 1fr' gap={6} height='100vh'>
         <Box d='flex' p={4}>
           {!cartArray[0] ? (
-            'Your cart is empty.'
+            <Text fontSize='2xl' fontFamily='fira-sans'>
+              Your cart is empty.
+            </Text>
           ) : (
             <>
               {' '}
-              <Text fontSize='2xl' fontFamily='fira-sans'>
+              <Heading as='h1' fontSize='2xl' fontFamily='fira-sans'>
                 Your Cart:{' '}
-              </Text>
+              </Heading>{' '}
+              <br />
               <ul>{cartLi}</ul>
             </>
           )}

@@ -2,16 +2,11 @@ import React from 'react';
 
 import { Box, Grid, Flex, Image } from '@chakra-ui/core';
 import './about.css';
-import gawdlogo from './gawdlogo.png';
 
 const About = () => {
   return (
     <>
-      <Grid
-        height='80vh'
-        className='header'
-        templateColumns='repeat(3, 45% 10% 45%)'
-      >
+      <Grid height='80vh' className='header' templateColumns='1fr 1fr'>
         <Flex
           flexDirection='column'
           alignItems='center'
@@ -29,15 +24,6 @@ const About = () => {
           who have visions and dreams, but have no way of making it a reality.
           We help make it a reality for them.
         </Flex>
-        <Box d='flex' alignItems='center' justifyContent='center'>
-          <Image
-            src={gawdlogo}
-            rounded='full'
-            alt='logo from G.A.W.D. website'
-            width='100px'
-            objectFit='contain'
-          />
-        </Box>
         <Flex
           flexDirection='column'
           alignItems='center'
