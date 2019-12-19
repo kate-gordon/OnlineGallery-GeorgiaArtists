@@ -2,7 +2,7 @@ import React from "react";
 import Moment from "react-moment";
 import "moment-timezone";
 
-import { Box, Image } from "@chakra-ui/core";
+import { Box, Image, Text } from "@chakra-ui/core";
 
 const EventCard = props => {
   const { event } = props;
@@ -28,23 +28,23 @@ const EventCard = props => {
             p={2}
             m={2}
           >
-            <h2>
+            <Text fontSize='3xl'>
               <Moment date={event.datewhen} format='MMM D' />
-            </h2>
+            </Text>
           </Box>
-          <h2>{event.title}</h2>
+          <Text fontSize='3xl'>{event.title}</Text>
         </Box>
         <Box>
           <Image width='70%' src={event.picture} />
         </Box>
-        <h2>
+        <Text fontSize='2xl'>
           <Moment date={event.datewhen} format='h:mm a' tz='Europe/London' />
-        </h2>
+        </Text>
         <Box>
-          <h3>{event.location}</h3>
+          <Text fontSize='xl'>{event.location}</Text>
         </Box>
         <Box>
-          <p>{event.blurb}</p>
+          <Text fontSize='lg'>{event.blurb}</Text>
         </Box>
       </Box>
     </>
