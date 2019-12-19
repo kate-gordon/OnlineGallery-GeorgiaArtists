@@ -17,7 +17,7 @@ const removeArtwork = id => {
 
 //Edits artwork in database
 
-const editArtwork = (artwork_id, title, medium, price, award, sold, artist) => {
+const editArtwork = (artwork_id, title, medium, price, award, artist, sold) => {
   db.any(
     `UPDATE artworks SET title = $1, medium = $2, price = $3, award = $4, artist = $5, sold = $6 WHERE artwork_id=$6;`,
     [title, medium, price, award, artist, sold, artwork_id]
