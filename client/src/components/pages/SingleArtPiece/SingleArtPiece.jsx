@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 import { StateContext } from "../../../context";
-import { Link, useRouteMatch } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import { Box, Grid, Image, IconButton } from "@chakra-ui/core";
 
 const SingleArtPiece = () => {
@@ -53,22 +53,14 @@ const SingleArtPiece = () => {
           {artPiece.sold ? (
             <h2>SOLD</h2>
           ) : (
-            <Box
-              d='flex'
-              p={2}
-              borderStyle='solid'
-              style={{ color: "#021714", backgroundColor: "#F0F0F0" }}
-            >
-              <h2>${artPiece.price}</h2>
-              <IconButton
-                className='iconBtn'
-                onClick={handleClick}
-                aria-label='Add to cart'
-                size='xs'
-                icon='add'
-                value={artPiece}
-              />
-            </Box>
+            <IconButton
+              className='iconBtn'
+              onClick={handleClick}
+              aria-label='Add to cart'
+              size='xs'
+              icon='add'
+              value={artPiece}
+            />
           )}
         </Box>
       </Grid>
