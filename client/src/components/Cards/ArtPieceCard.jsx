@@ -2,16 +2,34 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { StateContext } from "../../context";
 
-import { Box, Button, Image, IconButton, Text } from "@chakra-ui/core";
+import {
+  Box,
+  Button,
+  Image,
+  IconButton,
+  Text,
+  Popover,
+  PopoverTrigger,
+  PopoverContent
+} from "@chakra-ui/core";
 
 const ArtPieceCard = props => {
+  const [{ cart }] = useContext(StateContext);
+  let cartArray = [];
+  cart.map(item => cartArray.push(item.artwork_id));
   const { piece } = props;
   const [value, dispatch] = useContext(StateContext);
   const [hover, setHoverState] = useState(false);
 
-  const handleClick = e => {
+  const handleAddClick = e => {
     dispatch({
       type: "addCartItem",
+      item: piece
+    });
+  };
+  const handleRemoveClick = e => {
+    dispatch({
+      type: "removeCartItem",
       item: piece
     });
   };
@@ -25,20 +43,45 @@ const ArtPieceCard = props => {
       <h2>SOLD</h2>
     ) : (
       <Box
-        d='flex'
+        d="flex"
         p={2}
-        borderStyle='solid'
+        borderStyle="solid"
         style={{ color: "#021714", backgroundColor: "#F0F0F0" }}
       >
         <h2>${piece.price}</h2>
-        <IconButton
-          className='iconBtn'
-          onClick={handleClick}
-          aria-label='Add to cart'
-          size='xs'
-          icon='add'
-          value={piece}
-        />
+        {!cartArray.includes(piece.artwork_id) ? (
+          <Popover trigger="hover">
+            <PopoverContent>
+              <p>Add to Cart</p>
+            </PopoverContent>
+            <PopoverTrigger>
+              <IconButton
+                className="iconBtn"
+                onClick={handleAddClick}
+                aria-label="Add to cart"
+                size="xs"
+                icon="add"
+                value={piece}
+              />
+            </PopoverTrigger>
+          </Popover>
+        ) : (
+          <Popover trigger="hover">
+            <PopoverContent>
+              <p>Remove from Cart</p>
+            </PopoverContent>
+            <PopoverTrigger>
+              <IconButton
+                className="iconBtn"
+                onClick={handleRemoveClick}
+                aria-label="Add to cart"
+                size="xs"
+                icon="minus"
+                value={piece}
+              />
+            </PopoverTrigger>
+          </Popover>
+        )}
       </Box>
     )
   ) : null;
@@ -50,34 +93,34 @@ const ArtPieceCard = props => {
       <Box
         onMouseEnter={onHover}
         onMouseLeave={onHover}
-        width='90%'
-        height='auto'
+        width="90%"
+        height="auto"
         p={2}
         m={2}
       >
-        <Box position='relative'>
+        <Box position="relative">
           <Link to={`/piece/${piece.artwork_id}`}>
             <Image
               style={growCard}
-              htmlWidth='100%'
-              htmlHeight='auto'
+              htmlWidth="100%"
+              htmlHeight="auto"
               src={piece.picture}
               alt={piece.title}
-              boxShadow='4px 4px 2px 2px grey'
+              boxShadow="4px 4px 2px 2px grey"
             />
           </Link>
-          <Box position='absolute' right='0' top='0'>
+          <Box position="absolute" right="0" top="0">
             {addToCartBox}
           </Box>
         </Box>
         <Box
-          d='flex'
-          flexDirection='column'
-          alignItems='flex-start'
-          justifyContent='flex-start'
+          d="flex"
+          flexDirection="column"
+          alignItems="flex-start"
+          justifyContent="flex-start"
         >
-          <Text fontSize='3xl'>{piece.title}</Text>
-          <Text fontSize='2xl'>
+          <Text fontSize="3xl">{piece.title}</Text>
+          <Text fontSize="2xl">
             By {piece.firstname} {piece.lastname}
           </Text>
         </Box>
