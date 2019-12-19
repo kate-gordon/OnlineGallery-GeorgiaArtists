@@ -1,5 +1,7 @@
 <div id="edit">
   <div id="list" style="overflow:auto;height: 90vh;">
+    <!-- Lists out the artworks to edit starting with a new artwork option 
+  Onclick select runs a JS function that shows the selected artwork page-->
     <p>New Artwork</p>
     <button id="buttid_0" class="button" onclick="select(0)">
       Add New Artwork
@@ -20,6 +22,7 @@
   </div>
   <div>
     <div id="divid_0" class="hide">
+      <!-- Form pushes images and data to be added to the database -->
       <form
         method="POST"
         action="/admin/artworks/add"
@@ -57,6 +60,7 @@
     </div>
     ${artworks.map(artwork => `
     <div id="divid_${artwork.artwork_id}" class="hide">
+      <!-- Form populated by artwork data pushes updated data to database -->
       <form method="POST" action="/admin/artworks/edit">
         <input type="hidden" name="artwork_id" value="${artwork.artwork_id}" />
         <label
@@ -95,6 +99,7 @@
         >
         <button type="submit">Update</button>
       </form>
+      <!-- Form removes artwork -->
       <form method="POST" action="/admin/artworks/remove" id="deleteForm">
         <input type="hidden" name="artwork_id" value="${artwork.artwork_id}" />
         <label>

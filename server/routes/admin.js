@@ -2,7 +2,9 @@ const express = require("express");
 const router = express.Router();
 const { login } = require("../models/admin");
 
+//Router get for login screen
 //Shows login screen. Redirects to admin panel if logged in. All routes redirect here if user isn't logged in.
+// root
 
 router.get("/", function(req, res, next) {
   if (!req.session.is_logged_in) {
@@ -16,7 +18,8 @@ router.get("/", function(req, res, next) {
   }
 });
 
-//Landing page for admin
+//Router get - Landing page for admin
+// /admin
 
 router.get("/admin", function(req, res, next) {
   if (req.session.is_logged_in) {
@@ -30,7 +33,8 @@ router.get("/admin", function(req, res, next) {
   }
 });
 
-//Router for post checking user login. Updates session if login success. Checks user login against .env
+//Router post for checking user login. Updates session if login success. Checks user login against .env
+// /login
 
 router.post("/login", function(req, res, next) {
   const { username, password } = req.body;
@@ -42,7 +46,8 @@ router.post("/login", function(req, res, next) {
   }
 });
 
-//Router for user logout.
+//Router get for user logout.
+// /logout
 
 router.get("/logout", function(req, res, next) {
   req.session.destroy();

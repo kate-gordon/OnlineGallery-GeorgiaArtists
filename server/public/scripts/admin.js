@@ -1,3 +1,5 @@
+//Select handles showing the correct form when you press on a button in any of the management pages
+
 function select(id) {
   currentbutton = document.getElementById(`buttid_${id}`);
   currentdiv = document.getElementById(`divid_${id}`);

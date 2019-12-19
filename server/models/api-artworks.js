@@ -1,5 +1,7 @@
 const db = require("../utilities/conn");
 
+// Grabs all artworks from database
+
 const allartworks = async () => {
   try {
     const response = await db.any(
@@ -12,6 +14,8 @@ const allartworks = async () => {
   }
 };
 
+//Grabs a single artwork by ID
+
 const artworkid = async id => {
   try {
     const response = await db.any(
@@ -23,6 +27,8 @@ const artworkid = async id => {
   }
 };
 
+//Grabs all artworks by a single artist
+
 const artistart = async id => {
   try {
     const response = await db.any(
@@ -33,6 +39,8 @@ const artistart = async id => {
     return `Internal Database Error: ${err}`;
   }
 };
+
+//Sets all artworks in artwork_id array to sold
 
 const artwork_sold = async ids => {
   const response = await db.any(

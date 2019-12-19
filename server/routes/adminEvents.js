@@ -4,6 +4,9 @@ const { addEvent, removeEvent, editEvent } = require("../models/admin-events");
 const { allevents } = require("../models/api-events");
 const multer = require("multer");
 
+//Event image storage using Multer.
+//Images will go to URL/images/events/
+
 const eventStorage = multer.diskStorage({
   destination: function(req, file, cb) {
     cb(null, "public/images/events/");
@@ -13,6 +16,9 @@ const eventStorage = multer.diskStorage({
   }
 });
 const eventUpload = multer({ storage: eventStorage });
+
+//Router get for the event management page
+// admin/events
 
 router.get("/", async function(req, res, next) {
   const events = await allevents();
@@ -29,6 +35,9 @@ router.get("/", async function(req, res, next) {
     res.status(401).redirect("/");
   }
 });
+
+//Router post to add an event
+// admin/events/add
 
 router.post("/add", eventUpload.single("picture"), async function(
   req,
@@ -50,6 +59,9 @@ router.post("/add", eventUpload.single("picture"), async function(
   }
 });
 
+//Router post to remove an event
+// admin/events/add
+
 router.post("/remove", function(req, res, next) {
   if (req.session.is_logged_in) {
     const { event_id } = req.body;
@@ -59,6 +71,9 @@ router.post("/remove", function(req, res, next) {
     res.status(401).redirect("/");
   }
 });
+
+// Router post to update an event
+// admin/events/edit
 
 router.post("/edit", async function(req, res, next) {
   if (req.session.is_logged_in) {
