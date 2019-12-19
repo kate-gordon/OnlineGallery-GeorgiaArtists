@@ -21,7 +21,7 @@ import "./App.css";
 function App() {
   const [artists, setArtists] = useState([]);
   const [artPieces, setArtPieces] = useState([]);
-
+  console.log(artPieces);
 
   const initialState = {
     cart: []
@@ -49,6 +49,8 @@ function App() {
           cart: [...newCart]
         };
       case "clearCart":
+        // setTimeout(fetchArtPieceData(), 3000);
+        console.log(artPieces);
         return {
           cart: []
         };

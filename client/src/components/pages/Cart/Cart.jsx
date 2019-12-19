@@ -8,7 +8,7 @@ import "./cart.css";
 
 const Cart = props => {
   const [{ cart }] = useContext(StateContext);
-  // const { fetchArtPieceData } = props;
+  const { fetchArtPieceData } = props;
 
   const totalPrice = cart.reduce((a, { price }) => a + price, 0);
   // console.log(value);
@@ -45,7 +45,7 @@ const Cart = props => {
               Cart Total: ${totalPrice}.00
             </Text>
           )}
-          <CheckoutForm />
+          <CheckoutForm fetchArtPieceData={fetchArtPieceData} />
         </Box>
       </Grid>
     </>
