@@ -1,13 +1,14 @@
-import React, { useContext } from 'react';
-import { StateContext } from '../../../context';
-import { Box, Grid, Heading, IconButton, Text } from '@chakra-ui/core';
-import CheckoutForm from './CheckoutForm/CheckoutForm';
-import CartCard from '../../Cards/CartCard';
+import React, { useContext } from "react";
+import { StateContext } from "../../../context";
+import { Box, Grid, Heading, IconButton, Text } from "@chakra-ui/core";
+import CheckoutForm from "./CheckoutForm/CheckoutForm";
+import CartCard from "../../Cards/CartCard";
 
-import './cart.css';
+import "./cart.css";
 
-const Cart = () => {
+const Cart = props => {
   const [{ cart }] = useContext(StateContext);
+  // const { fetchArtPieceData } = props;
 
   const totalPrice = cart.reduce((a, { price }) => a + price, 0);
   // console.log(value);
@@ -27,10 +28,10 @@ const Cart = () => {
             </Text>
           ) : (
             <>
-              {' '}
+              {" "}
               <Heading as='h1' fontSize='2xl' fontFamily='fira-sans'>
-                Your Cart:{' '}
-              </Heading>{' '}
+                Your Cart:{" "}
+              </Heading>{" "}
               <br />
               {cartLi}
             </>
@@ -38,7 +39,7 @@ const Cart = () => {
         </Box>
         <Box p={4}>
           {totalPrice === 0 ? (
-            ''
+            ""
           ) : (
             <Text fontSize='2xl' fontFamily='fira-sans'>
               Cart Total: ${totalPrice}.00
