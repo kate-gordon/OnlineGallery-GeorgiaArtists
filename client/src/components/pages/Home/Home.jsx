@@ -70,6 +70,8 @@ class Home extends Component {
           pageLinkClassName={"pages"}
           activeClassName={"activePage"}
           activeLinkClassName={"activeLink"}
+          nextLinkClassName={"nextButton"}
+          previousLinkClassName={"prevButton"}
         />
       </>
     );

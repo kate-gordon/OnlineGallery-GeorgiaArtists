@@ -26,3 +26,10 @@
 .activeLink:focus {
   outline: 0;
 }
+
+.nextButton {
+  cursor: pointer;
+}
+.prevButton {
+  cursor: pointer;
+}
