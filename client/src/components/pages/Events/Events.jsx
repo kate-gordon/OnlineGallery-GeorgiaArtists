@@ -24,13 +24,7 @@ const Events = () => {
 
   return (
     <>
-      <Grid
-        templateColumns='repeat(3, 1fr)'
-        height='80vh'
-        m={3}
-        gap={6}
-        minHeight='100vh'
-      >
+      <Grid templateColumns='repeat(3, 1fr)' m={3} gap={6} minHeight='100vh'>
         {events.map((event, id) => {
           return <EventCard key={events[id].event_id} event={events[id]} />;
         })}

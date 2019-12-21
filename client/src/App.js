@@ -122,9 +122,9 @@ function App() {
               <Order />
             </Route>
           </Switch>
+          <Footer />
         </StateProvider>
       </ThemeProvider>
-      <Footer />
     </div>
   );
 }

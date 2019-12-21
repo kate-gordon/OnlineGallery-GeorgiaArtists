@@ -3,10 +3,11 @@ import axios from "axios";
 
 import { StateContext } from "../../../context";
 import { useRouteMatch } from "react-router-dom";
-import { Box, Grid, Image, IconButton, Tooltip } from "@chakra-ui/core";
+import { Box, Grid, Image, IconButton, Text, Tooltip } from "@chakra-ui/core";
 
 const SingleArtPiece = () => {
   const [artPiece, setArtPiece] = useState([]);
+
   const [value, dispatch] = useContext(StateContext);
   let match = useRouteMatch("/piece/:id");
   const id = match.params.id;
@@ -25,7 +26,7 @@ const SingleArtPiece = () => {
   };
 
   useEffect(() => {
-    fetchArtPiece();
+    fetchArtPiece(artPiece);
   }, []);
 
   const handleAddClick = e => {
@@ -43,7 +44,7 @@ const SingleArtPiece = () => {
 
   return (
     <>
-      <Grid height='100vh' templateColumns='repeat(2, 1fr)' gap={6}>
+      <Grid minHeight='100vh' templateColumns='repeat(2, 1fr)' gap={6}>
         <Box d='flex' alignItems='center' justifyContent='center'>
           <Image src={artPiece.picture} htmlWidth='100%' htmlHeight='auto' />
         </Box>
@@ -53,11 +54,15 @@ const SingleArtPiece = () => {
           alignItems='center'
           justifyContent='center'
         >
-          <h1>{artPiece.title}</h1>
-          <h2>{artPiece.medium}</h2>
-          <h2>
+          <Text fontSize='3xl' fontFamily='fira-sans' m={0}>
+            {artPiece.title}
+          </Text>
+          <Text fontSize='2xl' fontFamily='fira-sans' m={0}>
+            {artPiece.medium}
+          </Text>
+          <Text fontSize='2xl' fontFamily='fira-sans' m={0}>
             By {artPiece.firstname} {artPiece.lastname}
-          </h2>
+          </Text>
           <h3>Awarded {artPiece.award}</h3>
           <h3>${artPiece.price}</h3>
 
