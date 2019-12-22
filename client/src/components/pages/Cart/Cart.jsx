@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { StateContext } from "../../../context";
-import { Box, Grid, Heading, IconButton, Text } from "@chakra-ui/core";
+import { Box, Grid, Heading, Text } from "@chakra-ui/core";
 import CheckoutForm from "./CheckoutForm/CheckoutForm";
 import CartCard from "../../Cards/CartCard";
 

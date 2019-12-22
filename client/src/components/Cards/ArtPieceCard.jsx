@@ -4,7 +4,6 @@ import { StateContext } from "../../context";
 
 import {
   Box,
-  Button,
   IconButton,
   Image,
   Badge,

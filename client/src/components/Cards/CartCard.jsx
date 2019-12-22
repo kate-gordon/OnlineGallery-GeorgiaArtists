@@ -1,31 +1,20 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { StateContext } from '../../context';
+import React, { useContext } from 'react'
+import { StateContext } from '../../context'
 
-import {
-  Badge,
-  Box,
-  Button,
-  Flex,
-  Image,
-  IconButton,
-  Stack,
-  Text,
-  Tooltip
-} from '@chakra-ui/core';
+import { Box, Flex, Image, IconButton, Text, Tooltip } from '@chakra-ui/core'
 
 const CartCard = props => {
-  const [{ cart }] = useContext(StateContext);
-  let cartArray = [];
-  cart.map(item => cartArray.push(item.artwork_id));
-  const { piece } = props;
-  const [value, dispatch] = useContext(StateContext);
+  const [{ cart }] = useContext(StateContext)
+  let cartArray = []
+  cart.map(item => cartArray.push(item.artwork_id))
+  const { piece } = props
+  const [value, dispatch] = useContext(StateContext)
   const handleClick = e => {
     dispatch({
       type: 'removeCartItem',
       item: piece
-    });
-  };
+    })
+  }
 
   return (
     <>
@@ -81,7 +70,7 @@ const CartCard = props => {
         </Box>
       </Flex>
     </>
-  );
-};
+  )
+}
 
-export default CartCard;
+export default CartCard

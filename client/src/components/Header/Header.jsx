@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, Grid, Flex, Image, Text, Scale } from '@chakra-ui/core';
+import { Box, Button, Grid, Flex, Image } from '@chakra-ui/core';
 import { Link } from 'react-router-dom';
 
 import palettelogo from './palettelogo.png';
