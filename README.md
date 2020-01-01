@@ -26,6 +26,18 @@ We also created an Administrator control panel for a Board Member to login and g
 
 ### Features
 
+# Backend 
+
+- Admin Panel to add, update, & delete artists, art pieces, & events
+
+# Frontend 
+
+- Add to Cart Button on hover on Gallery display pages 
+- Click through to Single Art Piece page 
+- Click through to Single Artist page
+- Cart checkout with completed order page 
+
+
 ## Technologies
 
 - HTML - React - Figma
@@ -34,6 +46,10 @@ We also created an Administrator control panel for a Board Member to login and g
 - Chakra-UI - PostgreSQL - WCAG 2.0
 
 ## Minimum Viable Product (MVP)
+
+- An Online Gallery with purchase options 
+- Displaying information on Artists, the organization, & Events 
+- Admin Panel to edit Artists, Art Pieces, & Events 
 
 ## Challenges and Solutions
 
