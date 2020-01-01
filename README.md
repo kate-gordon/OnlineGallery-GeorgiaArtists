@@ -26,12 +26,7 @@ We also created an Administrator control panel for a Board Member to login and g
 
 ### Features
 
-# Backend 
-
 - Admin Panel to add, update, & delete artists, art pieces, & events
-
-# Frontend 
-
 - Add to Cart Button on hover on Gallery display pages 
 - Click through to Single Art Piece page 
 - Click through to Single Artist page
