@@ -46,10 +46,6 @@ We also created an Administrator control panel for a Board Member to login and g
 - Displaying information on Artists, the organization, & Events 
 - Admin Panel to edit Artists, Art Pieces, & Events 
 
-## Challenges and Solutions
-
-## Stretch Goals
-
 ## Contributors
 
 - Puja Fitzpatrick
