@@ -15,10 +15,9 @@ Georgia Artists with DisAbilities was founded in 1985, with a main goal to ident
     -Challenges and Solutions
     -Stretch Goals
     -Contributors
-    -Screenshots
     -Special Thanks
 
-## Decription
+## Description
 
 For this group project, we chose to create an online art gallery for a local non-proft, Georgia Artists with DisAbilities. This organization currently only sells artwork created by its members in person in public spaces around the state of Georgia, including local libraries.
 
@@ -56,11 +55,6 @@ We also created an Administrator control panel for a Board Member to login and g
   - [GitHub Profile](https://github.com/kate-gordon) | [Portfolio](https://k8gordon.com) | [Email](mailto:kategordonnyc@gmail.com)
 - Christopher Kemp
   - [GitHub Profile](https://github.com/cmkemp52) | [Portfolio](https://christopherkemp.dev) | [Email](mailto:cmkemp52@gmail.com)
-
-## Screenshots
-
-- Web
-- Mobile
 
 ## Special Thanks
 
