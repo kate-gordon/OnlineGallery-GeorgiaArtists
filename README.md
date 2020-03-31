@@ -1,5 +1,7 @@
 # Georgia Artists with DisAbilities Online Art Gallery
 
+![galleryGAWD](https://user-images.githubusercontent.com/54558374/78060122-00bea880-7359-11ea-90b1-25f3e4d795b0.gif)
+
 Capstone Project for DigitalCrafts Aug-Dec 2019 immersive, full-stack cohort.
 
 Georgia Artists with DisAbilities was founded in 1985, with a main goal to identify those disabled citizens of Georgia who are creative, capable, and talented in the arts, so that their achievements and talents can be recognized.
